@@ -14,11 +14,12 @@ library(dplyr)
 library(FactoMineR)
 library(factoextra)
 library(vegan)
+library(fitdistrplus)
 
-options(constrasts=c("contr.treatment","contr.poly"))
+#options(constrasts=c("contr.treatment","contr.poly"))
 #setwd("P:/Emmanuelle/MelangeEss_FOrl?ans/Analyses/These_JYB_2011")
 #setwd("Z:/projets/MelangeEss_FOrleans/TheseJYB/Analyses\These_JYB_2011")
-setwd("C:/Users/farchaux/Documents/OakPine")
+setwd("C:/Users/farchaux/Documents/OakPine/inrae-tree-mixture-communities/data")
 
 ##############################################################################################
 ##############################################################################################
@@ -113,6 +114,27 @@ boxplot(Carab.Rel.Env$RS_all~Carab.Rel.Env$MEL_cercle_cat)
 #Test for linear or quadratic relationship of taxonomic diversity/total abundance and local tree mixture using glmmTMB to account for a random site (parcelle) effect
 ####################################################################################################################################
 
+descdist(Carab.Rel.Env$RS_all,discrete=TRUE,boot=1001)
+plot(fitdist(Carab.Rel.Env$RS_all,"norm"))
+fitnb<-fitdist(Carab.Rel.Env$RS_all,"nbinom")
+fitp<-fitdist(Carab.Rel.Env$RS_all,"pois")
+fitn<-fitdist(Carab.Rel.Env$RS_all,"norm")
+fitlnorm<-fitdist(Carab.Rel.Env$RS_all,"lnorm")
+fitexp<-fitdist(Carab.Rel.Env$RS_all,"exp")
+fitgeom<-fitdist(Carab.Rel.Env$RS_all,"geom")
+fitbeta<-fitdist(Carab.Rel.Env$RS_all,"beta")
+fitunif<-fitdist(Carab.Rel.Env$RS_all,"unif")
+fitg<-fitdist(Carab.Rel.Env$RS_all,"gamma",method="mme")
+gofstat(fitnb)$chisqpvalue
+gofstat(fitp)$chisqpvalue
+gofstat(fitn)$chisqpvalue
+gofstat(fitlnorm)$chisqpvalue
+gofstat(fitexp)$chisqpvalue
+gofstat(fitgeom)$chisqpvalue
+gofstat(fitunif)$chisqpvalue
+gofstat(fibeta)$chisqpvalue
+gofstat(fitg)$chisqpvalue
+
 glmm_RS_all<-glmmTMB(RS_all~G_all_cercle+veg1+I(MEL_cercle/100)+I((MEL_cercle/100)^2)+(1|plot),family=poisson,data=Carab.Rel.Env)
 summary(glmm_RS_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, taux_veg1=0.83, AIC=285.2
 
@@ -121,11 +143,63 @@ summary(glmm_RS_all) #simple effect, p=0.0377, AIC=284.3
 
 #Test for linear or quadratic relationship of total abundance and local tree mixture using glmmTMB to account for a random site (parcelle) effect
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+veg1+I(MEL_cercle/100)+I((MEL_cercle/100)^2)+(1|plot),family=nbinom1(),data=Carab.Rel.Env)
-summary(glmm_Abdce_all)#G coeff=0.06 p=0.03, MEL coeff=1.42 p=0.036, MEL^2 coeff=-0.91 p=0.145 AIC 539.7
+descdist(Carab.Rel.Env$Abdce_all,discrete=TRUE,boot=1001)
+plot(fitdist(Carab.Rel.Env$Abdce_all,"norm"))
+fitnb<-fitdist(Carab.Rel.Env$Abdce_all,"nbinom")
+fitp<-fitdist(Carab.Rel.Env$Abdce_all,"pois")
+fitn<-fitdist(Carab.Rel.Env$Abdce_all,"norm")
+fitlnorm<-fitdist(Carab.Rel.Env$Abdce_all,"lnorm")
+fitexp<-fitdist(Carab.Rel.Env$Abdce_all,"exp")
+fitgeom<-fitdist(Carab.Rel.Env$Abdce_all,"geom")
+fitbeta<-fitdist(Carab.Rel.Env$Abdce_all,"beta")
+fitunif<-fitdist(Carab.Rel.Env$Abdce_all,"unif")
+fitg<-fitdist(Carab.Rel.Env$Abdce_all,"gamma",method="mme")
+gofstat(fitnb)$chisqpvalue
+gofstat(fitp)$chisqpvalue
+gofstat(fitn)$chisqpvalue
+gofstat(fitlnorm)$chisqpvalue
+gofstat(fitexp)$chisqpvalue
+gofstat(fitgeom)$chisqpvalue
+gofstat(fitunif)$chisqpvalue
+gofstat(fibeta)$chisqpvalue
+gofstat(fitg)$chisqpvalue
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+veg1+I(MEL_cercle/100)+(1|plot),family=nbinom1(),data=Carab.Rel.Env)
-summary(glmm_Abdce_all)#G coeff=0.06 p=0.03, MEL coeff=0.48 p=0.0291, AIC 539.7
+glmm_Abdce_all_nb<-glmmTMB(Abdce_all~G_all+I(MEL_cercle/100)+I((MEL_cercle/100)^2)+(1|plot),family=nbinom1(),data=Carab.Rel.Env)
+summary(glmm_Abdce_all_nb)#G coeff=0.06 p=0.03, MEL coeff=1.42 p=0.036, MEL^2 coeff=-0.91 p=0.145 AIC 539.7
+
+sim<-simulateResiduals(glmm_Abdce_all_nb)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value # Dispersion test  # Outliers 
+testOutliers(sim)
+
+#Data: Carab.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#540.1     553.4    -264.1     528.1        62 
+#
+#Random effects:
+#  
+#  Conditional model:
+#  Groups Name        Variance Std.Dev.
+#plot   (Intercept) 0.2262   0.4756  
+#Number of obs: 68, groups:  plot, 22
+#
+#Dispersion parameter for nbinom1 family (): 2.48 
+#
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)  
+#(Intercept)            1.73109    0.73971   2.340   0.0193 *
+#  G_all                  0.04596    0.02820   1.630   0.1031  
+#I(MEL_cercle/100)      1.26356    0.67067   1.884   0.0596 .
+#I((MEL_cercle/100)^2) -0.90799    0.63215  -1.436   0.1509  
+
+
+
+# #magnitude
+#récupérer les valeurs de Estimate et Std. Error pour la variable d’intérêt X
+Estimate_mod<-rnorm(10000,mean=37.7373,sd=18.2535)
+DX<-exp(Estimate_mod*0.1)-1 #pour un delta de X de 10 (%)
+mean(DX)
+quantile(DX, c(0.01, 0.99))
 
 #positive effect of basal area and tree mixture (potentially humped-shaped)
 
@@ -208,6 +282,9 @@ par(mfrow = c(1, 1))
 
 Bird.Rel.Env.Sp<-read.csv("Rel_Env_Sp_Bird_2026.csv", sep=";", header=T)
 dim(Bird.Rel.Env.Sp)
+
+rs.guild.saprox<-read.table("tabplotguilds.txt",header=T)
+
 
 #Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
 Bird.Rel.Env.Sp$MEL_cat<- factor(Bird.Rel.Env.Sp$MEL_point_cat, levels = c("Pine", "Mixed", "Oak"))
@@ -437,14 +514,26 @@ Saprox.Rel.Env$mel_trap_cat<- factor(Saprox.Rel.Env$mel_trap_cat, levels = c("Pi
 ###########################     SAPROX Species richness    ##################################
 ##############################################################################################
 
+#####################################
+########RS all
+################################
+
 hist(Saprox.Rel.Sp$SR_all) #family Poisson?
 mean(Saprox.Rel.Sp$SR_all) #38.29167
 var(Saprox.Rel.Sp$SR_all) #59.70035
 
-plot(Saprox.Rel.Env$SR_all~Saprox.Rel.Env$mel_trap)
+descdist(Saprox.Rel.Env$rs_all,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env$rs_all,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env$rs_all,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env$rs_all,"pois")
+gofstat(fitnb)$chisqpvalue #0.5436261
+gofstat(fitp)$chisqpvalue #0.7831754 --> Poisson
+
+
+plot(Saprox.Rel.Env$rs_all~Saprox.Rel.Env$mel_trap)
 
 # Visual inspection of taxonomic richness and local tree mixture
-gam_model <- gam(SR_all ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
+gam_model <- gam(rs_all ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
 
 # Create prediction grid
 mel_seq <- seq(min(Saprox.Rel.Env$mel_trap), max(Saprox.Rel.Env$mel_trap), length.out = 200)
@@ -469,10 +558,10 @@ ggplot(pred_df, aes(x = mel_trap, y = fit)) +
   labs(title = "GAM: SR_all ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Species number (all species)") +
   theme_minimal()
 
-boxplot(Saprox.Rel.Env$Abdce_all~Saprox.Rel.Env$mel_trap_cat)
+boxplot(Saprox.Rel.Env$ab_all~Saprox.Rel.Env$mel_trap_cat)
 
-glmm_SR_all<-glmmTMB(SR_all~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=poisson,data=Saprox.Rel.Env)
-summary(glmm_SR_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, taux_veg1=0.83, AIC=285.2
+glmm_rs_all<-glmmTMB(rs_all~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=poisson,data=Saprox.Rel.Env)
+summary(glmm_rs_all) 
 #Conditional model:
 #  Groups Name        Variance Std.Dev.
 #plot   (Intercept) 0.006482 0.08051 
@@ -484,33 +573,230 @@ summary(glmm_SR_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, 
 #G_all               -0.009823   0.003373   -2.91  0.00358 ** 
 #I(mel_trap/100)      0.400420   0.273439    1.46  0.14309    
 #I((mel_trap/100)^2) -0.435797   0.264574   -1.65  0.09952 .  
-AICc(glmm_SR_all) #[1] 331.4145
 
-
-glmm_SR_all<-glmmTMB(SR_all~G_all+I(mel_trap/100)+(1|plot),family=poisson,data=Saprox.Rel.Env)
-summary(glmm_SR_all) #simple effect, p=0.0377, AIC=284.3
-#Conditional model:
-#  Groups Name        Variance Std.Dev.
-#plot   (Intercept) 0.008134 0.09019 
-#Number of obs: 48, groups:  plot, 48
-#
-#Conditional model:
-#  Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)      3.900134   0.098241   39.70  < 2e-16 ***
-# G_all           -0.009581   0.003454   -2.77  0.00553 ** 
-# I(mel_trap/100) -0.033359   0.075763   -0.44  0.65971  
-AICc(glmm_SR_all) #[1] 331.572
+sim<-simulateResiduals(glmm_rs_all)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value # Dispersion test  # Outliers 
+testOutliers(sim)
 
 #no effect of tree mixture on trap saproxylic species
+
+#####################################
+########RS conif
+################################
+
+descdist(Saprox.Rel.Env$rs.conif,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env$rs.conif,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env$rs.conif,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env$rs.conif,"pois")
+gofstat(fitnb)$chisqpvalue #0.00205022 --> Poisson
+gofstat(fitp)$chisqpvalue #1.239995e-28 
+
+
+plot(Saprox.Rel.Env$rs_all~Saprox.Rel.Env$mel_trap)
+
+# Visual inspection of taxonomic richness and local tree mixture
+gam_model <- gam(rs.conif ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
+
+# Create prediction grid
+mel_seq <- seq(min(Saprox.Rel.Env$mel_trap), max(Saprox.Rel.Env$mel_trap), length.out = 200)
+pred <- predict(
+  gam_model,
+  newdata = data.frame(mel_trap = mel_seq),
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  mel_trap = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = mel_trap, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Saprox.Rel.Env, aes(x = mel_trap, y = rs.conif), color = "black") +
+  labs(title = "GAM: rs.conif ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Species number (conifer species)") +
+  theme_minimal()
+
+boxplot(Saprox.Rel.Env$ab_all~Saprox.Rel.Env$mel_trap_cat)
+
+glmm_rs_conif<-glmmTMB(rs.conif~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=poisson,data=Saprox.Rel.Env)
+summary(glmm_rs_conif) 
+# Family: poisson  ( log )
+#Formula:          rs.conif ~ G_all + I(mel_trap/100) + I((mel_trap/100)^2) + (1 |      plot)
+#Data: Saprox.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#232.5     241.8    -111.2     222.5        43 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance Std.Dev.
+#plot   (Intercept) 0.1564   0.3955  
+#Number of obs: 48, groups:  plot, 48
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          2.47024    0.35331   6.992 2.71e-12 ***
+#  G_all               -0.02078    0.01252  -1.659   0.0971 .  
+#I(mel_trap/100)      0.50533    0.94191   0.536   0.5916    
+#I((mel_trap/100)^2) -2.31423    1.01602  -2.278   0.0227 *  
+
+sim<-simulateResiduals(glmm_rs_conif)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value # Dispersion test  # Outliers 
+testOutliers(sim) # KS test p=0.81, Dispersion test, p=0.88, Outlier test, p=1
+
+#quadratic effect of tree mixture on conifer species richness
+
+#####################################
+########RS deciduous
+################################
+
+descdist(Saprox.Rel.Env$rs.decid,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env$rs.decid,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env$rs.decid,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env$rs.decid,"pois")
+gofstat(fitnb)$chisqpvalue #0.4257678 --> Negbin
+gofstat(fitp)$chisqpvalue #0.1261187 
+
+
+plot(Saprox.Rel.Env$rs.decid~Saprox.Rel.Env$mel_trap)
+
+# Visual inspection of taxonomic richness and local tree mixture
+gam_model <- gam(rs.decid ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
+
+# Create prediction grid
+mel_seq <- seq(min(Saprox.Rel.Env$mel_trap), max(Saprox.Rel.Env$mel_trap), length.out = 200)
+pred <- predict(
+  gam_model,
+  newdata = data.frame(mel_trap = mel_seq),
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  mel_trap = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = mel_trap, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Saprox.Rel.Env, aes(x = mel_trap, y = rs.decid), color = "black") +
+  labs(title = "GAM: rs.decid ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Species number (deciduous species)") +
+  theme_minimal()
+
+boxplot(Saprox.Rel.Env$ab_all~Saprox.Rel.Env$mel_trap_cat)
+
+glmm_rs_decid<-glmmTMB(rs.decid~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=poisson,data=Saprox.Rel.Env)
+summary(glmm_rs_decid) 
+#  Family: poisson  ( log )
+#Formula:          rs.decid ~ G_all + I(mel_trap/100) + I((mel_trap/100)^2) + (1 |      plot)
+#Data: Saprox.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#308.5     317.8    -149.2     298.5        43 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev.
+#plot   (Intercept) 0.0002539 0.01593 
+#Number of obs: 48, groups:  plot, 48
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          3.491904   0.103042   33.89  < 2e-16 ***
+#  G_all               -0.009262   0.003401   -2.72  0.00647 ** 
+#  I(mel_trap/100)      0.556113   0.281665    1.97  0.04834 *  
+#  I((mel_trap/100)^2) -0.365468   0.267762   -1.36  0.17228    
+
+sim<-simulateResiduals(glmm_rs_decid)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value 0.69 # Dispersion test 0.81 # Outliers 1 
+testOutliers(sim) # RAS
+
+#linear positive effect of tree mixture on deciduousspecies richness
+
+#####################################
+########RS generalist
+################################
+
+descdist(Saprox.Rel.Env$rs.gene,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env$rs.gene,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env$rs.gene,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env$rs.gene,"pois")
+gofstat(fitnb)$chisqpvalue #NULL
+gofstat(fitp)$chisqpvalue #0.1310683 
+
+
+plot(Saprox.Rel.Env$rs.gene~Saprox.Rel.Env$mel_trap)
+
+# Visual inspection of taxonomic richness and local tree mixture
+gam_model <- gam(rs.gene ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
+
+# Create prediction grid
+mel_seq <- seq(min(Saprox.Rel.Env$mel_trap), max(Saprox.Rel.Env$mel_trap), length.out = 200)
+pred <- predict(
+  gam_model,
+  newdata = data.frame(mel_trap = mel_seq),
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  mel_trap = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = mel_trap, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Saprox.Rel.Env, aes(x = mel_trap, y = rs.gene), color = "black") +
+  labs(title = "GAM: rs.decid ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Species number (generalist species)") +
+  theme_minimal()
+
+boxplot(Saprox.Rel.Env$rs.gene~Saprox.Rel.Env$mel_trap_cat)
+
+glmm_rs_gene<-glmmTMB(rs.gene~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=poisson,data=Saprox.Rel.Env)
+summary(glmm_rs_gene) 
+# Family: poisson  ( log )
+#Formula:          rs.gene ~ G_all + I(mel_trap/100) + I((mel_trap/100)^2) + (1 |      plot)
+#Data: Saprox.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#142.5     151.8     -66.2     132.5        43 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#plot   (Intercept) 3.233e-10 1.798e-05
+#Number of obs: 48, groups:  plot, 48
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)
+#(Intercept)          0.55986    0.44625   1.255    0.210
+#G_all               -0.01437    0.01465  -0.981    0.327
+#I(mel_trap/100)      1.90950    1.21758   1.568    0.117
+#I((mel_trap/100)^2) -1.82062    1.16456  -1.563    0.118
+
+sim<-simulateResiduals(glmm_rs_gene)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value 0.14 # Dispersion test 0.016 # Outliers 1 
+testOutliers(sim) # RAS
+
+#linear positive effect of tree mixture on generalist pecies richness
+
 
 
 ##############################################################################################
 ###########################     SAPROX Total abundance    ##################################
 ##############################################################################################
 
-hist(Saprox.Rel.Sp$Abdce_all) #family nbinom
-mean(Saprox.Rel.Sp$Abdce_all) #170.0833
-var(Saprox.Rel.Sp$Abdce_all) #6335.142
+descdist(Saprox.Rel.Env$ab_all,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env$ab_all,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env$ab_all,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env$ab_all,"pois")
+gofstat(fitnb)$chisqpvalue #0.1367534 --> Negbin
+gofstat(fitp)$chisqpvalue #0
 
 # Visual inspection of total abundance and local tree mixture
 gam_model <- gam(Abdce_all ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
@@ -538,10 +824,10 @@ ggplot(pred_df, aes(x = mel_trap, y = fit)) +
   labs(title = "GAM: Abdce_all ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Number of individuals (all species)") +
   theme_minimal()
 
-boxplot(Saprox.Rel.Env$Abdce_all~Saprox.Rel.Env$mel_trap_cat) 
+boxplot(Saprox.Rel.Env$ab_all~Saprox.Rel.Env$mel_trap_cat) 
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=nbinom1(),data=Saprox.Rel.Env)
-summary(glmm_Abdce_all)
+glmm_ab_all<-glmmTMB(ab_all~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=nbinom1(),data=Saprox.Rel.Env)
+summary(glmm_ab_all)
 #Conditional model:
 #  Groups Name        Variance Std.Dev.
 #plot   (Intercept) 0.1891   0.4349  
@@ -557,18 +843,10 @@ summary(glmm_Abdce_all)
 #I((mel_trap/100)^2) -0.708099   0.645788  -1.096    0.273  
 AICc(glmm_Abdce_all) #[1] 555.7867
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+I(mel_trap/100)+(1|plot),family=poisson,data=Saprox.Rel.Env)
-summary(glmm_Abdce_all)
-#Groups Name        Variance Std.Dev.
-#plot   (Intercept) 0.194    0.4404  
-#Number of obs: 48, groups:  plot, 48
-#
-#Conditional model:
-#                 Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)      5.335612   0.238032  22.416   <2e-16 ***
-#  G_all         -0.012152   0.008255  -1.472    0.141    
-#I(mel_trap/100)  0.025565   0.183189   0.140    0.889 
-AICc(glmm_Abdce_all) #[1] 551.8564
+sim<-simulateResiduals(glmm_ab_all)
+testUniformity(sim)#le qqplot est issu de cette commande 
+#KS Test p-value # Dispersion test  # Outliers 
+testOutliers(sim) # KS test p=0.64, Dispersion test, p=095, Outlier test, p=1
 
 #neither tree mixture, nor G influence total abundance
 

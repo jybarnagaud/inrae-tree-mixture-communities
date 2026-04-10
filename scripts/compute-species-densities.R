@@ -94,6 +94,49 @@ ridg4 <- ois4.frq10 %>%
   geom_density_ridges(scale=1, alpha=0.6,fill="black", colour="white")+
   theme_classic()+
   xlim(0,100)+
-  labs(x="Mixture (% oak vs pine + oak)",y="Species")
+  labs(x="Mixture (% oak vs pine + oak)",y="Species with frequency > 10% all plots")
 
 ridg4
+
+ggsave("outputs/ridge-plot-common-species.png", width = 7, height = 15)
+
+## carabids
+
+# data
+
+carab <- read.csv2("data/Sp_Carab_2026_selec.csv")
+env.carab <- read.csv2("data/Rel_Env_Carab_2026.csv",dec=".")
+
+# clean matrix
+
+colnames(carab) <- tolower(colnames(carab))
+
+# reshape
+
+carab.long <- pivot_longer(carab,cols=2:ncol(carab),names_to="species",values_to="count")
+
+# add mixture level
+
+env.carab1 <- env.carab[,c("plot_Ptrap","MEL_cercle")]
+colnames(env.carab1) <- c("piege","MEL_piege")
+
+carab2 <- merge(carab.long,env.carab1,by="piege")
+carab3 <- uncount(carab2,weights=count)
+
+# do the ridge plot
+
+ridg.carab <- carab3 %>%
+  mutate(species = fct_reorder(species, MEL_piege)) %>%
+  ggplot(aes(x = MEL_piege, y = species)) + 
+  geom_density_ridges(scale=1, alpha=0.6,fill="black", colour="white")+
+  theme_classic()+
+  xlim(0,100)+
+  labs(x="Mixture (% oak vs pine + oak)",y="Species with frequency > 10% all plots")
+
+ridg.carab
+
+## saproxylic stuff
+
+sapro <- read.csv2("data/tabplotsp_colsxselec.csv")
+
+

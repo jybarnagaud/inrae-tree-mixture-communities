@@ -1,0 +1,1132 @@
+plot_Ptrap_per;plot_Ptrap;plot;Ptrap;period;Espece;code_sp;Nombre;carni;commentaires
+14-1_PE_1;14-1_PE;14-1;PE;1;Abax (Abax) parallelepipedus;abat;3;;
+14-1_PE_1;14-1_PE;14-1;PE;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+14-1_PE_1;14-1_PE;14-1;PE;1;Carabus (Archicarabus) nemoralis;cane;2;;
+14-1_PE_1;14-1_PE;14-1;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+14-1_PN_1;14-1_PN;14-1;PN;1;Abax (Abax) parallelus;abpa;1;;
+14-1_PN_1;14-1_PN;14-1;PN;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+14-1_PN_1;14-1_PN;14-1;PN;1;Carabus (Archicarabus) nemoralis;cane;1;;
+14-1_PN_1;14-1_PN;14-1;PN;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+14-1_PS_1;14-1_PS;14-1;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+14-1_PS_1;14-1_PS;14-1;PS;1;Abax (Abax) parallelus;abpa;2;;
+14-1_PS_1;14-1_PS;14-1;PS;1;Carabus (Mesocarabus) problematicus;capr;1;;erreur saisie
+14-1_PS_1;14-1_PS;14-1;PS;1;Metallina (Metallina) lampros;mela;1;tube;1 individu carni en tp par rapport à fiche mais OK, ok feuille identif JF
+14-1_PS_1;14-1_PS;14-1;PS;1;Notiophilus biguttatus;nobi;3;tube;1 individu carni en tp par rapport à fiche mais OK, ok feuille identif JF
+14-1_PS_1;14-1_PS;14-1;PS;1;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;tube;1 individu carni en tp par rapport à fiche mais OK, ok feuille identif JF
+14-1_PW_1;14-1_PW;14-1;PW;1;Carabus (Tachypus) auratus;caau;1;;
+14-1_PW_1;14-1_PW;14-1;PW;1;Carabus (Megodontus) violaceus;cavi;1;;
+14-1_PW_1;14-1_PW;14-1;PW;1;Metallina (Metallina) lampros;mela;1;tube;ok feuille identif JF
+14-2_PE_1;14-2_PE;14-2;PE;1;Abax (Abax) parallelepipedus;abat;2;;
+14-2_PE_1;14-2_PE;14-2;PE;1;Abax (Abax) parallelus;abpa;3;;
+14-2_PE_1;14-2_PE;14-2;PE;1;Carabus (Archicarabus) nemoralis;cane;3;;
+14-2_PN_1;14-2_PN;14-2;PN;1;Abax (Abax) parallelus;abpa;1;;
+14-2_PN_1;14-2_PN;14-2;PN;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+14-2_PN_1;14-2_PN;14-2;PN;1;Carabus (Archicarabus) nemoralis;cane;2;;
+14-2_PN_1;14-2_PN;14-2;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+14-2_PS_1;14-2_PS;14-2;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PS_1;14-2_PS;14-2;PS;1;Carabus (Archicarabus) nemoralis;cane;2;;
+14-2_PW_1;14-2_PW;14-2;PW;1;Abax (Abax) parallelus;abpa;2;;
+14-2_PW_1;14-2_PW;14-2;PW;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+15-2_PE_1;15-2_PE;15-2;PE;1;Abax (Abax) parallelepipedus;abat;3;;
+15-2_PE_1;15-2_PE;15-2;PE;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+15-2_PN_1;15-2_PN;15-2;PN;1;Abax (Abax) parallelepipedus;abat;6;;
+15-2_PN_1;15-2_PN;15-2;PN;1;Carabus (Archicarabus) nemoralis;cane;1;;
+15-2_PS_1;15-2_PS;15-2;PS;1;Abax (Abax) parallelepipedus;abat;2;;
+15-2_PS_1;15-2_PS;15-2;PS;1;Carabus (Mesocarabus) problematicus;capr;2;;
+15-2_PW_1;15-2_PW;15-2;PW;1;Abax (Abax) parallelus;abpa;1;;
+110-4_PE_1;110-4_PE;110-4;PE;1;Carabus (Mesocarabus) problematicus;capr;3;;
+110-4_PN_1;110-4_PN;110-4;PN;1;Abax (Abax) parallelus;abpa;2;;
+110-4_PN_1;110-4_PN;110-4;PN;1;Carabus (Archicarabus) nemoralis;cane;1;;
+110-4_PS_1;110-4_PS;110-4;PS;1;Amara (Amara) ovata;amov;2;boite;non saisi et reporté sur la fiche, carni non indiqués sur la fiche, ms OK
+110-4_PS_1;110-4_PS;110-4;PS;1;Amara (Amara) lunicollis;amlu;1;boite, à valider;non saisi et reporté sur la fiche, carni non indiqués sur la fiche, ms OK
+110-4_PW_1;110-4_PW;110-4;PW;1;Carabus (Archicarabus) nemoralis;cane;1;;
+110-4_PW_1;110-4_PW;110-4;PW;1;Carabus (Mesocarabus) problematicus;capr;2;;
+111-1_PE_1;111-1_PE;111-1;PE;1;Abax (Abax) parallelus;abpa;3;;
+111-1_PE_1;111-1_PE;111-1;PE;1;Carabus (Tomocarabus) convexus;cacv;1;;
+111-1_PE_1;111-1_PE;111-1;PE;1;Carabus (Archicarabus) nemoralis;cane;3;;
+111-1_PN_1;111-1_PN;111-1;PN;1;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PN_1;111-1_PN;111-1;PN;1;Carabus (Archicarabus) nemoralis;cane;2;;oubli saisie
+111-1_PN_1;111-1_PN;111-1;PN;1;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;tube;inversion carni entre 111-1-PN et 111-3-PN, pour relevé 1, ok feuille identif JF
+111-1_PS_1;111-1_PS;111-1;PS;1;Abax (Abax) parallelepipedus;abat;2;;
+111-1_PS_1;111-1_PS;111-1;PS;1;Abax (Abax) parallelus;abpa;1;;
+111-1_PS_1;111-1_PS;111-1;PS;1;Carabus (Archicarabus) nemoralis;cane;3;;
+111-1_PS_1;111-1_PS;111-1;PS;1;Carabus (Mesocarabus) problematicus;capr;1;;
+111-1_PS_1;111-1_PS;111-1;PS;1;Nebria (Nebria) brevicollis;nebr;1;tube;détermination OK
+111-1_PW_1;111-1_PW;111-1;PW;1;Abax (Abax) parallelus;abpa;3;;
+111-1_PW_1;111-1_PW;111-1;PW;1;Carabus (Archicarabus) nemoralis;cane;2;;
+111-1_PW_1;111-1_PW;111-1;PW;1;Carabus (Mesocarabus) problematicus;capr;3;;
+111-1_PW_1;111-1_PW;111-1;PW;1;Carabus (Megodontus) violaceus;cavi;1;;
+111-3_PE_1;111-3_PE;111-3;PE;1;Abax (Abax) parallelepipedus;abat;2;;
+111-3_PE_1;111-3_PE;111-3;PE;1;Abax (Abax) parallelus;abpa;1;;
+111-3_PE_1;111-3_PE;111-3;PE;1;Carabus (Archicarabus) nemoralis;cane;1;;
+111-3_PE_1;111-3_PE;111-3;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+111-3_PN_1;111-3_PN;111-3;PN;1;Abax (Abax) parallelus;abpa;1;;
+111-3_PN_1;111-3_PN;111-3;PN;1;Amara (Amara) lunicollis;amlu;1;tube ? à valider;
+111-3_PS_1;111-3_PS;111-3;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+111-3_PS_1;111-3_PS;111-3;PS;1;Abax (Abax) parallelus;abpa;5;;
+111-3_PS_1;111-3_PS;111-3;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+111-3_PS_1;111-3_PS;111-3;PS;1;Carabus (Megodontus) violaceus;cavi;1;;
+111-3_PW_1;111-3_PW;111-3;PW;1;Abax (Abax) parallelepipedus;abat;1;;
+111-3_PW_1;111-3_PW;111-3;PW;1;Abax (Abax) parallelus;abpa;3;;
+111-3_PW_1;111-3_PW;111-3;PW;1;Carabus (Archicarabus) nemoralis;cane;2;;
+111-3_PW_1;111-3_PW;111-3;PW;1;Nebria (Nebria) brevicollis;nebr;1;tube;ok feuille identif JF
+125-3_PE_1;125-3_PE;125-3;PE;1;Abax (Abax) parallelus;abpa;2;;
+125-3_PE_1;125-3_PE;125-3;PE;1;Carabus (Mesocarabus) problematicus;capr;2;;
+125-3_PE_1;125-3_PE;125-3;PE;1;Amara (Amara) aenea;amae;1;tube;
+125-3_PN_1;125-3_PN;125-3;PN;1;Abax (Abax) parallelus;abpa;1;;
+125-3_PN_1;125-3_PN;125-3;PN;1;Carabus (Tomocarabus) convexus;cacv;1;;
+125-3_PN_1;125-3_PN;125-3;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+125-3_PS_1;125-3_PS;125-3;PS;1;Abax (Abax) parallelus;abpa;4;;
+125-3_PS_1;125-3_PS;125-3;PS;1;Carabus (Mesocarabus) problematicus;capr;3;;
+125-3_PS_1;125-3_PS;125-3;PS;1;Dyschiriodes (Eudyschirius) globosus;dygl;1;boîte;erreur fiche corrigée
+125-3_PW_1;125-3_PW;125-3;PW;1;Abax (Abax) parallelus;abpa;1;;
+125-3_PW_1;125-3_PW;125-3;PW;1;Carabus (Mesocarabus) problematicus;capr;3;;
+139-2_PE_1;139-2_PE;139-2;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+139-2_PN_1;139-2_PN;139-2;PN;1;0;0;0;;
+139-2_PS_1;139-2_PS;139-2;PS;1;0;0;0;;
+139-2_PW_1;139-2_PW;139-2;PW;1;0;0;0;;
+139-4_PE_1;139-4_PE;139-4;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+139-4_PN_1;139-4_PN;139-4;PN;1;0;0;0;;
+139-4_PS_1;139-4_PS;139-4;PS;1;0;0;0;;
+139-4_PW_1;139-4_PW;139-4;PW;1;0;0;0;;
+144-3_PE_1;144-3_PE;144-3;PE;1;Abax (Abax) parallelepipedus;abat;1;;
+144-3_PE_1;144-3_PE;144-3;PE;1;Carabus (Tomocarabus) convexus;cacv;1;;
+144-3_PE_1;144-3_PE;144-3;PE;1;Carabus (Archicarabus) nemoralis;cane;2;;
+144-3_PE_1;144-3_PE;144-3;PE;1;Carabus (Megodontus) violaceus;cavi;2;;
+144-3_PE_1;144-3_PE;144-3;PE;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+144-3_PN_1;144-3_PN;144-3;PN;1;Carabus (Mesocarabus) problematicus;capr;2;;
+144-3_PS_1;144-3_PS;144-3;PS;1;Abax (Abax) parallelus;abpa;1;;
+144-3_PS_1;144-3_PS;144-3;PS;1;Carabus (Mesocarabus) problematicus;capr;1;;
+144-3_PW_1;144-3_PW;144-3;PW;1;Carabus (Tomocarabus) convexus;cacv;1;;
+144-3_PW_1;144-3_PW;144-3;PW;1;Carabus (Archicarabus) nemoralis;cane;1;;
+166-2_PE_1;166-2_PE;166-2;PE;1;Carabus (Archicarabus) nemoralis;cane;1;;
+166-2_PN_1;166-2_PN;166-2;PN;1;Abax (Abax) parallelus;abpa;1;;
+166-2_PN_1;166-2_PN;166-2;PN;1;Carabus (Archicarabus) nemoralis;cane;1;;oubli saisie
+166-2_PS_1;166-2_PS;166-2;PS;1;Abax (Abax) parallelepipedus;abat;2;;
+166-2_PS_1;166-2_PS;166-2;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PE_1;166-4_PE;166-4;PE;1;Abax (Abax) parallelus;abpa;1;;erreur saisie n° piège
+166-4_PE_1;166-4_PE;166-4;PE;1;Carabus (Archicarabus) nemoralis;cane;3;;erreur saisie n° piège
+166-4_PE_1;166-4_PE;166-4;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;erreur saisie n° piège
+166-4_PN_1;166-4_PN;166-4;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+166-4_PS_1;166-4_PS;166-4;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+166-4_PS_1;166-4_PS;166-4;PS;1;Abax (Abax) parallelus;abpa;3;;
+166-4_PW_1;166-4_PW;166-4;PW;1;Abax (Abax) parallelepipedus;abat;1;;
+166-4_PW_1;166-4_PW;166-4;PW;1;Abax (Abax) parallelus;abpa;2;;
+166-4_PW_1;166-4_PW;166-4;PW;1;Carabus (Archicarabus) nemoralis;cane;2;;
+166-4_PW_1;166-4_PW;166-4;PW;1;Carabus (Mesocarabus) problematicus;capr;1;;
+215-2_PE_1;215-2_PE;215-2;PE;1;Abax (Abax) parallelus;abpa;2;;
+215-2_PE_1;215-2_PE;215-2;PE;1;Abax (Abax) parallelepipedus;abat;1;;
+215-2_PE_1;215-2_PE;215-2;PE;1;Carabus (Mesocarabus) problematicus;capr;2;;
+215-2_PN_1;215-2_PN;215-2;PN;1;Abax (Abax) parallelepipedus;abat;6;;
+215-2_PN_1;215-2_PN;215-2;PN;1;Abax (Abax) parallelus;abpa;5;;
+215-2_PN_1;215-2_PN;215-2;PN;1;Carabus (Tomocarabus) convexus;cacv;1;;
+215-2_PN_1;215-2_PN;215-2;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+215-2_PS_1;215-2_PS;215-2;PS;1;Abax (Abax) parallelus;abpa;4;;
+215-2_PS_1;215-2_PS;215-2;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+215-2_PS_1;215-2_PS;215-2;PS;1;Carabus (Mesocarabus) problematicus;capr;1;;
+215-2_PS_1;215-2_PS;215-2;PS;1;Amara (Amara) lunicollis;amlu;1;boite, à valider;oubli saisie et report fiche
+215-2_PW_1;215-2_PW;215-2;PW;1;Abax (Abax) parallelepipedus;abat;2;;
+215-2_PW_1;215-2_PW;215-2;PW;1;Abax (Abax) parallelus;abpa;1;;
+215-2_PW_1;215-2_PW;215-2;PW;1;Carabus (Archicarabus) nemoralis;cane;1;;
+215-2_PW_1;215-2_PW;215-2;PW;1;Carabus (Mesocarabus) problematicus;capr;1;;
+215-3_PE_1;215-3_PE;215-3;PE;1;Abax (Abax) parallelepipedus;abat;1;;
+215-3_PN_1;215-3_PN;215-3;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+215-3_PS_1;215-3_PS;215-3;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+215-3_PS_1;215-3_PS;215-3;PS;1;Abax (Abax) parallelus;abpa;5;;
+215-3_PS_1;215-3_PS;215-3;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+215-3_PS_1;215-3_PS;215-3;PS;1;Carabus (Mesocarabus) problematicus;capr;3;;
+215-3_PW_1;215-3_PW;215-3;PW;1;Abax (Abax) parallelepipedus;abat;3;;
+215-3_PW_1;215-3_PW;215-3;PW;1;Abax (Abax) parallelus;abpa;2;;
+215-3_PW_1;215-3_PW;215-3;PW;1;Carabus (Mesocarabus) problematicus;capr;1;;
+216-4_PE_1;216-4_PE;216-4;PE;1;Abax (Abax) parallelepipedus;abat;5;;
+216-4_PE_1;216-4_PE;216-4;PE;1;Abax (Abax) parallelus;abpa;1;;
+216-4_PE_1;216-4_PE;216-4;PE;1;Carabus (Mesocarabus) problematicus;capr;2;;
+216-4_PE_1;216-4_PE;216-4;PE;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+216-4_PN_1;216-4_PN;216-4;PN;1;0;0;0;;
+216-4_PS_1;216-4_PS;216-4;PS;1;Abax (Abax) parallelus;abpa;1;;
+216-4_PS_1;216-4_PS;216-4;PS;1;Carabus (Megodontus) violaceus;cavi;1;;
+216-4_PS_1;216-4_PS;216-4;PS;1;Amara (Amara) lunicollis;amlu;1;boite, à valider;oubli saisie
+216-4_PW_1;216-4_PW;216-4;PW;1;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PW_1;216-4_PW;216-4;PW;1;Abax (Abax) parallelus;abpa;5;;
+216-4_PW_1;216-4_PW;216-4;PW;1;Carabus (Procrustes) coriaceus;cacr;1;;
+216-4_PW_1;216-4_PW;216-4;PW;1;Carabus (Mesocarabus) problematicus;capr;1;;
+216-4_PW_1;216-4_PW;216-4;PW;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+219-1_PE_1;219-1_PE;219-1;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PN_1;219-1_PN;219-1;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PS_1;219-1_PS;219-1;PS;1;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PW_1;219-1_PW;219-1;PW;1;Carabus (Mesocarabus) problematicus;capr;3;;
+219-1_PW_1;219-1_PW;219-1;PW;1;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PE_1;219-4_PE;219-4;PE;1;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PE_1;219-4_PE;219-4;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+219-4_PE_1;219-4_PE;219-4;PE;1;Amara (Amara) lunicollis;amlu;1;tube, à valider;
+219-4_PE_1;219-4_PE;219-4;PE;1;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;tube;ok feuille identif JF
+219-4_PN_1;219-4_PN;219-4;PN;1;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PN_1;219-4_PN;219-4;PN;1;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PS_1;219-4_PS;219-4;PS;1;Abax (Abax) parallelepipedus;abat;4;;
+219-4_PW_1;219-4_PW;219-4;PW;1;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PE_1;245-2_PE;245-2;PE;1;Abax (Abax) parallelepipedus;abat;5;;
+245-2_PE_1;245-2_PE;245-2;PE;1;Abax (Abax) parallelus;abpa;7;;
+245-2_PE_1;245-2_PE;245-2;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PE_1;245-2_PE;245-2;PE;1;Badister (Badister) bullatus;babu;1;tube;ok feuille identif JF
+245-2_PN_1;245-2_PN;245-2;PN;1;Abax (Abax) parallelepipedus;abat;2;;
+245-2_PN_1;245-2_PN;245-2;PN;1;Abax (Abax) parallelus;abpa;4;;
+245-2_PN_1;245-2_PN;245-2;PN;1;Carabus (Tomocarabus) convexus;cacv;1;;
+245-2_PN_1;245-2_PN;245-2;PN;1;Carabus (Mesocarabus) problematicus;capr;3;;
+245-2_PS_1;245-2_PS;245-2;PS;1;Abax (Abax) parallelepipedus;abat;2;;
+245-2_PS_1;245-2_PS;245-2;PS;1;Abax (Abax) parallelus;abpa;1;;
+245-2_PS_1;245-2_PS;245-2;PS;1;Carabus (Tachypus) auratus;caau;1;;
+245-2_PS_1;245-2_PS;245-2;PS;1;Carabus (Mesocarabus) problematicus;capr;4;;
+245-2_PS_1;245-2_PS;245-2;PS;1;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PW_1;245-2_PW;245-2;PW;1;0;0;0;;
+255-1_PE_1;255-1_PE;255-1;PE;1;Abax (Abax) parallelus;abpa;1;;
+255-1_PN_1;255-1_PN;255-1;PN;1;Abax (Abax) ovalis;abov;1;;
+255-1_PN_1;255-1_PN;255-1;PN;1;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PN_1;255-1_PN;255-1;PN;1;Abax (Abax) parallelus;abpa;3;;
+255-1_PN_1;255-1_PN;255-1;PN;1;Carabus (Archicarabus) nemoralis;cane;1;;
+255-1_PS_1;255-1_PS;255-1;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PS_1;255-1_PS;255-1;PS;1;Metallina (Metallina) lampros;mela;8;boite;
+255-1_PS_1;255-1_PS;255-1;PS;1;Notiophilus biguttatus;nobi;1;tube;1 nobi carni SB en tp, identif JF : ok verif tube, même si pas sur feuille identif JF
+255-1_PS_1;255-1_PS;255-1;PS;1;Limodromus assimilis;lias;1;tube;
+255-1_PW_1;255-1_PW;255-1;PW;1;Abax (Abax) parallelus;abpa;2;;
+255-1_PW_1;255-1_PW;255-1;PW;1;Carabus (Tomocarabus) convexus;cacv;1;;
+255-1_PW_1;255-1_PW;255-1;PW;1;Carabus (Archicarabus) nemoralis;cane;14;;
+45-4_PE_1;45-4_PE;45-4;PE;1;Abax (Abax) ovalis;abov;1;;erreur saisie n° piege
+45-4_PE_1;45-4_PE;45-4;PE;1;Abax (Abax) parallelepipedus;abat;2;;erreur saisie n° piege
+45-4_PE_1;45-4_PE;45-4;PE;1;Abax (Abax) parallelus;abpa;1;;erreur saisie n° piege
+45-4_PE_1;45-4_PE;45-4;PE;1;Carabus (Archicarabus) nemoralis;cane;1;;erreur saisie n° piege
+45-4_PE_1;45-4_PE;45-4;PE;1;Notiophilus biguttatus;nobi;2;tube;erreur saisie nb individus corrigée, ok feuille identif JF
+45-4_PN_1;45-4_PN;45-4;PN;1;Abax (Abax) parallelepipedus;abat;1;;
+45-4_PN_1;45-4_PN;45-4;PN;1;Abax (Abax) parallelus;abpa;1;;
+45-4_PN_1;45-4_PN;45-4;PN;1;Carabus (Archicarabus) nemoralis;cane;2;;
+45-4_PN_1;45-4_PN;45-4;PN;1;Notiophilus biguttatus;nobi;1;tube;ok feuille identif JF
+45-4_PS_1;45-4_PS;45-4;PS;1;Abax (Abax) parallelepipedus;abat;3;;
+45-4_PS_1;45-4_PS;45-4;PS;1;Notiophilus biguttatus;nobi;1;;identif SB fiche tri
+45-4_PW_1;45-4_PW;45-4;PW;1;Abax (Abax) parallelepipedus;abat;2;;manque saisie
+45-4_PW_1;45-4_PW;45-4;PW;1;Abax (Abax) parallelus;abpa;3;;manque saisie
+45-4_PW_1;45-4_PW;45-4;PW;1;Carabus (Chaetocarabus) intricatus;cait;2;;
+45-4_PW_1;45-4_PW;45-4;PW;1;Carabus (Archicarabus) nemoralis;cane;1;;
+50-3_PN_1;50-3_PN;50-3;PN;1;Carabus (Tachypus) auratus;caau;5;;
+50-3_PN_1;50-3_PN;50-3;PN;1;Carabus (Archicarabus) nemoralis;cane;2;;
+50-3_PN_1;50-3_PN;50-3;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+50-3_PS_1;50-3_PS;50-3;PS;1;Abax (Abax) parallelepipedus;abat;2;;
+50-3_PS_1;50-3_PS;50-3;PS;1;Abax (Abax) parallelus;abpa;4;;
+50-3_PW_1;50-3_PW;50-3;PW;1;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PW_1;50-3_PW;50-3;PW;1;Abax (Abax) parallelus;abpa;1;;
+50-3_PW_1;50-3_PW;50-3;PW;1;Carabus (Tachypus) auratus;caau;2;;
+55-4_PE_1;55-4_PE;55-4;PE;1;Carabus (Mesocarabus) problematicus;capr;1;;
+55-4_PN_1;55-4_PN;55-4;PN;1;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PN_1;55-4_PN;55-4;PN;1;Abax (Abax) parallelus;abpa;3;;
+55-4_PN_1;55-4_PN;55-4;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+55-4_PS_1;55-4_PS;55-4;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PS_1;55-4_PS;55-4;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+55-4_PW_1;55-4_PW;55-4;PW;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+61-3_PE_1;61-3_PE;61-3;PE;1;Abax (Abax) parallelepipedus;abat;1;;
+61-3_PS_1;61-3_PS;61-3;PS;1;Abax (Abax) parallelepipedus;abat;4;;
+61-3_PS_1;61-3_PS;61-3;PS;1;Abax (Abax) parallelus;abpa;2;;
+61-3_PS_1;61-3_PS;61-3;PS;1;Carabus (Archicarabus) nemoralis;cane;1;;
+61-3_PW_1;61-3_PW;61-3;PW;1;Abax (Abax) parallelepipedus;abat;1;;
+61-3_PW_1;61-3_PW;61-3;PW;1;Abax (Abax) parallelus;abpa;1;;
+61-3_PW_1;61-3_PW;61-3;PW;1;Carabus (Tachypus) auratus;caau;1;;
+61-3_PW_1;61-3_PW;61-3;PW;1;Carabus (Archicarabus) nemoralis;cane;1;;
+61-4_PE_1;61-4_PE;61-4;PE;1;Carabus (Tomocarabus) convexus;cacv;1;;
+61-4_PE_1;61-4_PE;61-4;PE;1;Carabus (Archicarabus) nemoralis;cane;1;;
+61-4_PN_1;61-4_PN;61-4;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+61-4_PN_1;61-4_PN;61-4;PN;1;Amara (Amara) tibialis;amti;1;boite;
+61-4_PS_1;61-4_PS;61-4;PS;1;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PW_1;61-4_PW;61-4;PW;1;Abax (Abax) parallelus;abpa;2;;
+75-4_PE_1;75-4_PE;75-4;PE;1;Abax (Abax) parallelepipedus;abat;5;;
+75-4_PE_1;75-4_PE;75-4;PE;1;Abax (Abax) parallelus;abpa;5;;
+75-4_PE_1;75-4_PE;75-4;PE;1;Carabus (Archicarabus) nemoralis;cane;5;;
+75-4_PN_1;75-4_PN;75-4;PN;1;Abax (Abax) parallelepipedus;abat;1;;oubli saisie
+75-4_PN_1;75-4_PN;75-4;PN;1;Abax (Abax) parallelus;abpa;2;;
+75-4_PN_1;75-4_PN;75-4;PN;1;Carabus (Archicarabus) nemoralis;cane;2;;
+75-4_PN_1;75-4_PN;75-4;PN;1;Carabus (Mesocarabus) problematicus;capr;1;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Abax (Abax) ovalis;abov;1;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Abax (Abax) parallelepipedus;abat;5;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Abax (Abax) parallelus;abpa;12;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Carabus (Chaetocarabus) intricatus;cait;1;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Carabus (Archicarabus) nemoralis;cane;8;;
+75-4_PS_1;75-4_PS;75-4;PS;1;Carabus (Mesocarabus) problematicus;capr;2;;
+14-1_PE_2;14-1_PE;14-1;PE;2;Abax (Abax) parallelepipedus;abat;2;;
+14-1_PE_2;14-1_PE;14-1;PE;2;Carabus (Archicarabus) nemoralis;cane;1;;
+14-1_PE_2;14-1_PE;14-1;PE;2;Carabus (Megodontus) violaceus;cavi;4;;
+14-1_PE_2;14-1_PE;14-1;PE;2;Metallina (Metallina) lampros;mela;1;tube;ok feuille identif JF
+14-1_PN_2;14-1_PN;14-1;PN;2;Carabus (Chaetocarabus) intricatus;cait;2;;
+14-1_PN_2;14-1_PN;14-1;PN;2;Notiophilus biguttatus;nobi;1;X;ok feuille identif JF
+14-1_PS_2;14-1_PS;14-1;PS;2;Abax (Abax) parallelepipedus;abat;2;;
+14-1_PS_2;14-1_PS;14-1;PS;2;Abax (Abax) parallelus;abpa;1;;
+14-1_PS_2;14-1_PS;14-1;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+14-1_PS_2;14-1_PS;14-1;PS;2;Carabus (Megodontus) violaceus;cavi;1;;
+14-1_PS_2;14-1_PS;14-1;PS;2;Notiophilus biguttatus;nobi;1;X;ok feuille identif JF
+14-1_PW_2;14-1_PW;14-1;PW;2;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PE_2;14-2_PE;14-2;PE;2;Abax (Abax) parallelepipedus;abat;4;;
+14-2_PN_2;14-2_PN;14-2;PN;2;Abax (Abax) parallelepipedus;abat;2;;
+14-2_PN_2;14-2_PN;14-2;PN;2;Carabus (Chaetocarabus) intricatus;cait;3;;
+14-2_PN_2;14-2_PN;14-2;PN;2;Notiophilus biguttatus;nobi;2;X;ok feuille identif JF
+14-2_PS_2;14-2_PS;14-2;PS;2;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PS_2;14-2_PS;14-2;PS;2;Abax (Abax) parallelus;abpa;1;;
+14-2_PS_2;14-2_PS;14-2;PS;2;Carabus (Archicarabus) nemoralis;cane;1;;
+14-2_PS_2;14-2_PS;14-2;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+14-2_PW_2;14-2_PW;14-2;PW;2;Abax (Abax) parallelepipedus;abat;2;;
+14-2_PW_2;14-2_PW;14-2;PW;2;Notiophilus biguttatus;nobi;1;X;résolu : identification du carni non reportée sur fiche, reportée par erreur sur 14-1-PW-rel2, ok feuille identif
+15-2_PN_2;15-2_PN;15-2;PN;2;Abax (Abax) parallelus;abpa;1;;
+15-2_PN_2;15-2_PN;15-2;PN;2;Abax (Abax) parallelepipedus;abat;4;;
+15-2_PN_2;15-2_PN;15-2;PN;2;Carabus (Tachypus) auratus;caau;1;;
+15-2_PN_2;15-2_PN;15-2;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;
+15-2_PS_2;15-2_PS;15-2;PS;2;Abax (Abax) parallelepipedus;abat;2;;
+15-2_PS_2;15-2_PS;15-2;PS;2;Carabus (Tachypus) auratus;caau;1;;
+15-2_PS_2;15-2_PS;15-2;PS;2;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;tube;ok feuille identif JF
+15-2_PW_2;15-2_PW;15-2;PW;2;Abax (Abax) parallelepipedus;abat;5;;
+15-2_PW_2;15-2_PW;15-2;PW;2;Carabus (Tachypus) auratus;caau;1;;
+15-2_PW_2;15-2_PW;15-2;PW;2;Carabus (Chaetocarabus) intricatus;cait;1;;
+110-4_PE_2;110-4_PE;110-4;PE;2;Abax (Abax) parallelus;abpa;1;;
+110-4_PE_2;110-4_PE;110-4;PE;2;Carabus (Mesocarabus) problematicus;capr;2;;
+110-4_PN_2;110-4_PN;110-4;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;
+110-4_PN_2;110-4_PN;110-4;PN;2;Carabus (Megodontus) violaceus;cavi;1;;
+110-4_PN_2;110-4_PN;110-4;PN;2;Platyderus (Platyderus) depressus;plde;1;X;
+110-4_PS_2;110-4_PS;110-4;PS;2;0;0;0;;oubli saisie
+110-4_PW_2;110-4_PW;110-4;PW;2;Carabus (Mesocarabus) problematicus;capr;4;;
+110-4_PW_2;110-4_PW;110-4;PW;2;Carabus (Megodontus) violaceus;cavi;2;;
+110-4_PW_2;110-4_PW;110-4;PW;2;Harpalus (Harpalus) latus;hala;1;;résolu : identification différente sur fiche et papier JF
+111-1_PE_2;111-1_PE;111-1;PE;2;Abax (Abax) parallelus;abpa;1;;
+111-1_PE_2;111-1_PE;111-1;PE;2;Carabus (Mesocarabus) problematicus;capr;1;;
+111-1_PE_2;111-1_PE;111-1;PE;2;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PN_2;111-1_PN;111-1;PN;2;Abax (Abax) parallelepipedus;abat;2;;
+111-1_PN_2;111-1_PN;111-1;PN;2;Abax (Abax) parallelus;abpa;1;;
+111-1_PN_2;111-1_PN;111-1;PN;2;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PS_2;111-1_PS;111-1;PS;2;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PS_2;111-1_PS;111-1;PS;2;Carabus (Archicarabus) nemoralis;cane;2;;
+111-1_PS_2;111-1_PS;111-1;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+111-1_PS_2;111-1_PS;111-1;PS;2;Carabus (Megodontus) violaceus;cavi;3;;
+111-1_PW_2;111-1_PW;111-1;PW;2;Abax (Abax) parallelepipedus;abat;5;;oubli saisie
+111-1_PW_2;111-1_PW;111-1;PW;2;Abax (Abax) parallelus;abpa;2;;oubli saisie
+111-1_PW_2;111-1_PW;111-1;PW;2;Carabus (Mesocarabus) problematicus;capr;2;;oubli saisie
+111-1_PW_2;111-1_PW;111-1;PW;2;Carabus (Megodontus) violaceus;cavi;2;;oubli saisie
+111-3_PE_2;111-3_PE;111-3;PE;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+111-3_PE_2;111-3_PE;111-3;PE;2;Carabus (Megodontus) violaceus;cavi;5;;oubli saisie
+111-3_PN_2;111-3_PN;111-3;PN;2;Abax (Abax) parallelus;abpa;2;;oubli saisie
+111-3_PN_2;111-3_PN;111-3;PN;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+111-3_PS_2;111-3_PS;111-3;PS;2;Abax (Abax) parallelus;abpa;2;;oubli saisie
+111-3_PS_2;111-3_PS;111-3;PS;2;Badister (Badister) bullatus;babu;1;boite;
+111-3_PS_2;111-3_PS;111-3;PS;2;Amara (Amara) lunicollis;amlu;1;boite, à valider;
+111-3_PW_2;111-3_PW;111-3;PW;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+111-3_PW_2;111-3_PW;111-3;PW;2;Carabus (Archicarabus) nemoralis;cane;1;;oubli saisie
+125-3_PE_2;125-3_PE;125-3;PE;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+125-3_PE_2;125-3_PE;125-3;PE;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+125-3_PE_2;125-3_PE;125-3;PE;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+125-3_PN_2;125-3_PN;125-3;PN;2;Carabus (Megodontus) violaceus;cavi;4;;oubli saisie
+125-3_PS_2;125-3_PS;125-3;PS;2;Abax (Abax) parallelepipedus;abat;3;;oubli saisie
+125-3_PS_2;125-3_PS;125-3;PS;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+125-3_PW_2;125-3_PW;125-3;PW;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+125-3_PW_2;125-3_PW;125-3;PW;2;Carabus (Mesocarabus) problematicus;capr;5;;oubli saisie
+125-3_PW_2;125-3_PW;125-3;PW;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+139-2_PN_2;139-2_PN;139-2;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+139-2_PS_2;139-2_PS;139-2;PS;2;Carabus (Mesocarabus) problematicus;capr;3;;oubli saisie
+139-4_PS_2;139-4_PS;139-4;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+139-4_PW_2;139-4_PW;139-4;PW;2;Carabus (Mesocarabus) problematicus;capr;2;;oubli saisie
+144-3_PN_2;144-3_PN;144-3;PN;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+144-3_PS_2;144-3_PS;144-3;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+166-2_PE_2;166-2_PE;166-2;PE;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+166-2_PN_2;166-2_PN;166-2;PN;2;Carabus (Mesocarabus) problematicus;capr;2;;oubli saisie
+166-2_PN_2;166-2_PN;166-2;PN;2;Carabus (Megodontus) violaceus;cavi;2;;oubli saisie
+166-2_PS_2;166-2_PS;166-2;PS;2;Abax (Abax) ovalis;abov;1;;oubli saisie
+166-2_PS_2;166-2_PS;166-2;PS;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+166-2_PS_2;166-2_PS;166-2;PS;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+166-2_PW_2;166-2_PW;166-2;PW;2;Abax (Abax) parallelepipedus;abat;1;;oubli saisie
+166-2_PW_2;166-2_PW;166-2;PW;2;Carabus (Archicarabus) nemoralis;cane;1;;oubli saisie
+166-2_PW_2;166-2_PW;166-2;PW;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+166-4_PE_2;166-4_PE;166-4;PE;2;Abax (Abax) parallelepipedus;abat;1;;oubli saisie
+166-4_PE_2;166-4_PE;166-4;PE;2;Carabus (Mesocarabus) problematicus;capr;3;;oubli saisie
+166-4_PN_2;166-4_PN;166-4;PN;2;Abax (Abax) parallelepipedus;abat;1;;oubli saisie
+166-4_PN_2;166-4_PN;166-4;PN;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+166-4_PN_2;166-4_PN;166-4;PN;2;Carabus (Mesocarabus) problematicus;capr;4;;oubli saisie
+166-4_PN_2;166-4_PN;166-4;PN;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+166-4_PS_2;166-4_PS;166-4;PS;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+166-4_PS_2;166-4_PS;166-4;PS;2;Poecilus (Poecilus) cupreus;pocu;1;X;oubli saisie
+166-4_PS_2;166-4_PS;166-4;PS;2;Amara (Amara) lunicollis;amlu;1;boite, à valider;oubli saisie
+166-4_PW_2;166-4_PW;166-4;PW;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+166-4_PW_2;166-4_PW;166-4;PW;2;Carabus (Archicarabus) nemoralis;cane;3;;oubli saisie
+215-2_PE_2;215-2_PE;215-2;PE;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+215-2_PE_2;215-2_PE;215-2;PE;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+215-2_PE_2;215-2_PE;215-2;PE;2;Carabus (Mesocarabus) problematicus;capr;4;;oubli saisie
+215-2_PE_2;215-2_PE;215-2;PE;2;Notiophilus biguttatus;nobi;1;X;1 carni déclaré SB, pas noté feuille identif JF mais identifié par JF
+215-2_PN_2;215-2_PN;215-2;PN;2;Abax (Abax) parallelepipedus;abat;8;;oubli saisie
+215-2_PN_2;215-2_PN;215-2;PN;2;Abax (Abax) parallelus;abpa;4;;oubli saisie
+215-2_PN_2;215-2_PN;215-2;PN;2;Carabus (Tachypus) auratus;caau;1;;oubli saisie
+215-2_PN_2;215-2_PN;215-2;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;oubli saisie
+215-2_PN_2;215-2_PN;215-2;PN;2;Notiophilus biguttatus;nobi;1;X;ok feuille identif JF
+215-2_PS_2;215-2_PS;215-2;PS;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+215-2_PS_2;215-2_PS;215-2;PS;2;Carabus (Tachypus) auratus;caau;1;;oubli saisie
+215-2_PW_2;215-2_PW;215-2;PW;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+215-3_PE_2;215-3_PE;215-3;PE;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+215-3_PE_2;215-3_PE;215-3;PE;2;Carabus (Procrustes) coriaceus;cacr;1;;oubli saisie
+215-3_PE_2;215-3_PE;215-3;PE;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+215-3_PN_2;215-3_PN;215-3;PN;2;Carabus (Mesocarabus) problematicus;capr;3;;oubli saisie
+215-3_PN_2;215-3_PN;215-3;PN;2;Carabus (Megodontus) violaceus;cavi;1;;oubli saisie
+215-3_PS_2;215-3_PS;215-3;PS;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+215-3_PS_2;215-3_PS;215-3;PS;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+215-3_PS_2;215-3_PS;215-3;PS;2;Carabus (Procrustes) coriaceus;cacr;2;;oubli saisie
+215-3_PS_2;215-3_PS;215-3;PS;2;Carabus (Mesocarabus) problematicus;capr;3;;oubli saisie
+215-3_PW_2;215-3_PW;215-3;PW;2;Abax (Abax) parallelus;abpa;3;;oubli saisie
+215-3_PW_2;215-3_PW;215-3;PW;2;Carabus (Mesocarabus) problematicus;capr;2;;oubli saisie
+215-3_PW_2;215-3_PW;215-3;PW;2;Amara (Amara) lunicollis;amlu;1;boite, à valider;non saisi et reporté sur la fiche, carni non indiqués sur la fiche, ms bête étiquettée existe dans boite donc OK
+216-4_PE_2;216-4_PE;216-4;PE;2;Abax (Abax) parallelepipedus;abat;2;;oubli saisie
+216-4_PE_2;216-4_PE;216-4;PE;2;Abax (Abax) parallelus;abpa;1;;oubli saisie
+216-4_PE_2;216-4_PE;216-4;PE;2;Notiophilus biguttatus;nobi;2;X;ok feuille identif JF
+216-4_PN_2;216-4_PN;216-4;PN;2;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PN_2;216-4_PN;216-4;PN;2;Abax (Abax) parallelus;abpa;1;;
+216-4_PS_2;216-4_PS;216-4;PS;2;Abax (Abax) parallelepipedus;abat;2;;
+216-4_PS_2;216-4_PS;216-4;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+216-4_PW_2;216-4_PW;216-4;PW;2;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PW_2;216-4_PW;216-4;PW;2;Abax (Abax) parallelus;abpa;1;;
+216-4_PW_2;216-4_PW;216-4;PW;2;Carabus (Procrustes) coriaceus;cacr;1;;
+216-4_PW_2;216-4_PW;216-4;PW;2;Carabus (Mesocarabus) problematicus;capr;2;;
+219-1_PE_2;219-1_PE;219-1;PE;2;Carabus (Tachypus) auratus;caau;1;;
+219-1_PE_2;219-1_PE;219-1;PE;2;Carabus (Megodontus) violaceus;cavi;1;;
+219-1_PN_2;219-1_PN;219-1;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;erreur saisie
+219-1_PN_2;219-1_PN;219-1;PN;2;Carabus (Tachypus) auratus;caau;1;;
+219-1_PN_2;219-1_PN;219-1;PN;2;Abax (Abax) parallelepipedus;abat;1;;
+219-1_PS_2;219-1_PS;219-1;PS;2;Carabus (Megodontus) violaceus;cavi;1;;
+219-1_PS_2;219-1_PS;219-1;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PW_2;219-1_PW;219-1;PW;2;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PW_2;219-1_PW;219-1;PW;2;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PE_2;219-4_PE;219-4;PE;2;Carabus (Mesocarabus) problematicus;capr;2;;
+219-4_PE_2;219-4_PE;219-4;PE;2;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PE_2;219-4_PE;219-4;PE;2;Notiophilus biguttatus;nobi;3;X;ok feuille identif JF
+219-4_PE_2;219-4_PE;219-4;PE;2;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;X;ok feuille identif JF
+219-4_PN_2;219-4_PN;219-4;PN;2;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PN_2;219-4_PN;219-4;PN;2;Carabus (Mesocarabus) problematicus;capr;4;;
+219-4_PN_2;219-4_PN;219-4;PN;2;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PS_2;219-4_PS;219-4;PS;2;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PS_2;219-4_PS;219-4;PS;2;Carabus (Mesocarabus) problematicus;capr;1;;
+219-4_PS_2;219-4_PS;219-4;PS;2;Notiophilus rufipes;noru;3;X;oubli saisie
+219-4_PW_2;219-4_PW;219-4;PW;2;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PW_2;219-4_PW;219-4;PW;2;Abax (Abax) parallelus;abpa;1;;
+245-2_PE_2;245-2_PE;245-2;PE;2;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PN_2;245-2_PN;245-2;PN;2;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PN_2;245-2_PN;245-2;PN;2;Abax (Abax) parallelus;abpa;1;;
+245-2_PN_2;245-2_PN;245-2;PN;2;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PN_2;245-2_PN;245-2;PN;2;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Carabus (Mesocarabus) problematicus;capr;2;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Carabus (Procrustes) coriaceus;cacr;1;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Carabus (Tomocarabus) convexus;cacv;1;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PS_2;245-2_PS;245-2;PS;2;Nebria (Nebria) brevicollis;nebr;1;tube;ok feuille identif JF
+245-2_PW_2;245-2_PW;245-2;PW;2;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PW_2;245-2_PW;245-2;PW;2;Carabus (Mesocarabus) problematicus;capr;1;;
+255-1_PE_2;255-1_PE;255-1;PE;2;Carabus (Archicarabus) nemoralis;cane;2;;
+255-1_PE_2;255-1_PE;255-1;PE;2;Abax (Abax) parallelepipedus;abat;3;;
+255-1_PN_2;255-1_PN;255-1;PN;2;0;0;0;;
+255-1_PS_2;255-1_PS;255-1;PS;2;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PS_2;255-1_PS;255-1;PS;2;Abax (Abax) parallelus;abpa;1;;
+255-1_PS_2;255-1_PS;255-1;PS;2;Limodromus assimilis;lias;4;X;oubli saisie
+255-1_PS_2;255-1_PS;255-1;PS;2;Notiophilus rufipes;noru;2;X;oubli saisie
+255-1_PS_2;255-1_PS;255-1;PS;2;Asaphidion sp.;assp;1;boite, Asaphidion curtum (femelle) à valider ?;oubli saisie, non reporté sur fiche
+255-1_PW_2;255-1_PW;255-1;PW;2;Abax (Abax) parallelus;abpa;1;;
+255-1_PW_2;255-1_PW;255-1;PW;2;Carabus (Mesocarabus) problematicus;capr;2;;
+255-1_PW_2;255-1_PW;255-1;PW;2;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;tube;oubli saise, verif tube JF, ok feuille identif JF
+45-4_PW_2;45-4_PW;45-4;PW;2;Abax (Abax) parallelepipedus;abat;6;;
+45-4_PW_2;45-4_PW;45-4;PW;2;Abax (Abax) parallelus;abpa;2;;
+45-4_PW_2;45-4_PW;45-4;PW;2;Carabus (Tachypus) auratus;caau;1;;
+45-4_PW_2;45-4_PW;45-4;PW;2;Carabus (Archicarabus) nemoralis;cane;1;;
+50-3_PE_2;50-3_PE;50-3;PE;2;Abax (Abax) parallelepipedus;abat;2;;
+50-3_PE_2;50-3_PE;50-3;PE;2;Abax (Abax) parallelus;abpa;2;;
+50-3_PE_2;50-3_PE;50-3;PE;2;Carabus (Tachypus) auratus;caau;1;;
+50-3_PN_2;50-3_PN;50-3;PN;2;Carabus (Tachypus) auratus;caau;4;;
+50-3_PN_2;50-3_PN;50-3;PN;2;Carabus (Megodontus) violaceus;cavi;1;;
+50-3_PS_2;50-3_PS;50-3;PS;2;Abax (Abax) parallelepipedus;abat;2;;
+50-3_PS_2;50-3_PS;50-3;PS;2;Abax (Abax) parallelus;abpa;1;;
+50-3_PS_2;50-3_PS;50-3;PS;2;Amara (Amara) lunicollis;amlu;1;boite, à valider;oubli saisie + 1 amlu en tp, car carni non indiqués sur fiche, ms bete existe car montée
+50-3_PW_2;50-3_PW;50-3;PW;2;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PW_2;50-3_PW;50-3;PW;2;Carabus (Tachypus) auratus;caau;1;;
+50-3_PW_2;50-3_PW;50-3;PW;2;Amara (Amara) similata;amsi;1;X;
+55-4_PE_2;55-4_PE;55-4;PE;2;Carabus (Mesocarabus) problematicus;capr;1;;
+55-4_PE_2;55-4_PE;55-4;PE;2;Carabus (Megodontus) violaceus;cavi;1;;
+55-4_PS_2;55-4_PS;55-4;PS;2;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PS_2;55-4_PS;55-4;PS;2;Carabus (Megodontus) violaceus;cavi;1;;
+55-4_PW_2;55-4_PW;55-4;PW;2;Carabus (Megodontus) violaceus;cavi;1;;
+61-3_PE_2;61-3_PE;61-3;PE;2;Notiophilus biguttatus;nobi;1;X;ok feuille identif JF
+61-3_PS_2;61-3_PS;61-3;PS;2;Abax (Abax) parallelus;abpa;4;;
+61-3_PS_2;61-3_PS;61-3;PS;2;Notiophilus rufipes;noru;1;X;oubli saisie
+61-3_PW_2;61-3_PW;61-3;PW;2;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PE_2;61-4_PE;61-4;PE;2;0;0;0;;oubli saisie
+61-4_PN_2;61-4_PN;61-4;PN;2;Abax (Abax) parallelepipedus;abat;2;;
+61-4_PN_2;61-4_PN;61-4;PN;2;Carabus (Tachypus) auratus;caau;1;;
+61-4_PS_2;61-4_PS;61-4;PS;2;Abax (Abax) parallelepipedus;abat;1;;oubli saisie
+61-4_PW_2;61-4_PW;61-4;PW;2;Abax (Abax) parallelepipedus;abat;2;;
+61-4_PW_2;61-4_PW;61-4;PW;2;Abax (Abax) parallelus;abpa;2;;
+61-4_PW_2;61-4_PW;61-4;PW;2;Carabus (Tachypus) auratus;caau;1;;
+61-4_PW_2;61-4_PW;61-4;PW;2;Carabus (Chaetocarabus) intricatus;cait;1;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Abax (Abax) ovalis;abov;1;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Abax (Abax) parallelepipedus;abat;2;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Abax (Abax) parallelus;abpa;1;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Carabus (Chaetocarabus) intricatus;cait;1;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Carabus (Mesocarabus) problematicus;capr;1;;
+75-4_PE_2;75-4_PE;75-4;PE;2;Pterostichus (Steropus) madidus;ptma;1;X;
+75-4_PE_2;75-4_PE;75-4;PE;2;Platyderus (Platyderus) depressus;plde;1;X;
+75-4_PN_2;75-4_PN;75-4;PN;2;Abax (Abax) parallelepipedus;abat;3;;
+75-4_PN_2;75-4_PN;75-4;PN;2;Carabus (Archicarabus) nemoralis;cane;1;;
+75-4_PS_2;75-4_PS;75-4;PS;2;Abax (Abax) ovalis;abov;1;;
+75-4_PS_2;75-4_PS;75-4;PS;2;Abax (Abax) parallelepipedus;abat;3;;
+75-4_PS_2;75-4_PS;75-4;PS;2;Abax (Abax) parallelus;abpa;3;;
+75-4_PS_2;75-4_PS;75-4;PS;2;Carabus (Archicarabus) nemoralis;cane;1;;
+14-1_PE_3;14-1_PE;14-1;PE;3;Abax (Abax) parallelus;abpa;3;;
+14-1_PE_3;14-1_PE;14-1;PE;3;Carabus (Megodontus) violaceus;cavi;1;;
+14-1_PN_3;14-1_PN;14-1;PN;3;Carabus (Chaetocarabus) intricatus;cait;1;;
+14-1_PS_3;14-1_PS;14-1;PS;3;Abax (Abax) parallelepipedus;abat;2;;
+14-1_PW_3;14-1_PW;14-1;PW;3;0;0;0;;
+14-2_PE_3;14-2_PE;14-2;PE;3;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PN_3;14-2_PN;14-2;PN;3;Abax (Abax) parallelus;abpa;1;;
+14-2_PN_3;14-2_PN;14-2;PN;3;Notiophilus rufipes;noru;1;X;
+14-2_PS_3;14-2_PS;14-2;PS;3;0;0;0;;
+14-2_PW_3;14-2_PW;14-2;PW;3;0;0;0;;
+15-2_PE_3;15-2_PE;15-2;PE;3;Carabus (Megodontus) violaceus;cavi;1;;
+15-2_PN_3;15-2_PN;15-2;PN;3;Abax (Abax) parallelus;abpa;1;;
+15-2_PS_3;15-2_PS;15-2;PS;3;Carabus (Archicarabus) nemoralis;cane;1;;
+15-2_PS_3;15-2_PS;15-2;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+15-2_PS_3;15-2_PS;15-2;PS;3;Carabus (Chaetocarabus) intricatus;cait;1;;
+15-2_PW_3;15-2_PW;15-2;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+110-4_PE_3;110-4_PE;110-4;PE;3;Carabus (Mesocarabus) problematicus;capr;8;;
+110-4_PN_3;110-4_PN;110-4;PN;3;Abax (Abax) parallelepipedus;abat;1;;
+110-4_PN_3;110-4_PN;110-4;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+110-4_PN_3;110-4_PN;110-4;PN;3;Carabus (Tachypus) auratus;caau;1;;
+110-4_PS_3;110-4_PS;110-4;PS;3;Badister (Badister) bullatus;babu;1;X;
+110-4_PS_3;110-4_PS;110-4;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+110-4_PS_3;110-4_PS;110-4;PS;3;Abax (Abax) parallelus;abpa;1;;
+110-4_PW_3;110-4_PW;110-4;PW;3;Carabus (Megodontus) violaceus;cavi;3;;
+111-1_PE_3;111-1_PE;111-1;PE;3;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PN_3;111-1_PN;111-1;PN;3;Abax (Abax) parallelus;abpa;1;;
+111-1_PN_3;111-1_PN;111-1;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PS_3;111-1_PS;111-1;PS;3;Carabus (Megodontus) violaceus;cavi;2;;
+111-1_PS_3;111-1_PS;111-1;PS;3;Abax (Abax) parallelepipedus;abat;2;;
+111-1_PS_3;111-1_PS;111-1;PS;3;Abax (Abax) parallelus;abpa;2;;
+111-1_PW_3;111-1_PW;111-1;PW;3;Abax (Abax) parallelus;abpa;1;;
+111-1_PW_3;111-1_PW;111-1;PW;3;Carabus (Archicarabus) nemoralis;cane;1;;
+111-1_PW_3;111-1_PW;111-1;PW;3;Carabus (Megodontus) violaceus;cavi;2;;
+111-3_PE_3;111-3_PE;111-3;PE;3;0;0;0;;
+111-3_PN_3;111-3_PN;111-3;PN;3;Abax (Abax) parallelepipedus;abat;2;;
+111-3_PN_3;111-3_PN;111-3;PN;3;Abax (Abax) parallelus;abpa;1;;
+111-3_PN_3;111-3_PN;111-3;PN;3;Carabus (Chaetocarabus) intricatus;cait;1;;
+111-3_PS_3;111-3_PS;111-3;PS;3;Carabus (Megodontus) violaceus;cavi;2;;
+111-3_PS_3;111-3_PS;111-3;PS;3;Abax (Abax) parallelus;abpa;1;;
+111-3_PW_3;111-3_PW;111-3;PW;3;Abax (Abax) parallelepipedus;abat;3;;
+111-3_PW_3;111-3_PW;111-3;PW;3;Dyschiriodes (Eudyschirius) globosus;dygl;3;X;
+125-3_PE_3;125-3_PE;125-3;PE;3;Abax (Abax) parallelepipedus;abat;1;;
+125-3_PN_3;125-3_PN;125-3;PN;3;0;0;0;;
+125-3_PS_3;125-3_PS;125-3;PS;3;Abax (Abax) parallelepipedus;abat;1;;
+125-3_PS_3;125-3_PS;125-3;PS;3;Amara (Amara) lunicollis;amlu;1;boite, à valider;
+125-3_PW_3;125-3_PW;125-3;PW;3;Carabus (Megodontus) violaceus;cavi;1;;
+139-2_PE_3;139-2_PE;139-2;PE;3;Carabus (Megodontus) violaceus;cavi;3;;
+139-2_PN_3;139-2_PN;139-2;PN;3;0;0;0;;
+139-2_PS_3;139-2_PS;139-2;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+139-2_PS_3;139-2_PS;139-2;PS;3;Carabus (Tachypus) auratus;caau;1;;
+139-2_PW_3;139-2_PW;139-2;PW;3;Carabus (Mesocarabus) problematicus;capr;1;;
+139-4_PE_3;139-4_PE;139-4;PE;3;0;0;0;;
+139-4_PN_3;139-4_PN;139-4;PN;3;0;0;0;;
+139-4_PS_3;139-4_PS;139-4;PS;3;0;0;0;;
+139-4_PW_3;139-4_PW;139-4;PW;3;0;0;0;;
+144-3_PE_3;144-3_PE;144-3;PE;3;Abax (Abax) parallelus;abpa;1;;
+144-3_PE_3;144-3_PE;144-3;PE;3;Carabus (Megodontus) violaceus;cavi;2;;
+144-3_PE_3;144-3_PE;144-3;PE;3;Clivina (Clivina) fossor;clfo;1;X;
+144-3_PN_3;144-3_PN;144-3;PN;3;Abax (Abax) parallelepipedus;abat;1;;
+144-3_PN_3;144-3_PN;144-3;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+144-3_PN_3;144-3_PN;144-3;PN;3;Carabus (Mesocarabus) problematicus;capr;1;;
+144-3_PN_3;144-3_PN;144-3;PN;3;Notiophilus rufipes;noru;1;X;
+144-3_PS_3;144-3_PS;144-3;PS;3;Carabus (Mesocarabus) problematicus;capr;2;;
+144-3_PS_3;144-3_PS;144-3;PS;3;Carabus (Tomocarabus) convexus;cacv;2;;
+144-3_PW_3;144-3_PW;144-3;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+144-3_PW_3;144-3_PW;144-3;PW;3;Carabus (Megodontus) violaceus;cavi;1;;
+144-3_PW_3;144-3_PW;144-3;PW;3;Carabus (Mesocarabus) problematicus;capr;1;;
+166-2_PE_3;166-2_PE;166-2;PE;3;Carabus (Mesocarabus) problematicus;capr;1;;
+166-2_PN_3;166-2_PN;166-2;PN;3;Abax (Abax) parallelus;abpa;1;;
+166-2_PS_3;166-2_PS;166-2;PS;3;Abax (Abax) parallelepipedus;abat;1;;
+166-2_PW_3;166-2_PW;166-2;PW;3;0;0;0;;
+166-4_PE_3;166-4_PE;166-4;PE;3;0;0;0;;
+166-4_PN_3;166-4_PN;166-4;PN;3;0;0;0;;
+166-4_PS_3;166-4_PS;166-4;PS;3;Abax (Abax) parallelus;abpa;2;;
+166-4_PS_3;166-4_PS;166-4;PS;3;Carabus (Megodontus) violaceus;cavi;2;;
+166-4_PW_3;166-4_PW;166-4;PW;3;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PW_3;166-4_PW;166-4;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+215-2_PE_3;215-2_PE;215-2;PE;3;0;0;0;;
+215-2_PN_3;215-2_PN;215-2;PN;3;Abax (Abax) parallelepipedus;abat;6;;
+215-2_PS_3;215-2_PS;215-2;PS;3;Abax (Abax) parallelepipedus;abat;1;;
+215-2_PS_3;215-2_PS;215-2;PS;3;Abax (Abax) parallelus;abpa;1;;
+215-2_PS_3;215-2_PS;215-2;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+215-2_PW_3;215-2_PW;215-2;PW;3;0;0;0;;
+215-3_PE_3;215-3_PE;215-3;PE;3;Abax (Abax) parallelepipedus;abat;2;;
+215-3_PE_3;215-3_PE;215-3;PE;3;Carabus (Megodontus) violaceus;cavi;2;;
+215-3_PN_3;215-3_PN;215-3;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+215-3_PS_3;215-3_PS;215-3;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+215-3_PS_3;215-3_PS;215-3;PS;3;Abax (Abax) parallelus;abpa;1;;
+215-3_PW_3;215-3_PW;215-3;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PE_3;216-4_PE;216-4;PE;3;Abax (Abax) parallelepipedus;abat;4;;
+216-4_PN_3;216-4_PN;216-4;PN;3;Abax (Abax) parallelus;abpa;1;;
+216-4_PN_3;216-4_PN;216-4;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+216-4_PN_3;216-4_PN;216-4;PN;3;Amara (Amara) similata;amsi;1;X;
+216-4_PS_3;216-4_PS;216-4;PS;3;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PS_3;216-4_PS;216-4;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+216-4_PW_3;216-4_PW;216-4;PW;3;Carabus (Megodontus) violaceus;cavi;2;;
+216-4_PW_3;216-4_PW;216-4;PW;3;Abax (Abax) parallelepipedus;abat;2;;
+219-1_PE_3;219-1_PE;219-1;PE;3;Carabus (Megodontus) violaceus;cavi;1;;
+219-1_PN_3;219-1_PN;219-1;PN;3;Abax (Abax) parallelus;abpa;1;;
+219-1_PS_3;219-1_PS;219-1;PS;3;Carabus (Megodontus) violaceus;cavi;2;;
+219-1_PW_3;219-1_PW;219-1;PW;3;Pterostichus (Platysma) niger;ptni;2;;
+219-4_PE_3;219-4_PE;219-4;PE;3;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PE_3;219-4_PE;219-4;PE;3;Abax (Abax) parallelus;abpa;1;;
+219-4_PE_3;219-4_PE;219-4;PE;3;Carabus (Megodontus) violaceus;cavi;3;;
+219-4_PN_3;219-4_PN;219-4;PN;3;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PN_3;219-4_PN;219-4;PN;3;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;;ds CAR
+219-4_PS_3;219-4_PS;219-4;PS;3;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PS_3;219-4_PS;219-4;PS;3;Carabus (Mesocarabus) problematicus;capr;1;;
+219-4_PS_3;219-4_PS;219-4;PS;3;Carabus (Megodontus) violaceus;cavi;6;;
+219-4_PW_3;219-4_PW;219-4;PW;3;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PW_3;219-4_PW;219-4;PW;3;Pterostichus (Bothriopterus) oblongopunctatus;ptob;1;;ds CAR
+245-2_PE_3;245-2_PE;245-2;PE;3;Abax (Abax) parallelepipedus;abat;5;;
+245-2_PE_3;245-2_PE;245-2;PE;3;Abax (Abax) parallelus;abpa;1;;
+245-2_PE_3;245-2_PE;245-2;PE;3;Carabus (Megodontus) violaceus;cavi;3;;
+245-2_PN_3;245-2_PN;245-2;PN;3;Carabus (Megodontus) violaceus;cavi;5;;
+245-2_PN_3;245-2_PN;245-2;PN;3;Abax (Abax) parallelepipedus;abat;2;;
+245-2_PN_3;245-2_PN;245-2;PN;3;Abax (Abax) parallelus;abpa;1;;
+245-2_PN_3;245-2_PN;245-2;PN;3;Badister (Badister) bullatus;babu;1;X;oubli saisie
+245-2_PS_3;245-2_PS;245-2;PS;3;Abax (Abax) parallelus;abpa;1;;
+245-2_PS_3;245-2_PS;245-2;PS;3;Carabus (Megodontus) violaceus;cavi;5;;
+245-2_PW_3;245-2_PW;245-2;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PE_3;255-1_PE;255-1;PE;3;Carabus (Tachypus) auratus;caau;1;;
+255-1_PE_3;255-1_PE;255-1;PE;3;Abax (Abax) parallelepipedus;abat;3;;
+255-1_PE_3;255-1_PE;255-1;PE;3;Abax (Abax) parallelus;abpa;2;;
+255-1_PN_3;255-1_PN;255-1;PN;3;0;0;0;;
+255-1_PS_3;255-1_PS;255-1;PS;3;Metallina (Metallina) lampros;mela;5;X;
+255-1_PS_3;255-1_PS;255-1;PS;3;Pterostichus (Phonias) strenuus;ptst;1;X;non reporté sur la fiche, ms OK
+255-1_PS_3;255-1_PS;255-1;PS;3;Limodromus assimilis;lias;1;boite;1 carni en tp, ms Ok erreur notation JF
+255-1_PS_3;255-1_PS;255-1;PS;3;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PS_3;255-1_PS;255-1;PS;3;Abax (Abax) parallelus;abpa;1;;
+255-1_PS_3;255-1_PS;255-1;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+255-1_PW_3;255-1_PW;255-1;PW;3;Abax (Abax) parallelus;abpa;2;;
+45-4_PE_3;45-4_PE;45-4;PE;3;Notiophilus rufipes;noru;1;X;
+45-4_PN_3;45-4_PN;45-4;PN;3;0;0;0;;
+45-4_PS_3;45-4_PS;45-4;PS;3;Abax (Abax) parallelepipedus;abat;2;;
+45-4_PW_3;45-4_PW;45-4;PW;3;Abax (Abax) parallelus;abpa;1;;
+45-4_PW_3;45-4_PW;45-4;PW;3;Carabus (Megodontus) violaceus;cavi;1;;
+50-3_PE_3;50-3_PE;50-3;PE;3;Carabus (Tachypus) auratus;caau;5;;
+50-3_PN_3;50-3_PN;50-3;PN;3;Carabus (Tachypus) auratus;caau;2;;
+50-3_PN_3;50-3_PN;50-3;PN;3;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PS_3;50-3_PS;50-3;PS;3;Carabus (Tachypus) auratus;caau;2;;
+50-3_PW_3;50-3_PW;50-3;PW;3;Carabus (Tachypus) auratus;caau;4;;
+50-3_PW_3;50-3_PW;50-3;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PE_3;55-4_PE;55-4;PE;3;Abax (Abax) parallelus;abpa;1;;
+55-4_PN_3;55-4_PN;55-4;PN;3;0;0;0;;
+55-4_PS_3;55-4_PS;55-4;PS;3;Abax (Abax) parallelus;abpa;1;;
+55-4_PW_3;55-4_PW;55-4;PW;3;Abax (Abax) parallelus;abpa;1;;
+55-4_PW_3;55-4_PW;55-4;PW;3;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PW_3;55-4_PW;55-4;PW;3;Carabus (Megodontus) violaceus;cavi;1;;
+61-3_PE_3;61-3_PE;61-3;PE;3;0;0;0;;
+61-3_PN_3;61-3_PN;61-3;PN;3;Abax (Abax) parallelepipedus;abat;1;;
+61-3_PS_3;61-3_PS;61-3;PS;3;Abax (Abax) parallelus;abpa;2;;
+61-3_PW_3;61-3_PW;61-3;PW;3;Abax (Abax) parallelus;abpa;1;;
+61-4_PE_3;61-4_PE;61-4;PE;3;0;0;0;;
+61-4_PN_3;61-4_PN;61-4;PN;3;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PS_3;61-4_PS;61-4;PS;3;0;0;0;;
+61-4_PW_3;61-4_PW;61-4;PW;3;0;0;0;;
+75-4_PE_3;75-4_PE;75-4;PE;3;Abax (Abax) parallelepipedus;abat;4;;
+75-4_PE_3;75-4_PE;75-4;PE;3;Loricera pilicornis;lopi;1;;
+75-4_PN_3;75-4_PN;75-4;PN;3;Abax (Abax) parallelepipedus;abat;2;;
+75-4_PS_3;75-4_PS;75-4;PS;3;Abax (Abax) parallelepipedus;abat;4;;
+75-4_PS_3;75-4_PS;75-4;PS;3;Abax (Abax) parallelus;abpa;2;;
+75-4_PS_3;75-4_PS;75-4;PS;3;Carabus (Tachypus) auratus;caau;1;;
+75-4_PS_3;75-4_PS;75-4;PS;3;Carabus (Megodontus) violaceus;cavi;1;;
+75-4_PW_3;75-4_PW;75-4;PW;3;Abax (Abax) parallelepipedus;abat;3;;
+75-4_PW_3;75-4_PW;75-4;PW;3;Abax (Abax) parallelus;abpa;2;;
+14-1_PE_4;14-1_PE;14-1;PE;4;0;0;0;;
+14-1_PN_4;14-1_PN;14-1;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+14-1_PN_4;14-1_PN;14-1;PN;4;Carabus (Archicarabus) nemoralis;cane;1;;
+14-1_PN_4;14-1_PN;14-1;PN;4;Carabus (Megodontus) violaceus;cavi;3;;
+14-1_PS_4;14-1_PS;14-1;PS;4;0;0;0;;
+14-1_PW_4;14-1_PW;14-1;PW;4;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PE_4;14-2_PE;14-2;PE;4;Abax (Abax) parallelepipedus;abat;2;;
+14-2_PE_4;14-2_PE;14-2;PE;4;Abax (Abax) parallelus;abpa;1;;
+14-2_PN_4;14-2_PN;14-2;PN;4;Abax (Abax) parallelus;abpa;1;;
+14-2_PN_4;14-2_PN;14-2;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PS_4;14-2_PS;14-2;PS;4;Abax (Abax) parallelepipedus;abat;3;;
+14-2_PW_4;14-2_PW;14-2;PW;4;0;0;0;;
+15-2_PS_4;15-2_PS;15-2;PS;4;Carabus (Archicarabus) nemoralis;cane;1;;
+15-2_PS_4;15-2_PS;15-2;PS;4;Carabus (Megodontus) violaceus;cavi;4;;
+15-2_PW_4;15-2_PW;15-2;PW;4;Carabus (Archicarabus) nemoralis;cane;2;;
+15-2_PW_4;15-2_PW;15-2;PW;4;Abax (Abax) parallelepipedus;abat;2;;
+15-2_PW_4;15-2_PW;15-2;PW;4;Abax (Abax) parallelus;abpa;1;;
+111-1_PE_4;111-1_PE;111-1;PE;4;Pterostichus (Steropus) madidus;ptma;1;;pb n° nichoir pièges résolu
+111-1_PE_4;111-1_PE;111-1;PE;4;Carabus (Archicarabus) nemoralis;cane;3;;pb n° nichoir pièges
+111-1_PE_4;111-1_PE;111-1;PE;4;Carabus (Megodontus) violaceus;cavi;5;;pb n° nichoir pièges
+111-1_PE_4;111-1_PE;111-1;PE;4;Abax (Abax) parallelepipedus;abat;2;;pb n° nichoir pièges
+111-1_PE_4;111-1_PE;111-1;PE;4;Abax (Abax) parallelus;abpa;2;;pb n° nichoir pièges
+111-1_PE_4;111-1_PE;111-1;PE;4;Carabus (Tomocarabus) convexus;cacv;7;;pb n° nichoir pièges
+111-1_PN_4;111-1_PN;111-1;PN;4;Abax (Abax) parallelepipedus;abat;2;;pb n° nichoir pièges résolu
+111-1_PN_4;111-1_PN;111-1;PN;4;Carabus (Archicarabus) nemoralis;cane;2;;pb n° nichoir pièges résolu
+111-1_PN_4;111-1_PN;111-1;PN;4;Carabus (Megodontus) violaceus;cavi;11;;pb n° nichoir pièges résolu
+111-1_PN_4;111-1_PN;111-1;PN;4;Carabus (Tomocarabus) convexus;cacv;3;;pb n° nichoir pièges résolu
+111-1_PS_4;111-1_PS;111-1;PS;4;Abax (Abax) parallelepipedus;abat;4;;
+111-1_PS_4;111-1_PS;111-1;PS;4;Carabus (Archicarabus) nemoralis;cane;7;;
+111-1_PS_4;111-1_PS;111-1;PS;4;Carabus (Megodontus) violaceus;cavi;10;;
+111-1_PS_4;111-1_PS;111-1;PS;4;Carabus (Tomocarabus) convexus;cacv;1;;
+111-3_PE_4;111-3_PE;111-3;PE;4;Carabus (Megodontus) violaceus;cavi;6;;pb n° nichoir pièges résolu
+111-3_PN_4;111-3_PN;111-3;PN;4;Carabus (Tomocarabus) convexus;cacv;1;;pb n° nichoir pièges résolu
+111-3_PN_4;111-3_PN;111-3;PN;4;Carabus (Archicarabus) nemoralis;cane;2;;pb n° nichoir pièges résolu
+111-3_PN_4;111-3_PN;111-3;PN;4;Carabus (Megodontus) violaceus;cavi;2;;pb n° nichoir pièges résolu
+111-3_PN_4;111-3_PN;111-3;PN;4;Abax (Abax) parallelepipedus;abat;2;;pb n° nichoir pièges résolu
+111-3_PN_4;111-3_PN;111-3;PN;4;Abax (Abax) parallelus;abpa;1;;pb n° nichoir pièges résolu
+111-3_PS_4;111-3_PS;111-3;PS;4;Abax (Abax) parallelus;abpa;1;;
+111-3_PS_4;111-3_PS;111-3;PS;4;Abax (Abax) parallelepipedus;abat;1;;
+111-3_PS_4;111-3_PS;111-3;PS;4;Carabus (Megodontus) violaceus;cavi;8;;
+111-3_PW_4;111-3_PW;111-3;PW;4;Abax (Abax) parallelepipedus;abat;1;;pb n° nichoir pièges : piège normalement HS, résolu en considérant qu'il y avait eu inversion des étiquettes sur le terrain entre 111-1 et 111-3 alors que les couvercles des pafs étaient ok
+111-3_PW_4;111-3_PW;111-3;PW;4;Carabus (Archicarabus) nemoralis;cane;4;;pb n° nichoir pièges : piège normalement HS, résolu en considérant qu'il y avait eu inversion des étiquettes sur le terrain entre 111-1 et 111-3 alors que les couvercles des pafs étaient ok
+111-3_PW_4;111-3_PW;111-3;PW;4;Carabus (Megodontus) violaceus;cavi;12;;pb n° nichoir pièges : piège normalement HS, résolu en considérant qu'il y avait eu inversion des étiquettes sur le terrain entre 111-1 et 111-3 alors que les couvercles des pafs étaient ok
+111-3_PW_4;111-3_PW;111-3;PW;4;Pterostichus (Steropus) madidus;ptma;2;;pb n° nichoir pièges : piège normalement HS, résolu en considérant qu'il y avait eu inversion des étiquettes sur le terrain entre 111-1 et 111-3 alors que les couvercles des pafs étaient ok
+111-3_PW_4;111-3_PW;111-3;PW;4;Pterostichus (Platysma) niger;ptni;1;;pb n° nichoir pièges : piège normalement HS, résolu en considérant qu'il y avait eu inversion des étiquettes sur le terrain entre 111-1 et 111-3 alors que les couvercles des pafs étaient ok
+125-3_PE_4;125-3_PE;125-3;PE;4;0;0;0;;
+125-3_PN_4;125-3_PN;125-3;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+125-3_PS_4;125-3_PS;125-3;PS;4;Abax (Abax) parallelepipedus;abat;2;;
+125-3_PS_4;125-3_PS;125-3;PS;4;Abax (Abax) parallelus;abpa;1;;
+125-3_PS_4;125-3_PS;125-3;PS;4;Carabus (Megodontus) violaceus;cavi;2;;
+125-3_PW_4;125-3_PW;125-3;PW;4;Carabus (Megodontus) violaceus;cavi;5;;
+139-2_PE_4;139-2_PE;139-2;PE;4;Carabus (Megodontus) violaceus;cavi;2;;
+139-2_PN_4;139-2_PN;139-2;PN;4;Carabus (Megodontus) violaceus;cavi;2;;
+139-2_PN_4;139-2_PN;139-2;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+139-2_PS_4;139-2_PS;139-2;PS;4;Carabus (Tachypus) auratus;caau;1;;
+139-2_PS_4;139-2_PS;139-2;PS;4;Carabus (Tomocarabus) convexus;cacv;1;;
+139-2_PS_4;139-2_PS;139-2;PS;4;Carabus (Megodontus) violaceus;cavi;8;;
+139-2_PW_4;139-2_PW;139-2;PW;4;Carabus (Megodontus) violaceus;cavi;5;;
+139-2_PW_4;139-2_PW;139-2;PW;4;Carabus (Archicarabus) nemoralis;cane;1;;
+139-4_PE_4;139-4_PE;139-4;PE;4;Abax (Abax) parallelepipedus;abat;1;;
+139-4_PN_4;139-4_PN;139-4;PN;4;Carabus (Megodontus) violaceus;cavi;1;;
+139-4_PS_4;139-4_PS;139-4;PS;4;Carabus (Megodontus) violaceus;cavi;1;;
+139-4_PW_4;139-4_PW;139-4;PW;4;Carabus (Megodontus) violaceus;cavi;1;;
+166-2_PN_4;166-2_PN;166-2;PN;4;Carabus (Megodontus) violaceus;cavi;2;;
+166-2_PS_4;166-2_PS;166-2;PS;4;Carabus (Megodontus) violaceus;cavi;2;;
+166-2_PS_4;166-2_PS;166-2;PS;4;Abax (Abax) parallelepipedus;abat;2;;
+166-2_PS_4;166-2_PS;166-2;PS;4;Abax (Abax) parallelus;abpa;1;;
+166-2_PW_4;166-2_PW;166-2;PW;4;Abax (Abax) parallelus;abpa;2;;
+166-2_PW_4;166-2_PW;166-2;PW;4;Abax (Abax) parallelepipedus;abat;2;;
+166-2_PW_4;166-2_PW;166-2;PW;4;Carabus (Megodontus) violaceus;cavi;2;;
+166-2_PW_4;166-2_PW;166-2;PW;4;Carabus (Archicarabus) nemoralis;cane;6;;
+166-4_PE_4;166-4_PE;166-4;PE;4;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PE_4;166-4_PE;166-4;PE;4;Carabus (Megodontus) violaceus;cavi;2;;
+166-4_PN_4;166-4_PN;166-4;PN;4;Pterostichus (Steropus) madidus;ptma;1;;
+166-4_PS_4;166-4_PS;166-4;PS;4;Abax (Abax) parallelepipedus;abat;1;;
+166-4_PS_4;166-4_PS;166-4;PS;4;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PW_4;166-4_PW;166-4;PW;4;Carabus (Megodontus) violaceus;cavi;3;;
+166-4_PW_4;166-4_PW;166-4;PW;4;Abax (Abax) parallelepipedus;abat;4;;
+166-4_PW_4;166-4_PW;166-4;PW;4;Abax (Abax) parallelus;abpa;2;;
+215-2_PE_4;215-2_PE;215-2;PE;4;Abax (Abax) parallelus;abpa;2;;
+215-2_PE_4;215-2_PE;215-2;PE;4;Carabus (Megodontus) violaceus;cavi;1;;
+215-2_PN_4;215-2_PN;215-2;PN;4;Carabus (Megodontus) violaceus;cavi;5;;
+215-2_PN_4;215-2_PN;215-2;PN;4;Abax (Abax) parallelepipedus;abat;2;;
+215-2_PN_4;215-2_PN;215-2;PN;4;Abax (Abax) parallelus;abpa;1;;
+215-2_PS_4;215-2_PS;215-2;PS;4;Abax (Abax) parallelus;abpa;1;;erreur saisie piège
+215-2_PS_4;215-2_PS;215-2;PS;4;Carabus (Megodontus) violaceus;cavi;3;;erreur saisie piège
+215-2_PW_4;215-2_PW;215-2;PW;4;Carabus (Megodontus) violaceus;cavi;4;;erreur saisie piège
+215-2_PW_4;215-2_PW;215-2;PW;4;Carabus (Procrustes) coriaceus;cacr;2;;erreur saisie piège
+215-2_PW_4;215-2_PW;215-2;PW;4;Abax (Abax) parallelepipedus;abat;1;;erreur saisie piège
+215-3_PE_4;215-3_PE;215-3;PE;4;Abax (Abax) parallelepipedus;abat;1;;
+215-3_PE_4;215-3_PE;215-3;PE;4;Carabus (Megodontus) violaceus;cavi;4;;
+215-3_PN_4;215-3_PN;215-3;PN;4;Carabus (Megodontus) violaceus;cavi;2;;
+215-3_PS_4;215-3_PS;215-3;PS;4;Carabus (Megodontus) violaceus;cavi;3;;
+215-3_PS_4;215-3_PS;215-3;PS;4;Carabus (Procrustes) coriaceus;cacr;2;;
+215-3_PS_4;215-3_PS;215-3;PS;4;Abax (Abax) parallelepipedus;abat;1;;
+215-3_PW_4;215-3_PW;215-3;PW;4;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PN_4;216-4_PN;216-4;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+216-4_PN_4;216-4_PN;216-4;PN;4;Carabus (Procrustes) coriaceus;cacr;1;;
+216-4_PN_4;216-4_PN;216-4;PN;4;Carabus (Megodontus) violaceus;cavi;11;;
+216-4_PS_4;216-4_PS;216-4;PS;4;Carabus (Megodontus) violaceus;cavi;3;;
+216-4_PS_4;216-4_PS;216-4;PS;4;Carabus (Procrustes) coriaceus;cacr;2;;
+216-4_PS_4;216-4_PS;216-4;PS;4;Abax (Abax) parallelepipedus;abat;3;;
+216-4_PW_4;216-4_PW;216-4;PW;4;Abax (Abax) parallelepipedus;abat;2;;
+216-4_PW_4;216-4_PW;216-4;PW;4;Carabus (Procrustes) coriaceus;cacr;1;;
+216-4_PW_4;216-4_PW;216-4;PW;4;Carabus (Megodontus) violaceus;cavi;1;;
+219-1_PE_4;219-1_PE;219-1;PE;4;Carabus (Megodontus) violaceus;cavi;12;;
+219-1_PE_4;219-1_PE;219-1;PE;4;Carabus (Procrustes) coriaceus;cacr;1;;
+219-1_PN_4;219-1_PN;219-1;PN;4;Carabus (Tachypus) auratus;caau;1;;
+219-1_PN_4;219-1_PN;219-1;PN;4;Carabus (Megodontus) violaceus;cavi;2;;
+219-1_PN_4;219-1_PN;219-1;PN;4;Pterostichus (Platysma) niger;ptni;1;;
+219-1_PS_4;219-1_PS;219-1;PS;4;Carabus (Megodontus) violaceus;cavi;5;;
+219-1_PW_4;219-1_PW;219-1;PW;4;Carabus (Megodontus) violaceus;cavi;3;;
+219-1_PW_4;219-1_PW;219-1;PW;4;Pterostichus (Platysma) niger;ptni;2;;
+219-4_PE_4;219-4_PE;219-4;PE;4;Carabus (Procrustes) coriaceus;cacr;1;;
+219-4_PE_4;219-4_PE;219-4;PE;4;Carabus (Megodontus) violaceus;cavi;6;;
+219-4_PE_4;219-4_PE;219-4;PE;4;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PN_4;219-4_PN;219-4;PN;4;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PN_4;219-4_PN;219-4;PN;4;Carabus (Megodontus) violaceus;cavi;5;;
+219-4_PN_4;219-4_PN;219-4;PN;4;Carabus (Mesocarabus) problematicus;capr;1;;
+219-4_PN_4;219-4_PN;219-4;PN;4;Carabus (Tachypus) auratus;caau;1;;
+219-4_PS_4;219-4_PS;219-4;PS;4;Carabus (Megodontus) violaceus;cavi;7;;
+219-4_PS_4;219-4_PS;219-4;PS;4;Carabus (Archicarabus) nemoralis;cane;1;;
+219-4_PS_4;219-4_PS;219-4;PS;4;Abax (Abax) parallelepipedus;abat;3;;
+219-4_PW_4;219-4_PW;219-4;PW;4;0;0;0;;
+245-2_PE_4;245-2_PE;245-2;PE;4;Abax (Abax) parallelepipedus;abat;7;;
+245-2_PE_4;245-2_PE;245-2;PE;4;Abax (Abax) parallelus;abpa;2;;
+245-2_PE_4;245-2_PE;245-2;PE;4;Carabus (Megodontus) violaceus;cavi;2;;
+245-2_PE_4;245-2_PE;245-2;PE;4;Carabus (Tomocarabus) convexus;cacv;1;;
+245-2_PN_4;245-2_PN;245-2;PN;4;Carabus (Procrustes) coriaceus;cacr;1;;
+245-2_PN_4;245-2_PN;245-2;PN;4;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PN_4;245-2_PN;245-2;PN;4;Carabus (Megodontus) violaceus;cavi;5;;
+245-2_PN_4;245-2_PN;245-2;PN;4;Abax (Abax) parallelepipedus;abat;5;;
+245-2_PS_4;245-2_PS;245-2;PS;4;Abax (Abax) parallelepipedus;abat;2;;
+245-2_PS_4;245-2_PS;245-2;PS;4;Carabus (Megodontus) violaceus;cavi;7;;
+245-2_PS_4;245-2_PS;245-2;PS;4;Carabus (Tachypus) auratus;caau;1;;
+245-2_PW_4;245-2_PW;245-2;PW;4;Carabus (Megodontus) violaceus;cavi;7;;
+255-1_PE_4;255-1_PE;255-1;PE;4;Carabus (Archicarabus) nemoralis;cane;2;;
+255-1_PE_4;255-1_PE;255-1;PE;4;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PN_4;255-1_PN;255-1;PN;4;Abax (Abax) parallelepipedus;abat;5;;
+255-1_PN_4;255-1_PN;255-1;PN;4;Abax (Abax) parallelus;abpa;1;;
+255-1_PN_4;255-1_PN;255-1;PN;4;Carabus (Archicarabus) nemoralis;cane;6;;
+255-1_PN_4;255-1_PN;255-1;PN;4;Carabus (Megodontus) violaceus;cavi;1;;
+255-1_PS_4;255-1_PS;255-1;PS;4;Carabus (Archicarabus) nemoralis;cane;6;;
+255-1_PS_4;255-1_PS;255-1;PS;4;Carabus (Tomocarabus) convexus;cacv;1;;
+255-1_PS_4;255-1_PS;255-1;PS;4;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PS_4;255-1_PS;255-1;PS;4;Abax (Abax) parallelus;abpa;2;;
+255-1_PS_4;255-1_PS;255-1;PS;4;Metallina (Metallina) lampros;mela;15;X;
+255-1_PW_4;255-1_PW;255-1;PW;4;Abax (Abax) parallelus;abpa;1;;
+255-1_PW_4;255-1_PW;255-1;PW;4;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PW_4;255-1_PW;255-1;PW;4;Carabus (Archicarabus) nemoralis;cane;15;;
+255-1_PW_4;255-1_PW;255-1;PW;4;Carabus (Tomocarabus) convexus;cacv;3;;
+45-4_PN_4;45-4_PN;45-4;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+45-4_PW_4;45-4_PW;45-4;PW;4;Abax (Abax) parallelepipedus;abat;11;;
+45-4_PW_4;45-4_PW;45-4;PW;4;Abax (Abax) parallelus;abpa;2;;
+50-3_PE_4;50-3_PE;50-3;PE;4;Abax (Abax) parallelus;abpa;1;;
+50-3_PE_4;50-3_PE;50-3;PE;4;Abax (Abax) parallelepipedus;abat;5;;
+50-3_PE_4;50-3_PE;50-3;PE;4;Carabus (Tachypus) auratus;caau;4;;
+50-3_PN_4;50-3_PN;50-3;PN;4;Carabus (Megodontus) violaceus;cavi;3;;
+50-3_PN_4;50-3_PN;50-3;PN;4;Carabus (Tachypus) auratus;caau;1;;
+50-3_PN_4;50-3_PN;50-3;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PN_4;50-3_PN;50-3;PN;4;Pterostichus (Platysma) niger;ptni;4;;
+50-3_PS_4;50-3_PS;50-3;PS;4;0;0;0;;
+50-3_PW_4;50-3_PW;50-3;PW;4;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PE_4;55-4_PE;55-4;PE;4;Carabus (Megodontus) violaceus;cavi;4;;
+55-4_PN_4;55-4_PN;55-4;PN;4;Carabus (Megodontus) violaceus;cavi;1;;
+55-4_PS_4;55-4_PS;55-4;PS;4;Carabus (Megodontus) violaceus;cavi;5;;
+55-4_PS_4;55-4_PS;55-4;PS;4;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PW_4;55-4_PW;55-4;PW;4;Abax (Abax) parallelepipedus;abat;1;;
+55-4_PW_4;55-4_PW;55-4;PW;4;Carabus (Megodontus) violaceus;cavi;5;;
+61-3_PE_4;61-3_PE;61-3;PE;4;Carabus (Tachypus) auratus;caau;1;;
+61-3_PN_4;61-3_PN;61-3;PN;4;0;0;0;;
+61-4_PE_4;61-4_PE;61-4;PE;4;0;0;0;;
+61-4_PN_4;61-4_PN;61-4;PN;4;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PN_4;61-4_PN;61-4;PN;4;Abax (Abax) parallelus;abpa;1;;
+61-4_PN_4;61-4_PN;61-4;PN;4;Carabus (Mesocarabus) problematicus;capr;1;;
+61-4_PN_4;61-4_PN;61-4;PN;4;Carabus (Tachypus) auratus;caau;1;;
+61-4_PS_4;61-4_PS;61-4;PS;4;Abax (Abax) parallelepipedus;abat;2;;
+61-4_PS_4;61-4_PS;61-4;PS;4;Abax (Abax) parallelus;abpa;1;;
+61-4_PS_4;61-4_PS;61-4;PS;4;Carabus (Megodontus) violaceus;cavi;1;;
+61-4_PS_4;61-4_PS;61-4;PS;4;Carabus (Tachypus) auratus;caau;2;;
+61-4_PW_4;61-4_PW;61-4;PW;4;0;0;0;;pas de carabes ou oubli notation fiche
+75-4_PN_4;75-4_PN;75-4;PN;4;Abax (Abax) parallelepipedus;abat;3;;
+75-4_PN_4;75-4_PN;75-4;PN;4;Abax (Abax) parallelus;abpa;3;;
+75-4_PN_4;75-4_PN;75-4;PN;4;Carabus (Tomocarabus) convexus;cacv;1;;
+75-4_PN_4;75-4_PN;75-4;PN;4;Carabus (Megodontus) violaceus;cavi;2;;
+75-4_PS_4;75-4_PS;75-4;PS;4;Carabus (Megodontus) violaceus;cavi;2;;
+75-4_PS_4;75-4_PS;75-4;PS;4;Abax (Abax) parallelepipedus;abat;2;;
+75-4_PS_4;75-4_PS;75-4;PS;4;Abax (Abax) parallelus;abpa;1;;
+75-4_PS_4;75-4_PS;75-4;PS;4;Platynus livens;plli;1;boite;non mentionné comme carni sur fiche = carni mqt per6?
+75-4_PW_4;75-4_PW;75-4;PW;4;Abax (Abax) parallelus;abpa;2;;
+75-4_PW_4;75-4_PW;75-4;PW;4;Abax (Abax) parallelepipedus;abat;2;;
+75-4_PW_4;75-4_PW;75-4;PW;4;Carabus (Archicarabus) nemoralis;cane;6;;
+75-4_PW_4;75-4_PW;75-4;PW;4;Carabus (Tomocarabus) convexus;cacv;1;;
+75-4_PW_4;75-4_PW;75-4;PW;4;Carabus (Megodontus) violaceus;cavi;1;;
+75-4_PW_4;75-4_PW;75-4;PW;4;Pterostichus (Steropus) madidus;ptma;1;;
+14-1_PE_5;14-1_PE;14-1;PE;5;Carabus (Megodontus) violaceus;cavi;1;;
+14-1_PN_5;14-1_PN;14-1;PN;5;Carabus (Megodontus) violaceus;cavi;1;;
+14-1_PN_5;14-1_PN;14-1;PN;5;Abax (Abax) parallelepipedus;abat;1;;
+14-1_PS_5;14-1_PS;14-1;PS;5;0;0;0;;
+14-2_PN_5;14-2_PN;14-2;PN;5;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PS_5;14-2_PS;14-2;PS;5;Abax (Abax) parallelus;abpa;1;;
+14-2_PS_5;14-2_PS;14-2;PS;5;Carabus (Megodontus) violaceus;cavi;1;;
+14-2_PS_5;14-2_PS;14-2;PS;5;Carabus (Mesocarabus) problematicus;capr;1;;
+14-2_PW_5;14-2_PW;14-2;PW;5;Carabus (Megodontus) violaceus;cavi;2;;
+15-2_PE_5;15-2_PE;15-2;PE;5;Abax (Abax) parallelepipedus;abat;2;;
+15-2_PE_5;15-2_PE;15-2;PE;5;Abax (Abax) parallelus;abpa;1;;
+15-2_PN_5;15-2_PN;15-2;PN;5;Abax (Abax) parallelepipedus;abat;3;;
+15-2_PS_5;15-2_PS;15-2;PS;5;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PE_5;111-1_PE;111-1;PE;5;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PE_5;111-1_PE;111-1;PE;5;Carabus (Tomocarabus) convexus;cacv;1;;
+111-1_PE_5;111-1_PE;111-1;PE;5;Carabus (Megodontus) violaceus;cavi;2;;
+111-1_PN_5;111-1_PN;111-1;PN;5;Carabus (Megodontus) violaceus;cavi;4;;
+111-1_PN_5;111-1_PN;111-1;PN;5;Abax (Abax) parallelus;abpa;1;;
+111-1_PS_5;111-1_PS;111-1;PS;5;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PS_5;111-1_PS;111-1;PS;5;Carabus (Megodontus) violaceus;cavi;17;;
+111-1_PW_5;111-1_PW;111-1;PW;5;Carabus (Megodontus) violaceus;cavi;5;;
+111-1_PW_5;111-1_PW;111-1;PW;5;Carabus (Mesocarabus) problematicus;capr;1;;
+111-1_PW_5;111-1_PW;111-1;PW;5;Abax (Abax) parallelus;abpa;1;;
+111-1_PW_5;111-1_PW;111-1;PW;5;Abax (Abax) parallelepipedus;abat;2;;
+111-3_PE_5;111-3_PE;111-3;PE;5;Abax (Abax) parallelepipedus;abat;1;;
+111-3_PE_5;111-3_PE;111-3;PE;5;Carabus (Megodontus) violaceus;cavi;17;;
+111-3_PE_5;111-3_PE;111-3;PE;5;Pterostichus (Platysma) niger;ptni;4;;
+111-3_PS_5;111-3_PS;111-3;PS;5;Pterostichus (Morphnosoma) melanarius;ptme;2;;
+111-3_PS_5;111-3_PS;111-3;PS;5;Carabus (Archicarabus) nemoralis;cane;1;;
+111-3_PS_5;111-3_PS;111-3;PS;5;Carabus (Megodontus) violaceus;cavi;14;;
+111-3_PW_5;111-3_PW;111-3;PW;5;Carabus (Megodontus) violaceus;cavi;4;;
+111-3_PW_5;111-3_PW;111-3;PW;5;Carabus (Archicarabus) nemoralis;cane;1;;
+111-3_PW_5;111-3_PW;111-3;PW;5;Pterostichus (Platysma) niger;ptni;2;;
+125-3_PN_5;125-3_PN;125-3;PN;5;Carabus (Megodontus) violaceus;cavi;4;;
+125-3_PS_5;125-3_PS;125-3;PS;5;Carabus (Megodontus) violaceus;cavi;9;;
+125-3_PW_5;125-3_PW;125-3;PW;5;Carabus (Megodontus) violaceus;cavi;9;;
+125-3_PW_5;125-3_PW;125-3;PW;5;Abax (Abax) parallelepipedus;abat;2;;
+139-2_PS_5;139-2_PS;139-2;PS;5;Carabus (Archicarabus) nemoralis;cane;1;;
+139-2_PS_5;139-2_PS;139-2;PS;5;Carabus (Megodontus) violaceus;cavi;2;;
+139-2_PS_5;139-2_PS;139-2;PS;5;Carabus (Mesocarabus) problematicus;capr;2;;
+139-4_PE_5;139-4_PE;139-4;PE;5;Carabus (Megodontus) violaceus;cavi;4;;
+139-4_PE_5;139-4_PE;139-4;PE;5;Carabus (Mesocarabus) problematicus;capr;1;;
+139-4_PS_5;139-4_PS;139-4;PS;5;Carabus (Megodontus) violaceus;cavi;2;;
+139-4_PS_5;139-4_PS;139-4;PS;5;Pterostichus (Morphnosoma) melanarius;ptme;1;;
+166-2_PE_5;166-2_PE;166-2;PE;5;Carabus (Megodontus) violaceus;cavi;4;;
+166-2_PS_5;166-2_PS;166-2;PS;5;Carabus (Megodontus) violaceus;cavi;2;;
+166-2_PW_5;166-2_PW;166-2;PW;5;Carabus (Megodontus) violaceus;cavi;2;;
+166-4_PE_5;166-4_PE;166-4;PE;5;Carabus (Megodontus) violaceus;cavi;3;;
+166-4_PN_5;166-4_PN;166-4;PN;5;Carabus (Megodontus) violaceus;cavi;2;;
+166-4_PN_5;166-4_PN;166-4;PN;5;Carabus (Mesocarabus) problematicus;capr;2;;
+166-4_PS_5;166-4_PS;166-4;PS;5;Carabus (Megodontus) violaceus;cavi;3;;
+215-2_PE_5;215-2_PE;215-2;PE;5;Carabus (Megodontus) violaceus;cavi;4;;
+215-2_PS_5;215-2_PS;215-2;PS;5;Abax (Abax) parallelepipedus;abat;1;;
+215-2_PS_5;215-2_PS;215-2;PS;5;Carabus (Megodontus) violaceus;cavi;3;;
+215-2_PS_5;215-2_PS;215-2;PS;5;Carabus (Mesocarabus) problematicus;capr;1;;
+215-2_PS_5;215-2_PS;215-2;PS;5;Carabus (Procrustes) coriaceus;cacr;1;;
+215-2_PW_5;215-2_PW;215-2;PW;5;Carabus (Megodontus) violaceus;cavi;8;;
+215-2_PW_5;215-2_PW;215-2;PW;5;Carabus (Procrustes) coriaceus;cacr;1;;
+215-2_PW_5;215-2_PW;215-2;PW;5;Abax (Abax) parallelepipedus;abat;3;;
+215-3_PE_5;215-3_PE;215-3;PE;5;Carabus (Megodontus) violaceus;cavi;6;;
+215-3_PE_5;215-3_PE;215-3;PE;5;Carabus (Mesocarabus) problematicus;capr;1;;
+215-3_PE_5;215-3_PE;215-3;PE;5;Carabus (Procrustes) coriaceus;cacr;2;;
+215-3_PN_5;215-3_PN;215-3;PN;5;Carabus (Megodontus) violaceus;cavi;2;;
+215-3_PN_5;215-3_PN;215-3;PN;5;Carabus (Procrustes) coriaceus;cacr;1;;
+215-3_PS_5;215-3_PS;215-3;PS;5;Carabus (Megodontus) violaceus;cavi;3;;
+215-3_PS_5;215-3_PS;215-3;PS;5;Carabus (Mesocarabus) problematicus;capr;1;;
+215-3_PS_5;215-3_PS;215-3;PS;5;Abax (Abax) parallelepipedus;abat;1;;
+215-3_PW_5;215-3_PW;215-3;PW;5;Carabus (Megodontus) violaceus;cavi;1;;
+215-3_PW_5;215-3_PW;215-3;PW;5;Abax (Abax) parallelus;abpa;1;;
+216-4_PE_5;216-4_PE;216-4;PE;5;Abax (Abax) parallelepipedus;abat;2;;
+216-4_PE_5;216-4_PE;216-4;PE;5;Carabus (Megodontus) violaceus;cavi;2;;
+216-4_PN_5;216-4_PN;216-4;PN;5;Carabus (Megodontus) violaceus;cavi;4;;
+216-4_PN_5;216-4_PN;216-4;PN;5;Carabus (Mesocarabus) problematicus;capr;1;;
+216-4_PS_5;216-4_PS;216-4;PS;5;Carabus (Megodontus) violaceus;cavi;9;;
+216-4_PS_5;216-4_PS;216-4;PS;5;Abax (Abax) parallelus;abpa;1;;
+216-4_PS_5;216-4_PS;216-4;PS;5;Pterostichus (Steropus) madidus;ptma;1;X;
+216-4_PW_5;216-4_PW;216-4;PW;5;Carabus (Megodontus) violaceus;cavi;9;;
+216-4_PW_5;216-4_PW;216-4;PW;5;Carabus (Procrustes) coriaceus;cacr;2;;
+216-4_PW_5;216-4_PW;216-4;PW;5;Abax (Abax) parallelepipedus;abat;1;;
+219-1_PE_5;219-1_PE;219-1;PE;5;Carabus (Megodontus) violaceus;cavi;9;;
+219-1_PE_5;219-1_PE;219-1;PE;5;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PN_5;219-1_PN;219-1;PN;5;Carabus (Megodontus) violaceus;cavi;5;;
+219-1_PN_5;219-1_PN;219-1;PN;5;Pterostichus (Platysma) niger;ptni;1;;
+219-1_PN_5;219-1_PN;219-1;PN;5;Pterostichus (Steropus) madidus;ptma;1;;
+219-1_PS_5;219-1_PS;219-1;PS;5;Carabus (Megodontus) violaceus;cavi;9;;
+219-1_PS_5;219-1_PS;219-1;PS;5;Pterostichus (Morphnosoma) melanarius;ptme;1;;
+219-1_PW_5;219-1_PW;219-1;PW;5;Pterostichus (Platysma) niger;ptni;14;;
+219-1_PW_5;219-1_PW;219-1;PW;5;Carabus (Megodontus) violaceus;cavi;15;;
+219-4_PE_5;219-4_PE;219-4;PE;5;Abax (Abax) parallelepipedus;abat;2;;
+219-4_PE_5;219-4_PE;219-4;PE;5;Carabus (Megodontus) violaceus;cavi;5;;
+219-4_PE_5;219-4_PE;219-4;PE;5;Pterostichus (Platysma) niger;ptni;1;;
+219-4_PN_5;219-4_PN;219-4;PN;5;Carabus (Megodontus) violaceus;cavi;7;;
+219-4_PS_5;219-4_PS;219-4;PS;5;Carabus (Megodontus) violaceus;cavi;6;;
+219-4_PW_5;219-4_PW;219-4;PW;5;Carabus (Megodontus) violaceus;cavi;5;;
+219-4_PW_5;219-4_PW;219-4;PW;5;Carabus (Procrustes) coriaceus;cacr;2;;
+219-4_PW_5;219-4_PW;219-4;PW;5;Pterostichus (Platysma) niger;ptni;5;;
+219-4_PW_5;219-4_PW;219-4;PW;5;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PE_5;245-2_PE;245-2;PE;5;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PE_5;245-2_PE;245-2;PE;5;Carabus (Procrustes) coriaceus;cacr;1;;
+245-2_PE_5;245-2_PE;245-2;PE;5;Abax (Abax) parallelepipedus;abat;3;;
+245-2_PN_5;245-2_PN;245-2;PN;5;Carabus (Megodontus) violaceus;cavi;9;;
+245-2_PN_5;245-2_PN;245-2;PN;5;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PS_5;245-2_PS;245-2;PS;5;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PS_5;245-2_PS;245-2;PS;5;Carabus (Megodontus) violaceus;cavi;5;;
+245-2_PS_5;245-2_PS;245-2;PS;5;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PS_5;245-2_PS;245-2;PS;5;Carabus (Procrustes) coriaceus;cacr;1;;
+245-2_PW_5;245-2_PW;245-2;PW;5;Carabus (Megodontus) violaceus;cavi;3;;
+255-1_PE_5;255-1_PE;255-1;PE;5;Carabus (Archicarabus) nemoralis;cane;2;;
+255-1_PE_5;255-1_PE;255-1;PE;5;Carabus (Megodontus) violaceus;cavi;2;;
+255-1_PE_5;255-1_PE;255-1;PE;5;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PN_5;255-1_PN;255-1;PN;5;Abax (Abax) parallelus;abpa;3;;
+255-1_PN_5;255-1_PN;255-1;PN;5;Carabus (Archicarabus) nemoralis;cane;1;;
+255-1_PS_5;255-1_PS;255-1;PS;5;Carabus (Archicarabus) nemoralis;cane;1;;
+255-1_PS_5;255-1_PS;255-1;PS;5;Carabus (Megodontus) violaceus;cavi;1;;
+255-1_PS_5;255-1_PS;255-1;PS;5;Metallina (Metallina) lampros;mela;2;X;
+255-1_PS_5;255-1_PS;255-1;PS;5;Pterostichus (Steropus) madidus;ptma;1;;
+255-1_PS_5;255-1_PS;255-1;PS;5;Limodromus assimilis;lias;1;boite;
+255-1_PW_5;255-1_PW;255-1;PW;5;Carabus (Tomocarabus) convexus;cacv;1;;
+255-1_PW_5;255-1_PW;255-1;PW;5;Carabus (Mesocarabus) problematicus;capr;2;;
+255-1_PW_5;255-1_PW;255-1;PW;5;Abax (Abax) parallelus;abpa;2;;
+45-4_PN_5;45-4_PN;45-4;PN;5;Carabus (Archicarabus) nemoralis;cane;1;;
+45-4_PN_5;45-4_PN;45-4;PN;5;Synuchus vivalis;syvi;1;X;
+45-4_PS_5;45-4_PS;45-4;PS;5;0;0;0;;
+45-4_PW_5;45-4_PW;45-4;PW;5;Abax (Abax) parallelepipedus;abat;5;;
+50-3_PE_5;50-3_PE;50-3;PE;5;Pterostichus (Platysma) niger;ptni;1;;
+50-3_PN_5;50-3_PN;50-3;PN;5;Carabus (Megodontus) violaceus;cavi;3;;
+50-3_PN_5;50-3_PN;50-3;PN;5;Abax (Abax) parallelepipedus;abat;2;;
+50-3_PN_5;50-3_PN;50-3;PN;5;Pterostichus (Platysma) niger;ptni;2;;
+50-3_PS_5;50-3_PS;50-3;PS;5;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PS_5;50-3_PS;50-3;PS;5;Carabus (Tachypus) auratus;caau;1;;
+50-3_PW_5;50-3_PW;50-3;PW;5;Abax (Abax) parallelepipedus;abat;2;;
+50-3_PW_5;50-3_PW;50-3;PW;5;Carabus (Megodontus) violaceus;cavi;1;;
+61-3_PE_5;61-3_PE;61-3;PE;5;0;0;0;;
+61-4_PE_5;61-4_PE;61-4;PE;5;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PE_5;61-4_PE;61-4;PE;5;Carabus (Archicarabus) nemoralis;cane;1;;
+61-4_PE_5;61-4_PE;61-4;PE;5;Pterostichus (Platysma) niger;ptni;1;;
+61-4_PS_5;61-4_PS;61-4;PS;5;Pterostichus (Morphnosoma) melanarius;ptme;1;;
+61-4_PW_5;61-4_PW;61-4;PW;5;Abax (Abax) parallelus;abpa;1;;
+75-4_PN_5;75-4_PN;75-4;PN;5;Abax (Abax) ovalis;abov;1;;
+75-4_PN_5;75-4_PN;75-4;PN;5;Abax (Abax) parallelepipedus;abat;1;;
+75-4_PN_5;75-4_PN;75-4;PN;5;Carabus (Megodontus) violaceus;cavi;3;;
+75-4_PS_5;75-4_PS;75-4;PS;5;Abax (Abax) parallelepipedus;abat;3;;
+75-4_PS_5;75-4_PS;75-4;PS;5;Abax (Abax) ovalis;abov;1;;
+75-4_PS_5;75-4_PS;75-4;PS;5;Abax (Abax) parallelus;abpa;2;;
+14-1_PN_6;14-1_PN;14-1;PN;6;Carabus (Archicarabus) nemoralis;cane;2;;
+14-1_PN_6;14-1_PN;14-1;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+14-1_PW_6;14-1_PW;14-1;PW;6;0;0;0;;
+14-2_PE_6;14-2_PE;14-2;PE;6;0;0;0;;
+14-2_PN_6;14-2_PN;14-2;PN;6;Abax (Abax) parallelepipedus;abat;1;;
+14-2_PN_6;14-2_PN;14-2;PN;6;Carabus (Archicarabus) nemoralis;cane;1;;
+14-2_PN_6;14-2_PN;14-2;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+14-2_PS_6;14-2_PS;14-2;PS;6;Carabus (Mesocarabus) problematicus;capr;3;;
+14-2_PW_6;14-2_PW;14-2;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+14-2_PW_6;14-2_PW;14-2;PW;6;Abax (Abax) parallelepipedus;abat;1;;
+15-2_PW_6;15-2_PW;15-2;PW;6;Abax (Abax) parallelepipedus;abat;1;;
+110-4_PS_6;110-4_PS;110-4;PS;6;Carabus (Archicarabus) nemoralis;cane;1;;
+110-4_PS_6;110-4_PS;110-4;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+110-4_PW_6;110-4_PW;110-4;PW;6;Carabus (Megodontus) violaceus;cavi;1;;
+110-4_PW_6;110-4_PW;110-4;PW;6;Carabus (Mesocarabus) problematicus;capr;2;;
+111-1_PE_6;111-1_PE;111-1;PE;6;Carabus (Mesocarabus) problematicus;capr;2;;
+111-1_PN_6;111-1_PN;111-1;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+111-1_PN_6;111-1_PN;111-1;PN;6;Carabus (Archicarabus) nemoralis;cane;1;;
+111-1_PN_6;111-1_PN;111-1;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PS_6;111-1_PS;111-1;PS;6;Abax (Abax) parallelepipedus;abat;1;;
+111-1_PS_6;111-1_PS;111-1;PS;6;Carabus (Archicarabus) nemoralis;cane;5;;
+111-1_PS_6;111-1_PS;111-1;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PW_6;111-1_PW;111-1;PW;6;Carabus (Megodontus) violaceus;cavi;1;;
+111-1_PW_6;111-1_PW;111-1;PW;6;Abax (Abax) parallelus;abpa;1;;
+111-3_PE_6;111-3_PE;111-3;PE;6;Carabus (Archicarabus) nemoralis;cane;3;;
+111-3_PE_6;111-3_PE;111-3;PE;6;Carabus (Megodontus) violaceus;cavi;3;;
+111-3_PE_6;111-3_PE;111-3;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;
+111-3_PN_6;111-3_PN;111-3;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+111-3_PN_6;111-3_PN;111-3;PN;6;Pterostichus (Platysma) niger;ptni;1;;
+111-3_PS_6;111-3_PS;111-3;PS;6;Carabus (Archicarabus) nemoralis;cane;1;;
+111-3_PS_6;111-3_PS;111-3;PS;6;Carabus (Megodontus) violaceus;cavi;2;;
+111-3_PS_6;111-3_PS;111-3;PS;6;Pterostichus (Steropus) madidus;ptma;1;X;
+111-3_PW_6;111-3_PW;111-3;PW;6;Carabus (Megodontus) violaceus;cavi;2;;
+111-3_PW_6;111-3_PW;111-3;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+111-3_PW_6;111-3_PW;111-3;PW;6;Carabus (Archicarabus) nemoralis;cane;2;;
+125-3_PN_6;125-3_PN;125-3;PN;6;0;0;0;;
+139-2_PE_6;139-2_PE;139-2;PE;6;Carabus (Megodontus) violaceus;cavi;1;;
+139-2_PN_6;139-2_PN;139-2;PN;6;0;0;0;;
+139-2_PS_6;139-2_PS;139-2;PS;6;Carabus (Mesocarabus) problematicus;capr;5;;
+139-2_PW_6;139-2_PW;139-2;PW;6;Carabus (Mesocarabus) problematicus;capr;2;;
+139-4_PE_6;139-4_PE;139-4;PE;6;0;0;0;;
+139-4_PS_6;139-4_PS;139-4;PS;6;0;0;0;;
+144-3_PS_6;144-3_PS;144-3;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-2_PE_6;166-2_PE;166-2;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;
+166-2_PE_6;166-2_PE;166-2;PE;6;Carabus (Archicarabus) nemoralis;cane;2;;
+166-2_PE_6;166-2_PE;166-2;PE;6;Abax (Abax) parallelepipedus;abat;1;;
+166-2_PN_6;166-2_PN;166-2;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-2_PS_6;166-2_PS;166-2;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-2_PW_6;166-2_PW;166-2;PW;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-2_PW_6;166-2_PW;166-2;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+166-4_PE_6;166-4_PE;166-4;PE;6;Carabus (Mesocarabus) problematicus;capr;3;;
+166-4_PE_6;166-4_PE;166-4;PE;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-4_PE_6;166-4_PE;166-4;PE;6;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PN_6;166-4_PN;166-4;PN;6;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PN_6;166-4_PN;166-4;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-4_PS_6;166-4_PS;166-4;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+166-4_PS_6;166-4_PS;166-4;PS;6;Carabus (Archicarabus) nemoralis;cane;2;;
+166-4_PS_6;166-4_PS;166-4;PS;6;Abax (Abax) parallelus;abpa;1;;
+166-4_PW_6;166-4_PW;166-4;PW;6;Carabus (Archicarabus) nemoralis;cane;1;;
+166-4_PW_6;166-4_PW;166-4;PW;6;Carabus (Megodontus) violaceus;cavi;3;;
+215-2_PE_6;215-2_PE;215-2;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;
+215-2_PN_6;215-2_PN;215-2;PN;6;Carabus (Mesocarabus) problematicus;capr;6;;
+215-2_PS_6;215-2_PS;215-2;PS;6;Abax (Abax) parallelepipedus;abat;1;;
+215-2_PS_6;215-2_PS;215-2;PS;6;Carabus (Megodontus) violaceus;cavi;2;;
+215-2_PS_6;215-2_PS;215-2;PS;6;Lebia marginata;lema;1;;oubli saisie
+215-2_PW_6;215-2_PW;215-2;PW;6;0;0;0;;
+215-3_PE_6;215-3_PE;215-3;PE;6;Carabus (Megodontus) violaceus;cavi;1;;oubli saie
+215-3_PE_6;215-3_PE;215-3;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;oubli saie
+215-3_PE_6;215-3_PE;215-3;PE;6;Carabus (Procrustes) coriaceus;cacr;1;;oubli saie
+215-3_PN_6;215-3_PN;215-3;PN;6;0;0;0;;
+215-3_PS_6;215-3_PS;215-3;PS;6;Carabus (Mesocarabus) problematicus;capr;1;;
+215-3_PS_6;215-3_PS;215-3;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+215-3_PW_6;215-3_PW;215-3;PW;6;Carabus (Mesocarabus) problematicus;capr;2;;
+216-4_PE_6;216-4_PE;216-4;PE;6;Carabus (Mesocarabus) problematicus;capr;2;;
+216-4_PN_6;216-4_PN;216-4;PN;6;Carabus (Megodontus) violaceus;cavi;4;;
+216-4_PS_6;216-4_PS;216-4;PS;6;0;0;0;;
+216-4_PW_6;216-4_PW;216-4;PW;6;Carabus (Archicarabus) nemoralis;cane;1;;
+216-4_PW_6;216-4_PW;216-4;PW;6;Carabus (Megodontus) violaceus;cavi;2;;
+216-4_PW_6;216-4_PW;216-4;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+216-4_PW_6;216-4_PW;216-4;PW;6;Carabus (Procrustes) coriaceus;cacr;1;;
+219-1_PE_6;219-1_PE;219-1;PE;6;Carabus (Archicarabus) nemoralis;cane;1;;
+219-1_PE_6;219-1_PE;219-1;PE;6;Carabus (Megodontus) violaceus;cavi;3;;
+219-1_PN_6;219-1_PN;219-1;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PN_6;219-1_PN;219-1;PN;6;Abax (Abax) parallelus;abpa;1;;
+219-1_PN_6;219-1_PN;219-1;PN;6;Carabus (Procrustes) coriaceus;cacr;2;;
+219-1_PS_6;219-1_PS;219-1;PS;6;Carabus (Megodontus) violaceus;cavi;3;;
+219-1_PS_6;219-1_PS;219-1;PS;6;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PW_6;219-1_PW;219-1;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+219-1_PW_6;219-1_PW;219-1;PW;6;Carabus (Megodontus) violaceus;cavi;2;;
+219-4_PE_6;219-4_PE;219-4;PE;6;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PE_6;219-4_PE;219-4;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;
+219-4_PN_6;219-4_PN;219-4;PN;6;Carabus (Mesocarabus) problematicus;capr;2;;
+219-4_PN_6;219-4_PN;219-4;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PN_6;219-4_PN;219-4;PN;6;Abax (Abax) parallelepipedus;abat;1;;
+219-4_PS_6;219-4_PS;219-4;PS;6;Carabus (Archicarabus) nemoralis;cane;1;;
+219-4_PS_6;219-4_PS;219-4;PS;6;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PS_6;219-4_PS;219-4;PS;6;Carabus (Mesocarabus) problematicus;capr;5;;
+219-4_PS_6;219-4_PS;219-4;PS;6;Carabus (Procrustes) coriaceus;cacr;1;;
+219-4_PW_6;219-4_PW;219-4;PW;6;Carabus (Procrustes) coriaceus;cacr;1;;
+219-4_PW_6;219-4_PW;219-4;PW;6;Carabus (Megodontus) violaceus;cavi;1;;
+219-4_PW_6;219-4_PW;219-4;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+245-2_PE_6;245-2_PE;245-2;PE;6;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PN_6;245-2_PN;245-2;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+245-2_PN_6;245-2_PN;245-2;PN;6;Abax (Abax) parallelepipedus;abat;1;;
+245-2_PS_6;245-2_PS;245-2;PS;6;Carabus (Mesocarabus) problematicus;capr;2;;
+245-2_PS_6;245-2_PS;245-2;PS;6;Carabus (Megodontus) violaceus;cavi;3;;
+245-2_PW_6;245-2_PW;245-2;PW;6;Carabus (Megodontus) violaceus;cavi;2;;
+255-1_PE_6;255-1_PE;255-1;PE;6;Carabus (Procrustes) coriaceus;cacr;2;;
+255-1_PE_6;255-1_PE;255-1;PE;6;Carabus (Archicarabus) nemoralis;cane;17;;
+255-1_PE_6;255-1_PE;255-1;PE;6;Abax (Abax) parallelepipedus;abat;2;;
+255-1_PN_6;255-1_PN;255-1;PN;6;Abax (Abax) parallelus;abpa;1;;
+255-1_PN_6;255-1_PN;255-1;PN;6;Carabus (Archicarabus) nemoralis;cane;1;;
+255-1_PN_6;255-1_PN;255-1;PN;6;Carabus (Megodontus) violaceus;cavi;3;;
+255-1_PN_6;255-1_PN;255-1;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+255-1_PN_6;255-1_PN;255-1;PN;6;Carabus (Procrustes) coriaceus;cacr;1;;
+255-1_PS_6;255-1_PS;255-1;PS;6;Carabus (Mesocarabus) problematicus;capr;1;;
+255-1_PS_6;255-1_PS;255-1;PS;6;Carabus (Archicarabus) nemoralis;cane;1;;
+255-1_PS_6;255-1_PS;255-1;PS;6;Abax (Abax) parallelepipedus;abat;1;;
+255-1_PS_6;255-1_PS;255-1;PS;6;Abax (Abax) parallelus;abpa;1;;
+255-1_PS_6;255-1_PS;255-1;PS;6;Nebria (Nebria) brevicollis;nebr;3;carni;oubli saisie, noté fiche mais pas sur feuille JF
+255-1_PW_6;255-1_PW;255-1;PW;6;Carabus (Archicarabus) nemoralis;cane;2;;
+255-1_PW_6;255-1_PW;255-1;PW;6;Carabus (Mesocarabus) problematicus;capr;2;;
+45-4_PE_6;45-4_PE;45-4;PE;6;Carabus (Archicarabus) nemoralis;cane;2;;
+45-4_PE_6;45-4_PE;45-4;PE;6;Carabus (Mesocarabus) problematicus;capr;1;;
+45-4_PE_6;45-4_PE;45-4;PE;6;Nebria (Nebria) brevicollis;nebr;2;carni;oubli saisie, noté fiche mais pas sur feuille JF
+45-4_PN_6;45-4_PN;45-4;PN;6;Carabus (Archicarabus) nemoralis;cane;1;;
+45-4_PN_6;45-4_PN;45-4;PN;6;Carabus (Megodontus) violaceus;cavi;1;;
+45-4_PN_6;45-4_PN;45-4;PN;6;Abax (Abax) parallelepipedus;abat;2;;
+45-4_PS_6;45-4_PS;45-4;PS;6;Carabus (Mesocarabus) problematicus;capr;2;;
+45-4_PW_6;45-4_PW;45-4;PW;6;Carabus (Mesocarabus) problematicus;capr;3;;
+45-4_PW_6;45-4_PW;45-4;PW;6;Carabus (Archicarabus) nemoralis;cane;3;;
+50-3_PE_6;50-3_PE;50-3;PE;6;Abax (Abax) parallelus;abpa;3;;
+50-3_PE_6;50-3_PE;50-3;PE;6;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PN_6;50-3_PN;50-3;PN;6;Abax (Abax) parallelepipedus;abat;1;;
+50-3_PN_6;50-3_PN;50-3;PN;6;Carabus (Mesocarabus) problematicus;capr;2;;
+50-3_PS_6;50-3_PS;50-3;PS;6;Carabus (Mesocarabus) problematicus;capr;2;;
+50-3_PW_6;50-3_PW;50-3;PW;6;Carabus (Archicarabus) nemoralis;cane;2;;
+50-3_PW_6;50-3_PW;50-3;PW;6;Abax (Abax) parallelepipedus;abat;1;;
+61-4_PE_6;61-4_PE;61-4;PE;6;0;0;0;;
+61-4_PN_6;61-4_PN;61-4;PN;6;Abax (Abax) parallelus;abpa;1;;
+61-4_PS_6;61-4_PS;61-4;PS;6;0;0;0;;
+75-4_PE_6;75-4_PE;75-4;PE;6;Abax (Abax) parallelus;abpa;1;;
+75-4_PE_6;75-4_PE;75-4;PE;6;Carabus (Archicarabus) nemoralis;cane;3;;
+75-4_PE_6;75-4_PE;75-4;PE;6;Carabus (Megodontus) violaceus;cavi;1;;
+75-4_PN_6;75-4_PN;75-4;PN;6;Carabus (Archicarabus) nemoralis;cane;4;;
+75-4_PN_6;75-4_PN;75-4;PN;6;Carabus (Mesocarabus) problematicus;capr;1;;
+75-4_PN_6;75-4_PN;75-4;PN;6;Abax (Abax) parallelus;abpa;2;;
+75-4_PS_6;75-4_PS;75-4;PS;6;Abax (Abax) parallelepipedus;abat;2;;erreur saisie : conf abpa et abat
+75-4_PS_6;75-4_PS;75-4;PS;6;Abax (Abax) ovalis;abov;2;;
+75-4_PS_6;75-4_PS;75-4;PS;6;Carabus (Archicarabus) nemoralis;cane;3;;
+75-4_PS_6;75-4_PS;75-4;PS;6;Carabus (Mesocarabus) problematicus;capr;2;;
+75-4_PW_6;75-4_PW;75-4;PW;6;Carabus (Mesocarabus) problematicus;capr;1;;
+75-4_PW_6;75-4_PW;75-4;PW;6;Carabus (Archicarabus) nemoralis;cane;11;;
+75-4_PW_6;75-4_PW;75-4;PW;6;Abax (Abax) parallelepipedus;abat;2;;oubli saisie

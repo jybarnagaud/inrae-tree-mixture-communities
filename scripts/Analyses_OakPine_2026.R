@@ -783,7 +783,7 @@ testUniformity(sim)#le qqplot est issu de cette commande
 #KS Test p-value 0.14 # Dispersion test 0.016 # Outliers 1 
 testOutliers(sim) # RAS
 
-#linear positive effect of tree mixture on generalist pecies richness
+#linear positive effect of tree mixture on generalist species richness
 
 
 

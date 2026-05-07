@@ -28,104 +28,27 @@ setwd("C:/Users/farchaux/Documents/OakPine/inrae-tree-mixture-communities/data")
 ##############################################################################################
 ##############################################################################################
 
-
 Carab.Rel.Env<-read.csv("Rel_Env_Carab_2026.csv", sep=";", header=T)
-dim(Carab.Rel.Env)
 
-#Reducing the number of levels of ground vegetation type Fougère-Aigle, Molinie, Autres végétations)
-Carab.Rel.Env$veg1[Carab.Rel.Env$veg1=="BRYO"]<-"Other"
-Carab.Rel.Env$veg1[Carab.Rel.Env$veg1=="CH300"]<-"Other"
-Carab.Rel.Env$veg1[Carab.Rel.Env$veg1=="CH600"]<-"Other"
-Carab.Rel.Env$veg1[Carab.Rel.Env$veg1=="RON"]<-"Other"
-
-#Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
-Carab.Rel.Env$MEL_cat<- factor(Carab.Rel.Env$MEL_cat, levels = c("Pine", "Mixed", "Oak"))
-Carab.Rel.Env$MEL_cercle_cat<- factor(Carab.Rel.Env$MEL_cat, levels = c("Pine", "Mixed", "Oak"))
-
-hist(Carab.Rel.Env$RS_all) #family Poisson
-hist(Carab.Rel.Env$Abdce_all) #family nbinom1 in glmmTMB
-
-
-plot(x=Carab.Rel.Env$G_Ch_PS,y=Carab.Rel.Env$taux_veg1)
-
-plot(Carab.Rel.Env$RS_all~Carab.Rel.Env$MEL_parcelle)
-
-
-# Visual inspection of total abundance and local tree mixture
-gam_model <- gam(Abdce_all ~ s(MEL_cercle,k=2), data = Carab.Rel.Env)
-
-# Create prediction grid
-MEL_cercle_seq <- seq(min(Carab.Rel.Env$MEL_cercle), max(Carab.Rel.Env$MEL_cercle), length.out = 200)
-pred <- predict(
-  gam_model,
-  newdata = data.frame(MEL_cercle = MEL_cercle_seq),
-  se.fit = TRUE
-)
-
-# Compute 95% CI
-crit <- qnorm(0.975)  # 1.96 for 95%
-pred_df <- data.frame(
-  MEL_cercle = MEL_cercle_seq,
-  fit = pred$fit,
-  lower = pred$fit - crit * pred$se.fit,
-  upper = pred$fit + crit * pred$se.fit
-)
-
-# Plot with ggplot2
-ggplot(pred_df, aes(x = MEL_cercle, y = fit)) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
-  geom_line(color = "blue", size = 1) +
-  geom_point(data = Carab.Rel.Env, aes(x = MEL_cercle, y = Abdce_all), color = "black") +
-  labs(title = "GAM: Abdce_all ~ s(MEL_cercle) with 95% CI", x = "Deciduous basal area (%)", y = "Number of individuals (all species)") +
-  theme_minimal()
-
-boxplot(Carab.Rel.Env$Abdce_all~Carab.Rel.Env$MEL_cercle_cat) #donne l'impression que l'abondance est maximale dans les pins purs
-
-# Visual inspection of taxonomic richness and local tree mixture
-gam_model <- gam(RS_all ~ s(MEL_cercle), data = Carab.Rel.Env)
-
-# Create prediction grid
-MEL_cercle_seq <- seq(min(Carab.Rel.Env$MEL_cercle), max(Carab.Rel.Env$MEL_cercle), length.out = 200)
-pred <- predict(
-  gam_model,
-  newdata = data.frame(MEL_cercle = MEL_cercle_seq),
-  se.fit = TRUE
-)
-
-# Compute 95% CI
-crit <- qnorm(0.975)  # 1.96 for 95%
-pred_df <- data.frame(
-  MEL_cercle = MEL_cercle_seq,
-  fit = pred$fit,
-  lower = pred$fit - crit * pred$se.fit,
-  upper = pred$fit + crit * pred$se.fit
-)
-
-# Plot with ggplot2
-ggplot(pred_df, aes(x = MEL_cercle, y = fit)) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
-  geom_line(color = "blue", size = 1) +
-  geom_point(data = Carab.Rel.Env, aes(x = MEL_cercle, y = RS_all), color = "black") +
-  labs(title = "GAM: RS_all ~ s(MEL_cercle) with 95% CI", x = "Deciduous basal area (%)", y = "Species richness (all)") +
-  theme_minimal()
-
-boxplot(Carab.Rel.Env$RS_all~Carab.Rel.Env$MEL_cercle_cat)
-  
 ####################################################################################################################################
-#Test for linear or quadratic relationship of taxonomic diversity/total abundance and local tree mixture using glmmTMB to account for a random site (parcelle) effect
+#### CARABIDS - GLMMM
 ####################################################################################################################################
+
+###CARABIDS - Species richness
+
+#CARABIDS - Statistical distribution
 
 descdist(Carab.Rel.Env$RS_all,discrete=TRUE,boot=1001)
-plot(fitdist(Carab.Rel.Env$RS_all,"norm"))
-fitnb<-fitdist(Carab.Rel.Env$RS_all,"nbinom")
-fitp<-fitdist(Carab.Rel.Env$RS_all,"pois")
-fitn<-fitdist(Carab.Rel.Env$RS_all,"norm")
-fitlnorm<-fitdist(Carab.Rel.Env$RS_all,"lnorm")
-fitexp<-fitdist(Carab.Rel.Env$RS_all,"exp")
-fitgeom<-fitdist(Carab.Rel.Env$RS_all,"geom")
-fitbeta<-fitdist(Carab.Rel.Env$RS_all,"beta")
-fitunif<-fitdist(Carab.Rel.Env$RS_all,"unif")
-fitg<-fitdist(Carab.Rel.Env$RS_all,"gamma",method="mme")
+plot(fitdist(Carab.Rel.Env$SS_all,"norm"))
+fitnb<-fitdist(Carab.Rel.Env$SR_all,"nbinom")
+fitp<-fitdist(Carab.Rel.Env$SR_all,"pois")
+fitn<-fitdist(Carab.Rel.Env$SR_all,"norm")
+fitlnorm<-fitdist(Carab.Rel.Env$SR_all,"lnorm")
+fitexp<-fitdist(Carab.Rel.Env$SR_all,"exp")
+fitgeom<-fitdist(Carab.Rel.Env$SR_all,"geom")
+fitbeta<-fitdist(Carab.Rel.Env$SR_all,"beta")
+fitunif<-fitdist(Carab.Rel.Env$SR_all,"unif")
+fitg<-fitdist(Carab.Rel.Env$SR_all,"gamma",method="mme")
 gofstat(fitnb)$chisqpvalue
 gofstat(fitp)$chisqpvalue
 gofstat(fitn)$chisqpvalue
@@ -136,13 +59,76 @@ gofstat(fitunif)$chisqpvalue
 gofstat(fibeta)$chisqpvalue
 gofstat(fitg)$chisqpvalue
 
-glmm_RS_all<-glmmTMB(RS_all~G_all_cercle+veg1+I(MEL_cercle/100)+I((MEL_cercle/100)^2)+(1|plot),family=poisson,data=Carab.Rel.Env)
-summary(glmm_RS_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, taux_veg1=0.83, AIC=285.2
+#CARABIDS - SR all species with quadratic effect of tree mixture
 
-glmm_RS_all<-glmmTMB(RS_all~G_all_cercle+veg1+I(MEL_cercle/100)+(1|plot),family=poisson,data=Carab.Rel.Env)
-summary(glmm_RS_all) #simple effect, p=0.0377, AIC=284.3
+glmm_RS_all<-glmmTMB(SR_all~G_all_plot+I(mel_plot/100)+I((mel_plot/100)^2)+(1|stand),family=poisson,data=Carab.Rel.Env)
+summary(glmm_RS_all)
+# Family: poisson  ( log )
+#Formula:          SR_all ~ G_all_plot + I(mel_plot/100) + I((mel_plot/100)^2) +      (1 | stand)
+#Data: Carab.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#285.4     296.5    -137.7     275.4        63 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#stand  (Intercept) 4.677e-10 2.163e-05
+#Number of obs: 68, groups:  stand, 15
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          1.13172    0.30618   3.696 0.000219 ***
+#  G_all_plot           0.01704    0.01017   1.675 0.093928 .  
+#I(mel_plot/100)      0.68892    0.59584   1.156 0.247594    
+#I((mel_plot/100)^2) -0.40080    0.60261  -0.665 0.505983 
+AICc(glmm_RS_all) #286.3324
 
-#Test for linear or quadratic relationship of total abundance and local tree mixture using glmmTMB to account for a random site (parcelle) effect
+#CARABIDS - SR all species with simple effect of tree mixture
+
+glmm_RS_all<-glmmTMB(SR_all~G_all_plot+I(mel_plot/100)+(1|stand),family=poisson,data=Carab.Rel.Env)
+summary(glmm_RS_all)
+# Family: poisson  ( log )
+#Formula:          SR_all ~ G_all_plot + I(mel_plot/100) + (1 | stand)
+#Data: Carab.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#283.8     292.7    -137.9     275.8        64 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#stand  (Intercept) 2.639e-10 1.624e-05
+#Number of obs: 68, groups:  stand, 15
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)     1.130849   0.304644   3.712 0.000206 ***
+#  G_all_plot      0.018681   0.009855   1.896 0.058023 .  
+#I(mel_plot/100) 0.307193   0.160231   1.917 0.055214 . 
+AICc(glmm_RS_all)#284.4429
+
+# Create prediction grid
+mel_seq <- seq(min(Carab.Rel.Env$mel_plot), max(Carab.Rel.Env$mel_plot), length.out = 200)
+G_all_moy<-mean(Carab.Rel.Env$G_all_plot)
+G_all_seq<-rep(G_all_moy,200)
+stand_seq<-rep("245",200)
+pred <- predict(
+  glmm_RS_all,
+  newdata = data.frame(G_all_plot=G_all_seq,mel_plot=mel_seq,stand=stand_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  mel_plot = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = mel_plot, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Carab.Rel.Env, aes(x = mel_plot, y = SR_all), color = "black") +
+  labs(x = "Mixture (% oak vs pine+oak)", y = "Number of carabid species (all)") +
+  theme_minimal()
+
+#CARABIDS - Abundance all species with quadratic effect of tree mixture
 
 descdist(Carab.Rel.Env$Abdce_all,discrete=TRUE,boot=1001)
 plot(fitdist(Carab.Rel.Env$Abdce_all,"norm"))
@@ -165,44 +151,63 @@ gofstat(fitunif)$chisqpvalue
 gofstat(fibeta)$chisqpvalue
 gofstat(fitg)$chisqpvalue
 
-glmm_Abdce_all_nb<-glmmTMB(Abdce_all~G_all+I(MEL_cercle/100)+I((MEL_cercle/100)^2)+(1|plot),family=nbinom1(),data=Carab.Rel.Env)
-summary(glmm_Abdce_all_nb)#G coeff=0.06 p=0.03, MEL coeff=1.42 p=0.036, MEL^2 coeff=-0.91 p=0.145 AIC 539.7
-
-sim<-simulateResiduals(glmm_Abdce_all_nb)
-testUniformity(sim)#le qqplot est issu de cette commande 
-#KS Test p-value # Dispersion test  # Outliers 
-testOutliers(sim)
-
+glmm_Abdce_all_nb<-glmmTMB(Abdce_all~G_all_plot+I(mel_plot/100)+I((mel_plot/100)^2)+(1|stand),family=nbinom1(),data=Carab.Rel.Env)
+summary(glmm_Abdce_all_nb) 
+# Family: nbinom1  ( log )
+#Formula:          Abdce_all ~ G_all_plot + I(mel_plot/100) + I((mel_plot/100)^2) +      (1 | stand)
 #Data: Carab.Rel.Env
 #AIC       BIC    logLik -2*log(L)  df.resid 
-#540.1     553.4    -264.1     528.1        62 
-#
+#529.9     543.2    -259.0     517.9        62 
 #Random effects:
-#  
 #  Conditional model:
 #  Groups Name        Variance Std.Dev.
-#plot   (Intercept) 0.2262   0.4756  
-#Number of obs: 68, groups:  plot, 22
-#
-#Dispersion parameter for nbinom1 family (): 2.48 
-#
+#stand  (Intercept) 0.1954   0.4421  
+#Number of obs: 68, groups:  stand, 15
+#Dispersion parameter for nbinom1 family ():  2.5 
 #Conditional model:
-#  Estimate Std. Error z value Pr(>|z|)  
-#(Intercept)            1.73109    0.73971   2.340   0.0193 *
-#  G_all                  0.04596    0.02820   1.630   0.1031  
-#I(MEL_cercle/100)      1.26356    0.67067   1.884   0.0596 .
-#I((MEL_cercle/100)^2) -0.90799    0.63215  -1.436   0.1509  
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          2.29510    0.43777   5.243 1.58e-07 ***
+#  G_all_plot           0.03039    0.01521   1.998   0.0457 *  
+#  I(mel_plot/100)      0.38686    0.98283   0.394   0.6939    
+#I((mel_plot/100)^2) -0.16514    0.98353  -0.168   0.8667 
 
+sim<-simulateResiduals(glmm_Abdce_all_nb)
+testUniformity(sim)#D = 0.06594, p-value = 0.9099 
+#KS Test p-value # Dispersion test  # Outliers 
+testOutliers(sim) #p-value = 1
 
+#CARABIDS - Abundance all species with simple effect of tree mixture
+
+glmm_Abdce_all_nb<-glmmTMB(Abdce_all~G_all_plot+I(mel_plot/100)+(1|stand),family=nbinom1(),data=Carab.Rel.Env)
+summary(glmm_Abdce_all_nb) 
+#Family: nbinom1  ( log )
+#Formula:          Abdce_all ~ G_all_plot + I(mel_plot/100) + (1 | stand)
+#Data: Carab.Rel.Env
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#528.0     539.1    -259.0     518.0        63 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance Std.Dev.
+#stand  (Intercept) 0.1966   0.4433  
+#Number of obs: 68, groups:  stand, 15
+#Dispersion parameter for nbinom1 family ():  2.5 
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)      2.29012    0.43665   5.245 1.57e-07 ***
+#  G_all_plot       0.03121    0.01440   2.167   0.0303 *  
+#  I(mel_plot/100)  0.23098    0.32166   0.718   0.4727
+
+ggplot(Carab.Rel.Env, aes(x = mel_plot, y = Abdce_all))+  
+         geom_point()+
+  labs(x = "Mixture (% oak vs pine+oak)", y = "Abundance of ground beetles (all species)") +
+  theme_minimal()
 
 # #magnitude
 #récupérer les valeurs de Estimate et Std. Error pour la variable d’intérêt X
-Estimate_mod<-rnorm(10000,mean=37.7373,sd=18.2535)
+Estimate_mod<-rnorm(10000,mean=0.23098,0.32166)
 DX<-exp(Estimate_mod*0.1)-1 #pour un delta de X de 10 (%)
 mean(DX)
 quantile(DX, c(0.01, 0.99))
-
-#positive effect of basal area and tree mixture (potentially humped-shaped)
 
 
 #####################################################
@@ -212,6 +217,8 @@ quantile(DX, c(0.01, 0.99))
 Carab.Rel.Spe<-read.csv("Rel_Sp_Carab_2026.csv", sep=";", header=T)
 # Analyse en composantes principales
 Carab_acp <- PCA(Carab.Rel.Spe[,c(2:29)], graph = FALSE)
+Carab.Rel.Env$cat_mel_plot<- factor(Carab.Rel.Env$cat_mel_plot, levels = c("pine", "mixed", "oak"))
+
 
 # Visualisation avec regroupement par modalité
 fviz_pca_ind(
@@ -227,7 +234,7 @@ fviz_pca_ind(
 #####################################################
 Carab.rda <- rda(Carab.Rel.Spe[,c(2:29)])
 biplot(Carab.rda)
-ordiellipse(Carab.rda,group = Carab.Rel.Env$MEL_cercle_cat,col = c(1,2,3),label=TRUE)
+ordiellipse(Carab.rda,group = Carab.Rel.Env$cat_mel_plot,col = c(1,2,3),label=TRUE)
 
 ##################################################################################################
 ##############      RLQ analysis   ###############################################################
@@ -280,88 +287,11 @@ plot(bb$sampled.values)
 ##############################################################################################
 
 par(mfrow = c(1, 1))
-
 Bird.Rel.Env.Sp<-read.csv("Rel_Env_Sp_Bird_2026.csv", sep=";", header=T)
 dim(Bird.Rel.Env.Sp)
 
-rs.guild.saprox<-read.table("tabplotguilds.txt",header=T)
-
-
 #Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
-Bird.Rel.Env.Sp$MEL_cat<- factor(Bird.Rel.Env.Sp$MEL_point_cat, levels = c("Pine", "Mixed", "Oak"))
-
-hist(Bird.Rel.Env.Sp$SR_all) #family Poisson
-mean(Bird.Rel.Env.Sp$SR_all) #12.82
-var(Bird.Rel.Env.Sp$SR_all) #8.24 
-
-hist(Bird.Rel.Env.Sp$Abdce_all) #family Poisson
-mean(Bird.Rel.Env.Sp$Abdce_all) #19.76
-var(Bird.Rel.Env.Sp$Abdce_all) #23.37
-
-plot(Bird.Rel.Env.Sp$SR_all~Bird.Rel.Env.Sp$MEL_point)
-
-
-# Visual inspection of total abundance and local tree mixture
-gam_model <- gam(Abdce_all ~ s(MEL_point), data = Bird.Rel.Env.Sp)
-
-# Create prediction grid
-MEL_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
-pred <- predict(
-  gam_model,
-  newdata = data.frame(MEL_point = MEL_seq),
-  se.fit = TRUE
-)
-
-# Compute 95% CI
-crit <- qnorm(0.975)  # 1.96 for 95%
-pred_df <- data.frame(
-  MEL_point = MEL_seq,
-  fit = pred$fit,
-  lower = pred$fit - crit * pred$se.fit,
-  upper = pred$fit + crit * pred$se.fit
-)
-
-# Plot with ggplot2
-ggplot(pred_df, aes(x = MEL_point, y = fit)) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
-  geom_line(color = "blue", size = 1) +
-  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = Abdce_all), color = "black") +
-  labs(title = "GAM: Abdce_all ~ s(MEL_point) with 95% CI", x = "Deciduous basal area (%)", y = "Number of individuals (all species)") +
-  theme_minimal()
-
-#almost linear increase of total abundance with % of oak (although kind of plateau)
-
-boxplot(Bird.Rel.Env.Sp$Abdce_all~Bird.Rel.Env.Sp$MEL_cat) #plateauing increase of total abundance with proportion of oaks
-
-# Visual inspection of taxonomic richness and local tree mixture
-gam_model <- gam(SR_all ~ s(MEL,k=3), data = Bird.Rel.Env.Sp)
-
-# Create prediction grid
-MEL_seq <- seq(min(Bird.Rel.Env.Sp$MEL), max(Bird.Rel.Env.Sp$MEL), length.out = 200)
-pred <- predict(
-  gam_model,
-  newdata = data.frame(MEL = MEL_seq),
-  se.fit = TRUE
-)
-
-# Compute 95% CI
-crit <- qnorm(0.975)  # 1.96 for 95%
-pred_df <- data.frame(
-  MEL = MEL_seq,
-  fit = pred$fit,
-  lower = pred$fit - crit * pred$se.fit,
-  upper = pred$fit + crit * pred$se.fit
-)
-
-# Plot with ggplot2
-ggplot(pred_df, aes(x = MEL, y = fit)) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
-  geom_line(color = "blue", size = 1) +
-  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL, y = SR_all), color = "black") +
-  labs(title = "GAM: SR_all ~ s(MEL) with 95% CI", x = "Deciduous basal area (%)", y = "Species richness (all)") +
-  theme_minimal()
-
-boxplot(Bird.Rel.Env.Sp$SR_all~Bird.Rel.Env.Sp$MEL_cat) #globally same pattern as total abundance (plateau)
+Bird.Rel.Env.Sp$cat_mel_plot<- factor(Bird.Rel.Env.Sp$cat_mel_plot, levels = c("Pine", "Mixed", "Oak"))
 
 ####################################################################################################################################
 #######BIRDS - GLMM
@@ -369,39 +299,39 @@ boxplot(Bird.Rel.Env.Sp$SR_all~Bird.Rel.Env.Sp$MEL_cat) #globally same pattern a
 
 #### BIRDS - SR all species with quadratic effect of tree mixture
 
-glmm_SR_all<-glmmTMB(SR_all~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+glmm_SR_all<-glmmTMB(SR_all~G_all_plot+I(mel_plot/100)+I((mel_plot/100)^2)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_SR_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, taux_veg1=0.83, AIC=285.2
 #Estimate Std. Error z value Pr(>|z|)    
 #(Intercept)           2.363951   0.230875  10.239   <2e-16 ***
-#  G_all                -0.002286   0.008852  -0.258   0.7962    
-#I(MEL_point/100)      1.173185   0.508405   2.308   0.0210 *  
-#  I((MEL_point/100)^2) -1.016384   0.608559  -1.670   0.0949 .  
+#  G_all_plot                -0.002286   0.008852  -0.258   0.7962    
+#I(mel_plot/100)      1.173185   0.508405   2.308   0.0210 *  
+#  I((mel_plot/100)^2) -1.016384   0.608559  -1.670   0.0949 .  
 AICc(glmm_SR_all) #[1] 334.2836
 
 # Create prediction grid
-mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
-G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+mel_seq <- seq(min(Bird.Rel.Env.Sp$mel_plot), max(Bird.Rel.Env.Sp$mel_plot), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
 plot_seq<-rep(245,200)
 pred <- predict(
   glmm_SR_all,
-  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  newdata = data.frame(G_all_plot=G_all_seq,mel_plot = mel_seq,plot=plot_seq),type="response",re.form=NA,
   se.fit = TRUE)
 
 # Compute 95% CI
 crit <- qnorm(0.975)  # 1.96 for 95%
 pred_df <- data.frame(
-  MEL_point = mel_seq,
+  mel_plot = mel_seq,
   fit = pred$fit,
   lower = pred$fit - crit * pred$se.fit,
   upper = pred$fit + crit * pred$se.fit)
 
 # Plot with ggplot2
-ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+ggplot(pred_df, aes(x = mel_plot, y = fit)) +
   geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
   geom_line(color = "blue", size = 1) +
-  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = SR_all), color = "black") +
-  labs(title = "GLMM: SR_all ~ G + MEL +MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Number of bird species (all)") +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = mel_plot, y = SR_all), color = "black") +
+  labs(x = "Mixture (% oak vs pine+oak)", y = "Number of bird species (all)") +
   theme_minimal()
 
 #### BIRDS - SR all species with simple effect of tree mixture
@@ -416,7 +346,6 @@ AICc(glmm_SR_all) #334.7857
 
 
 #### BIRDS - SR Generalist species with quadratic effect of tree mixture
-
 
 glmm_SR_Generalist<-glmmTMB(SR_Generalist~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_SR_Generalist)
@@ -437,6 +366,7 @@ summary(glmm_SR_Generalist)
 #I(MEL_point/100)      1.095891   0.582534   1.881   0.0599 .  
 #I((MEL_point/100)^2) -0.969737   0.697061  -1.391   0.1642    
 AICc(glmm_SR_Generalist) #313.0802
+
 # Create prediction grid
 mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
 G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
@@ -627,49 +557,47 @@ ggplot(pred_df, aes(x = MEL_point, y = fit)) +
 ########################   BIRD Abundance
 ##################################################################################################
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+glmm_Abdce_all<-glmmTMB(Abdce_all~G_all_plot+I(mel_plot/100)+I((mel_plot/100)^2)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_Abdce_all)
 #(Intercept)           2.7729872  0.1855616  14.944   <2e-16 ***
-#  G_all                -0.0004843  0.0071010  -0.068   0.9456    
-#I(MEL_point/100)      0.9198519  0.4061184   2.265   0.0235 *  
-#  I((MEL_point/100)^2) -0.6660573  0.4838513  -1.377   0.1686  
+#  G_all_plot                -0.0004843  0.0071010  -0.068   0.9456    
+#I(mel_plot/100)      0.9198519  0.4061184   2.265   0.0235 *  
+#  I((mel_plot/100)^2) -0.6660573  0.4838513  -1.377   0.1686  
 AICc(glmm_Abdce_all) #388.9731
 
-glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+I(MEL_point/100)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+glmm_Abdce_all<-glmmTMB(Abdce_all~G_all_plot+I(mel_plot/100)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_Abdce_all)#G coeff=0.06 p=0.03, MEL coeff=0.48 p=0.0291, AIC 539.7
 #Estimate Std. Error z value Pr(>|z|)    
 #(Intercept)      2.8173088  0.1814950  15.523  < 2e-16 ***
-#  G_all            0.0003549  0.0070422   0.050 0.959803    
-#I(MEL_point/100) 0.3808931  0.1092179   3.487 0.000488 ***
+#  G_all_plot            0.0003549  0.0070422   0.050 0.959803    
+#I(mel_point/100) 0.3808931  0.1092179   3.487 0.000488 ***
 AICc(glmm_Abdce_all) #388.5486
 
-#Create prediction grid
-mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
-G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+# Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$mel_plot), max(Bird.Rel.Env.Sp$mel_plot), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
 plot_seq<-rep(245,200)
 pred <- predict(
   glmm_Abdce_all,
-  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  newdata = data.frame(G_all_plot=G_all_seq,mel_plot = mel_seq,plot=plot_seq),type="response",re.form=NA,
   se.fit = TRUE)
 
 # Compute 95% CI
 crit <- qnorm(0.975)  # 1.96 for 95%
 pred_df <- data.frame(
-  MEL_point = mel_seq,
+  mel_plot = mel_seq,
   fit = pred$fit,
   lower = pred$fit - crit * pred$se.fit,
   upper = pred$fit + crit * pred$se.fit)
 
 # Plot with ggplot2
-ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+ggplot(pred_df, aes(x = mel_plot, y = fit)) +
   geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
   geom_line(color = "blue", size = 1) +
-  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = Abdce_all), color = "black") +
-  labs(title = "GLMM: Abdce_all ~ G + MEL+MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Abundance of all bird species") +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = mel_plot, y = Abdce_all), color = "black") +
+  labs(x = "Mixture (% oak vs pine+oak)", y = "Abundance of bird species (all)") +
   theme_minimal()
-
-
 
 
 ###########################################################
@@ -695,8 +623,8 @@ fviz_pca_ind(
 
 Bird.rda <- rda(Bird.Rel.Env.Sp[,c(8:46)])
 biplot(Bird.rda,display = c("sites","species"),type = c("text","points"))
-#ordihull(Bird.rda,group = Bird.Rel.Env.Sp$MEL_point_cat,col = c(1,2,3),label=TRUE)
-ordiellipse(Bird.rda,group = Bird.Rel.Env.Sp$MEL_point_cat,col = c(1,2,3),label=TRUE)
+#ordihull(Bird.rda,group = Bird.Rel.Env.Sp$cat_mel_plot,col = c(1,2,3),label=TRUE)
+ordiellipse(Bird.rda,group = Bird.Rel.Env.Sp$cat_mel_plot,col = c(1,2,3),label=TRUE)
 
 ##############################################################
 ##############    BIRD - RLQ analysis   ###########################
@@ -723,11 +651,11 @@ s.label(rlq.Bird$lQ, label=Bird.Sp.Trait$Espece,boxes = TRUE)
 ###########################                IndVal          ####################################
 ###############################################################################################
 
-beta_bird<-beta.div(Bird.Rel.Env.Sp[,c(8:46)])
+beta_bird<-beta.div(Bird.Rel.Env.Sp[,c(7:45)])
 plot(Bird.Rel.Env.Sp$MEL_point,beta_bird$LCBD)
 cor.test(Bird.Rel.Env.Sp$MEL_point,beta_bird$LCBD)
 
-indval_Bird <- multipatt(Bird.Rel.Env.Sp[,c(8:46)], Bird.Rel.Env.Sp$MEL_point_cat,control = how(nperm=999)) 
+indval_Bird <- multipatt(Bird.Rel.Env.Sp[,c(7:45)], Bird.Rel.Env.Sp$cat_mel_plot,control = how(nperm=999)) 
 summary(indval_Bird)
 
 #Group Oak  #sps.  1 

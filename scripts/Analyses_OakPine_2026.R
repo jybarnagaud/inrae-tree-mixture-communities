@@ -15,6 +15,7 @@ library(FactoMineR)
 library(factoextra)
 library(vegan)
 library(fitdistrplus)
+library(adespatial)
 
 #options(constrasts=c("contr.treatment","contr.poly"))
 #setwd("P:/Emmanuelle/MelangeEss_FOrl?ans/Analyses/These_JYB_2011")
@@ -363,8 +364,10 @@ ggplot(pred_df, aes(x = MEL, y = fit)) +
 boxplot(Bird.Rel.Env.Sp$SR_all~Bird.Rel.Env.Sp$MEL_cat) #globally same pattern as total abundance (plateau)
 
 ####################################################################################################################################
-#Test for linear or quadratic relationship of taxonomic diversity and local tree mixture using glmmTMB to account for a random site (parcelle) effect
+#######BIRDS - GLMM
 ####################################################################################################################################
+
+#### BIRDS - SR all species with quadratic effect of tree mixture
 
 glmm_SR_all<-glmmTMB(SR_all~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_SR_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, taux_veg1=0.83, AIC=285.2
@@ -375,6 +378,33 @@ summary(glmm_SR_all) #simple effect, p=0.12, quadratic effect p=0.29, G p=0.31, 
 #  I((MEL_point/100)^2) -1.016384   0.608559  -1.670   0.0949 .  
 AICc(glmm_SR_all) #[1] 334.2836
 
+# Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+G_all_seq<-rep(G_all_moy,200)
+plot_seq<-rep(245,200)
+pred <- predict(
+  glmm_SR_all,
+  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  MEL_point = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = SR_all), color = "black") +
+  labs(title = "GLMM: SR_all ~ G + MEL +MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Number of bird species (all)") +
+  theme_minimal()
+
+#### BIRDS - SR all species with simple effect of tree mixture
 
 glmm_SR_all<-glmmTMB(SR_all~G_all+I(MEL_point/100)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
 summary(glmm_SR_all) #simple effect, p=0.0377, AIC=284.3
@@ -384,10 +414,217 @@ summary(glmm_SR_all) #simple effect, p=0.0377, AIC=284.3
 #I(MEL_point/100)  0.3535493  0.1354959   2.609  0.00907 ** 
 AICc(glmm_SR_all) #334.7857
 
-#Almost linear increase of species richness with % of oak (no effect of basal area)
+
+#### BIRDS - SR Generalist species with quadratic effect of tree mixture
+
+
+glmm_SR_Generalist<-glmmTMB(SR_Generalist~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Generalist)
+#Family: poisson  ( log )
+#Formula:          SR_Generalist ~ G_all + I(MEL_point/100) + I((MEL_point/100)^2) +      (1 | plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#312.1     323.0    -151.0     302.1        61 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#plot   (Intercept) 7.993e-11 8.941e-06
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)           1.968231   0.265269   7.420 1.17e-13 ***
+#  G_all                 0.003174   0.010141   0.313   0.7543    
+#I(MEL_point/100)      1.095891   0.582534   1.881   0.0599 .  
+#I((MEL_point/100)^2) -0.969737   0.697061  -1.391   0.1642    
+AICc(glmm_SR_Generalist) #313.0802
+# Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+G_all_seq<-rep(G_all_moy,200)
+plot_seq<-rep(245,200)
+pred <- predict(
+  glmm_SR_Generalist,
+  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  MEL_point = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = SR_Generalist), color = "black") +
+  labs(title = "GLMM: SR_Generalist ~ G + MEL +MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Generalist Species number") +
+  theme_minimal()
+
+#### BIRDS - SR Generalist species with simple effect of tree mixture
+
+glmm_SR_Generalist<-glmmTMB(SR_Generalist~G_all+I(MEL_point/100)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Generalist)
+#Family: poisson  ( log )
+#Formula:          SR_Generalist ~ G_all + I(MEL_point/100) + (1 | plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#312.1     320.8    -152.0     304.1        62 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance Std.Dev.
+#plot   (Intercept) 1.21e-10 1.1e-05 
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)      2.030701   0.258865   7.845 4.34e-15 ***
+#  G_all            0.004452   0.010031   0.444   0.6572    
+#I(MEL_point/100) 0.313817   0.155739   2.015   0.0439 *  
+AICc(glmm_SR_Generalist) #312.7092
+
+#### BIRDS - SR Oak species with quadratic effect of tree mixture
+
+glmm_SR_Oak<-glmmTMB(SR_Oak~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Oak)
+#Family: poisson  ( log )
+#Formula:          SR_Oak ~ G_all + I(MEL_point/100) + I((MEL_point/100)^2) + (1 |      plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#195.4     206.4     -92.7     185.4        61 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#plot   (Intercept) 7.949e-10 2.819e-05
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)          -1.122967   0.722631  -1.554  0.12018    
+#G_all                 0.008989   0.024311   0.370  0.71158    
+#I(MEL_point/100)      5.464396   1.654838   3.302  0.00096 ***
+#I((MEL_point/100)^2) -4.121930   1.775338  -2.322  0.02025 *  
+AICc(glmm_SR_Oak) #196.4205
+
+# Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+G_all_seq<-rep(G_all_moy,200)
+plot_seq<-rep(245,200)
+pred <- predict(
+  glmm_SR_Oak,
+  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  MEL_point = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = SR_Oak), color = "black") +
+  labs(title = "GLMM: SR_Oak ~ G + MEL +MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Number of oak-preferring bird species") +
+  theme_minimal()
+
+#### BIRDS - SR Oak species with simple effect of tree mixture
+
+glmm_SR_Oak<-glmmTMB(SR_Oak~G_all+I(MEL_point/100)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Oak)
+#Family: poisson  ( log )
+#Formula:          SR_Oak ~ G_all + I(MEL_point/100) + (1 | plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#199.2     207.9     -95.6     191.2        62 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance Std.Dev.
+#plot   (Intercept) 0.02988  0.1729  
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)    
+#(Intercept)      -0.538602   0.694440  -0.776    0.438    
+#G_all             0.008475   0.025970   0.326    0.744    
+#I(MEL_point/100)  1.800483   0.427141   4.215  2.5e-05 ***
+AICc(glmm_SR_Oak) #199.8354
+
+#### BIRDS - SR Pine species with quadratic effect of tree mixture
+
+glmm_SR_Pine<-glmmTMB(SR_Pine~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Pine)
+#Family: poisson  ( log )
+#Formula:          SR_Pine ~ G_all + I(MEL_point/100) + I((MEL_point/100)^2) + (1 |      plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#193.0     204.0     -91.5     183.0        61 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#plot   (Intercept) 7.476e-10 2.734e-05
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)   
+#(Intercept)           1.88874    0.66900   2.823  0.00475 **
+#  G_all                -0.04864    0.02794  -1.741  0.08171 . 
+#I(MEL_point/100)     -0.65622    1.58682  -0.414  0.67921   
+#I((MEL_point/100)^2) -0.38772    2.07503  -0.187  0.85178   
+AICc(glmm_SR_Pine) #194.0265
+
+#### BIRDS - SR Oak species with simple effect of tree mixture
+
+glmm_SR_Pine<-glmmTMB(SR_Pine~G_all+I(MEL_point/100)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
+summary(glmm_SR_Pine)
+#Family: poisson  ( log )
+#Formula:          SR_Pine ~ G_all + I(MEL_point/100) + (1 | plot)
+#Data: Bird.Rel.Env.Sp
+#AIC       BIC    logLik -2*log(L)  df.resid 
+#191.1     199.8     -91.5     183.1        62 
+#Random effects:
+#  Conditional model:
+#  Groups Name        Variance  Std.Dev. 
+#plot   (Intercept) 4.212e-10 2.052e-05
+#Number of obs: 66, groups:  plot, 22
+#Conditional model:
+#  Estimate Std. Error z value Pr(>|z|)   
+#(Intercept)       1.88850    0.66771   2.828  0.00468 **
+#  G_all            -0.04753    0.02725  -1.744  0.08112 . 
+#I(MEL_point/100) -0.94310    0.40902  -2.306  0.02112 * 
+AICc(glmm_SR_Pine) #191.7175
+
+#Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+G_all_seq<-rep(G_all_moy,200)
+plot_seq<-rep(245,200)
+pred <- predict(
+  glmm_SR_Pine,
+  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  MEL_point = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = SR_Pine), color = "black") +
+  labs(title = "GLMM: SR_Pine ~ G + MEL with 95% CI", x = "Deciduous basal area (%)", y = "Number of pine-preferring bird species") +
+  theme_minimal()
+
 
 ##################################################################################################
-########################   Test for linear or quadratic relationship of total abundance and local tree mixture using glmmTMB to account for a random site (parcelle) effect
+########################   BIRD Abundance
 ##################################################################################################
 
 glmm_Abdce_all<-glmmTMB(Abdce_all~G_all+I(MEL_point/100)+I((MEL_point/100)^2)+(1|plot),family=poisson,data=Bird.Rel.Env.Sp)
@@ -406,7 +643,34 @@ summary(glmm_Abdce_all)#G coeff=0.06 p=0.03, MEL coeff=0.48 p=0.0291, AIC 539.7
 #I(MEL_point/100) 0.3808931  0.1092179   3.487 0.000488 ***
 AICc(glmm_Abdce_all) #388.5486
 
-#positive effect of tree mixture (potentially humped-shaped)
+#Create prediction grid
+mel_seq <- seq(min(Bird.Rel.Env.Sp$MEL_point), max(Bird.Rel.Env.Sp$MEL_point), length.out = 200)
+G_all_moy<-mean(Bird.Rel.Env.Sp$G_all)
+G_all_seq<-rep(G_all_moy,200)
+plot_seq<-rep(245,200)
+pred <- predict(
+  glmm_Abdce_all,
+  newdata = data.frame(G_all=G_all_seq,MEL_point = mel_seq,plot=plot_seq),type="response",re.form=NA,
+  se.fit = TRUE)
+
+# Compute 95% CI
+crit <- qnorm(0.975)  # 1.96 for 95%
+pred_df <- data.frame(
+  MEL_point = mel_seq,
+  fit = pred$fit,
+  lower = pred$fit - crit * pred$se.fit,
+  upper = pred$fit + crit * pred$se.fit)
+
+# Plot with ggplot2
+ggplot(pred_df, aes(x = MEL_point, y = fit)) +
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "blue", size = 1) +
+  geom_point(data = Bird.Rel.Env.Sp, aes(x = MEL_point, y = Abdce_all), color = "black") +
+  labs(title = "GLMM: Abdce_all ~ G + MEL+MEL2 with 95% CI", x = "Deciduous basal area (%)", y = "Abundance of all bird species") +
+  theme_minimal()
+
+
+
 
 ###########################################################
 ##############        BIRD - PCA      #####################
@@ -458,6 +722,11 @@ s.label(rlq.Bird$lQ, label=Bird.Sp.Trait$Espece,boxes = TRUE)
 ################################################################################################
 ###########################                IndVal          ####################################
 ###############################################################################################
+
+beta_bird<-beta.div(Bird.Rel.Env.Sp[,c(8:46)])
+plot(Bird.Rel.Env.Sp$MEL_point,beta_bird$LCBD)
+cor.test(Bird.Rel.Env.Sp$MEL_point,beta_bird$LCBD)
+
 indval_Bird <- multipatt(Bird.Rel.Env.Sp[,c(8:46)], Bird.Rel.Env.Sp$MEL_point_cat,control = how(nperm=999)) 
 summary(indval_Bird)
 

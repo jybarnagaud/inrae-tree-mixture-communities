@@ -10,6 +10,8 @@ library(ggplot2)
 library(ggridges)
 library(viridis)
 
+setwd("C:/Users/farchaux/Documents/OakPine/inrae-tree-mixture-communities")
+
 ## birds -----------------------------------------------------------------------
 
 # get data
@@ -19,15 +21,15 @@ ois.traits <- read.csv2("data/Sp_Traits_Bird_2026.csv")
 
 # reframe to long
 
-ois1 <- ois[, -c(2:7, 47, 48)]
-rownames(ois1) <- ois$point
+ois1 <- ois[, -c(1,3:6, 46:53)]
+rownames(ois1) <- ois$plot
 ois1.long = pivot_longer(
   ois1,
   cols = 2:ncol(ois1),
   names_to = "species",
   values_to = "count"
 )
-mixture <- ois[, c("point", "MEL_point")]
+mixture <- ois[, c("plot", "mel_plot")]
 
 # subset trait matrix
 
@@ -40,7 +42,7 @@ colnames(ois.tr) <- c("species", "name", "diet")
 
 # merge with covariates
 
-ois2 <- merge(ois1.long, mixture, by = "point")
+ois2 <- merge(ois1.long, mixture, by = "plot")
 ois3 <- uncount(ois2, weights = count)
 ois4 <- merge(ois3,
               ois.tr,
@@ -51,9 +53,9 @@ ois4 <- merge(ois3,
 # do the ridge plot with color scale ~ diet
 
 ridg1 <- ois4 %>%
-  mutate(species = fct_reorder(species, MEL_point)) %>%
+  mutate(species = fct_reorder(species, mel_plot)) %>%
   ggplot(aes(
-    x = MEL_point,
+    x = mel_plot,
     y = species,
     fill = diet,
     colour = diet
@@ -77,8 +79,8 @@ ridg1
 # same ridge plot with no color scale (might be more readable)
 
 ridg2 <- ois4 %>%
-  mutate(species = fct_reorder(species, MEL_point)) %>%
-  ggplot(aes(x = MEL_point, y = species)) +
+  mutate(species = fct_reorder(species, mel_plot)) %>%
+  ggplot(aes(x = mel_plot, y = species)) +
   geom_density_ridges(
     scale = 1,
     alpha = 0.6,
@@ -97,15 +99,15 @@ ggsave("outputs/birds-ridge-plot-all-species.png",
 
 # same ridge plot, restrict to the 15 most common species
 
-ois.b <- ois[, -c(1:7, 47, 48)]
+ois.b <- ois[, -c(1:6, 46:53)]
 freq.tot <- apply(ois.b, 2, sum)
 freq.tot.s <- rev(sort(freq.tot))
 sp.com10 <- names(freq.tot.s[1:15])
 ois4.com10 <- subset(ois4, species %in% sp.com10)
 
 ridg3 <- ois4.com10 %>%
-  mutate(species = fct_reorder(species, MEL_point)) %>%
-  ggplot(aes(x = MEL_point, y = species)) +
+  mutate(species = fct_reorder(species, mel_plot)) %>%
+  ggplot(aes(x = mel_plot, y = species)) +
   geom_density_ridges(
     scale = 1,
     alpha = 0.6,
@@ -135,8 +137,8 @@ sp.frq10 <- names(which(freq.rel >= 0.1))
 ois4.frq10 <- subset(ois4, species %in% sp.frq10)
 
 ridg4 <- ois4.frq10 %>%
-  mutate(species = fct_reorder(species, MEL_point)) %>%
-  ggplot(aes(x = MEL_point, y = species)) +
+  mutate(species = fct_reorder(species, mel_plot)) %>%
+  ggplot(aes(x = mel_plot, y = species)) +
   geom_density_ridges(
     scale = 1,
     alpha = 0.6,
@@ -177,7 +179,7 @@ carab.long <- pivot_longer(
 
 # add mixture level
 
-env.carab1 <- env.carab[, c("plot_Ptrap", "MEL_cercle")]
+env.carab1 <- env.carab[, c("plot_Ptrap", "mel_plot")]
 colnames(env.carab1) <- c("piege", "MEL_piege")
 
 carab2 <- merge(carab.long, env.carab1, by = "piege")

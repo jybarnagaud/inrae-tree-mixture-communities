@@ -265,7 +265,7 @@ s.label(rlq.Carab$lQ, label=Carab.Sp.Trait$code_sp,boxes = TRUE)
 ###############################################################################################
 ###########################                IndVal          ####################################
 ###############################################################################################
-indval_Carab <- multipatt(Carab.Rel.Spe[,c(2:29)], Carab.Rel.Env$MEL_cercle_cat,control = how(nperm=999)) 
+indval_Carab <- multipatt(Carab.Rel.Spe[,c(2:29)], Carab.Rel.Env$cat_mel_plot,control = how(nperm=999)) 
 #indval_Carab<-indval(Carab.Rel.Spe[,c(2:29)],clustering=cluster,numitr=1000)
 summary(indval_Carab)
 

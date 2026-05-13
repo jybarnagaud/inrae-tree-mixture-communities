@@ -18,6 +18,7 @@ library(factoextra)
 library(vegan)
 library(fitdistrplus)
 library(adespatial)
+library(MuMIn)
 
 #options(constrasts=c("contr.treatment","contr.poly"))
 #setwd("P:/Emmanuelle/MelangeEss_FOrl?ans/Analyses/These_JYB_2011")
@@ -69,6 +70,12 @@ summary(glmm_SR_all_simple)
 #  G_all_plot          0.018681   0.009855   1.896 0.058023 .  
 #I(mixture_plot/100) 0.307193   0.160231   1.917 0.055214 .
 
+r.squaredGLMM(glmm_SR_all_simple)
+#R2m        R2c
+#delta     0.07111530 0.07111530
+#lognormal 0.07659117 0.07659117
+#trigamma  0.06560042 0.06560042
+
 # Create prediction grid
 mixture_seq <- seq(min(Carab.Rel.Env.Sp$mixture_plot), max(Carab.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Carab.Rel.Env.Sp$G_all_plot)
@@ -95,7 +102,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of carabid species (all)") +
   theme_minimal()
 
-#GROUND BEETLES - Abundance all species
+###GROUND BEETLES - Abundance all species
 
 descdist(Carab.Rel.Env.Sp$Abdce_all,discrete=TRUE,boot=1001)
 fitnb<-fitdist(Carab.Rel.Env.Sp$Abdce_all,"nbinom")
@@ -130,6 +137,12 @@ summary(glmm_Abdce_all_nb_simple)
 #(Intercept)      2.29012    0.43665   5.245 1.57e-07 ***
 #  G_all_plot       0.03121    0.01440   2.167   0.0303 *  
 #  I(ixture_plot/100)  0.23098    0.32166   0.718   0.4727
+
+r.squaredGLMM(glmm_Abdce_all_nb_simple)
+#R2m       R2c
+#delta     0.07233377 0.6392027
+#lognormal 0.07387379 0.6528116
+#trigamma  0.07067250 0.6245223
 
 # Create prediction grid
 mixture_seq <- seq(min(Carab.Rel.Env.Sp$mixture_plot), max(Carab.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -277,10 +290,36 @@ s.label(rlq.Carab$lQ, label=Carab.Sp.Trait$code_sp,boxes = TRUE)
 ###############################################################################################
 ########################### GROUND BEETLES - IndVal        ####################################
 ###############################################################################################
-indval_Carab <- multipatt(Carab.Rel.Spe[,c(2:29)], Carab.Rel.Env$cat_mel_plot,control = how(nperm=999)) 
+indval_Carab <- multipatt(Carab.Rel.Env.Sp[,c(10:37)], Carab.Rel.Env.Sp$cat_mixture_plot,control = how(nperm=999)) 
 #indval_Carab<-indval(Carab.Rel.Spe[,c(2:29)],clustering=cluster,numitr=1000)
 summary(indval_Carab)
+#Multilevel pattern analysis
+#---------------------------
+#  Association function: IndVal.g
+#Significance level (alpha): 0.05
+#
+#Total number of species: 28
+#Selected number of species: 3 
+#Number of species associated to 1 group: 1 
+#Number of species associated to 2 groups: 2 
+#
+#List of species associated to each combination: 
+#
+#  Group oak  #sps.  1 
+#stat p.value    
+#cait 0.564   0.001 ***
+#  
+#  Group mixed+oak  #sps.  1 
+#stat p.value   
+#cane 0.808   0.002 **
+#  
+#  Group mixed+pine  #sps.  1 
+#stat p.value   
+#cacr 0.612   0.005 **
 
+plot(Carab.Rel.Env.Sp$mixture_plot,Carab.Rel.Env.Sp$cait)
+plot(Carab.Rel.Env.Sp$mixture_plot,Carab.Rel.Env.Sp$cane)
+plot(Carab.Rel.Env.Sp$mixture_plot,Carab.Rel.Env.Sp$cacr)
 
 ################################################################################################
 ################### GROUND BEETLES - Beta partitioning (Baselga 2017 MEE) ######################
@@ -322,6 +361,12 @@ summary(glmm_SR_all_quad)
 #  G_all_plot                -0.002286   0.008852  -0.258   0.7962    
 #I(mixture_plot/100)      1.173185   0.508405   2.308   0.0210 *  
 #  I((mixture_plot/100)^2) -1.016384   0.608559  -1.670   0.0949 .  
+
+r.squaredGLMM(glmm_SR_all_quad)
+#                R2m       R2c
+#delta     0.1374353 0.1374353
+#lognormal 0.1419776 0.1419776
+#trigamma  0.1328494 0.1328494
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -372,6 +417,12 @@ summary(glmm_SR_Generalist_simple)
 #(Intercept)         2.024550   0.257871   7.851 4.13e-15 ***
 #  G_all_plot          0.005075   0.009990   0.508   0.6114    
 #I(mixture_plot/100) 0.308946   0.155143   1.991   0.0464 *  
+
+r.squaredGLMM(glmm_SR_Generalist_simple)
+#R2m        R2c
+#delta     0.06696145 0.06696145
+#lognormal 0.07009076 0.07009076
+#trigamma  0.06381640 0.06381640
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -424,6 +475,12 @@ summary(glmm_SR_Oak_quad)
 #I(mixture_plot/100)      5.217113   1.596568   3.268  0.00108 **
 #I((mixture_plot/100)^2) -3.830064   1.712861  -2.236  0.02535 *  
 
+r.squaredGLMM(glmm_SR_Oak_quad)
+#                R2m       R2c
+#delta     0.4054464 0.4054464
+#lognormal 0.4619385 0.4619385
+#trigamma  0.3391193 0.3391193
+
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Bird.Rel.Env.Sp$G_all_plot)
@@ -473,6 +530,13 @@ summary(glmm_SR_Pine_simple)
 #(Intercept)          2.09344    0.70995   2.949  0.00319 **
 #  G_all_plot          -0.05775    0.02926  -1.974  0.04843 * 
 #  I(mixture_plot/100) -1.18908    0.43988  -2.703  0.00687 **
+
+r.squaredGLMM(glmm_SR_Pine_simple)
+#                R2m       R2c
+#delta     0.1762219 0.1762219
+#lognormal 0.2252243 0.2252243
+#trigamma  0.1253279 0.1253279
+
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -524,6 +588,12 @@ summary(glmm_SR_Generalist2_simple)
 #  G_all_plot          -0.007641   0.011831  -0.646   0.5184    
 #I(mixture_plot/100)  0.466551   0.182894   2.551   0.0107 *
 
+r.squaredGLMM(glmm_SR_Generalist2_simple)
+#R2m        R2c
+#delta     0.09247877 0.09247877
+#lognormal 0.09826598 0.09826599
+#trigamma  0.08663606 0.08663606
+
 #### BIRDS - Species richness of oak preferring species tolerating mixed deciduous-conifers 
 
 glmm_SR_Oak_Mixed_quad<-glmmTMB(SR_Oak_Mixed~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
@@ -548,6 +618,13 @@ summary(glmm_SR_Oak_Mixed_simple)
 #G_all_plot           0.03819    0.01933   1.976   0.0482 *
 #  I(mixture_plot/100) -0.16715    0.30371  -0.550   0.5821
 AICc(glmm_SR_Oak_Mixed) #217.642
+
+r.squaredGLMM(glmm_SR_Oak_Mixed_simple)
+#                 R2m        R2c
+#delta     0.05620835 0.05620835
+#lognormal 0.06584469 0.06584469
+#trigamma  0.04659699 0.04659699
+
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -601,6 +678,12 @@ summary(glmm_Abdce_all_simple)
 #  G_all_plot          0.0003549  0.0070422   0.050 0.959803    
 #I(mixture_plot/100) 0.3808931  0.1092179   3.487 0.000488 ***
 
+r.squaredGLMM(glmm_Abdce_all_simple)
+#                R2m       R2c
+#delta     0.1624053 0.1624054
+#lognormal 0.1658056 0.1658057
+#trigamma  0.1589787 0.1589788
+
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Bird.Rel.Env.Sp$G_all_plot)
@@ -650,6 +733,12 @@ summary(glmm_Abdce_Generalist1_simple)
 #(Intercept)         2.406845   0.203328  11.837   <2e-16 ***
 #  G_all_plot          0.008677   0.007860   1.104   0.2696    
 #I(mixture_plot/100) 0.312445   0.122370   2.553   0.0107 * 
+
+r.squaredGLMM(glmm_Abdce_Generalist1_simple)
+#R2m       R2c
+#delta     0.1196968 0.1196968
+#lognormal 0.1229935 0.1229935
+#trigamma  0.1163773 0.1163773
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -701,6 +790,12 @@ summary(glmm_Abdce_Generalist2_simple)
 #  G_all_plot          0.001463   0.008904   0.164  0.86947    
 #I(mixture_plot/100) 0.427939   0.138390   3.092  0.00199 ** 
 
+r.squaredGLMM(glmm_Abdce_Generalist2_simple)
+#R2m       R2c
+#delta     0.1341560 0.1341560
+#lognormal 0.1387791 0.1387791
+#trigamma  0.1294880 0.1294880
+
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Bird.Rel.Env.Sp$G_all_plot)
@@ -750,6 +845,12 @@ summary(glmm_Abdce_Oak_0_1_Mixed_simple)
 #(Intercept)          0.40148    0.44726   0.898   0.3694  
 #G_all_plot           0.03232    0.01717   1.883   0.0598 .
 #I(mixture_plot/100) -0.12027    0.26909  -0.447   0.6549   
+
+r.squaredGLMM(glmm_Abdce_Oak_Mixed_simple)
+#                 R2m        R2c
+#delta     0.05094732 0.05094732
+#lognormal 0.05795439 0.05795439
+#trigamma  0.04393894 0.04393894
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -802,6 +903,11 @@ summary(glmm_Abdce_Oak_0_1_quad)
 #I(mixture_plot/100)      4.948971   1.509098   3.279  0.00104 **
 #I((mixture_plot/100)^2) -3.249982   1.600920  -2.030  0.04235 *  
 
+r.squaredGLMM(glmm_Abdce_Oak_quad)
+#                R2m       R2c
+#delta     0.4726688 0.5417812
+#lognormal 0.5101022 0.5846880
+#trigamma  0.4278644 0.4904256
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -852,6 +958,12 @@ summary(glmm_Abdce_Pine_simple)
 #(Intercept)          2.81399    0.63292   4.446 8.75e-06 ***
 #  G_all_plot          -0.07651    0.02642  -2.895  0.00379 ** 
 #  I(mixture_plot/100) -1.28705    0.39223  -3.281  0.00103 **
+
+r.squaredGLMM(glmm_Abdce_Pine_simple)
+#R2m       R2c
+#delta     0.2729879 0.2729879
+#lognormal 0.3261043 0.3261043
+#trigamma  0.2144138 0.2144138
 
 # Create prediction grid
 mixture_seq <- seq(min(Bird.Rel.Env.Sp$mixture_plot), max(Bird.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -1027,6 +1139,13 @@ summary(indval_Bird)
 #SITEUR 0.855   0.001 ***
 #PARCAE 0.847   0.001 ***
  
+#Species with unexpected preference
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$PHOPHO)
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$CARCAR)
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$TROTRO)
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$CERBRA)
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$SITEUR)
+plot(Bird.Rel.Env.Sp$mixture_plot,Bird.Rel.Env.Sp$PARCAE)
 
 
 #############################################################
@@ -1092,6 +1211,13 @@ summary(glmm_SR_all_simple)
 #  G_all_plot          -0.010025   0.003388   -2.96  0.00309 ** 
 #  I(mixture_plot/100) -0.036635   0.080721   -0.45  0.64994    
 
+r.squaredGLMM(glmm_SR_all_simple)
+#R2m       R2c
+#delta     0.1670078 0.3290084
+#lognormal 0.1684620 0.3318732
+#trigamma  0.1655413 0.3261193
+
+
 sim<-simulateResiduals(glmm_SR_all_simple)
 testUniformity(sim)#le qqplot est issu de cette commande 
 #KS Test p-value 0.77 # Dispersion test 0.608  # Outliers p=1 
@@ -1132,8 +1258,8 @@ fitp<-fitdist(Saprox.Rel.Env.Sp$SR.pine,"pois")
 gofstat(fitnb)$chisqpvalue #0.00205022 --> Poisson
 gofstat(fitp)$chisqpvalue #1.239995e-28 
 
-glmm_SR_Pine_quad<-glmmTMB(SR_Pine~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
-glmm_SR_Pine_simple<-glmmTMB(SR_Pine~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Pine_quad<-glmmTMB(SR_Pine_0_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Pine_simple<-glmmTMB(SR_Pine_0_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
 AICc(glmm_SR_Pine_quad) #226.6784
 AICc(glmm_SR_Pine) #228.4148
 
@@ -1154,6 +1280,12 @@ summary(glmm_SR_Pine_quad)
 #  G_all_plot              -0.02347    0.01200  -1.956   0.0505 .  
 #I(mixture_plot/100)      0.39370    0.99196   0.397   0.6914    
 #I((mixture_plot/100)^2) -2.14845    1.04337  -2.059   0.0395 *  
+
+r.squaredGLMM(glmm_SR_Pine_quad)
+#                R2m       R2c
+#delta     0.5623487 0.7752588
+#lognormal 0.5731898 0.7902044
+#trigamma  0.5499218 0.7581270
 
 sim<-simulateResiduals(glmm_SR_Pine_quad)
 testUniformity(sim)#le qqplot est issu de cette commande 
@@ -1195,8 +1327,8 @@ fitp<-fitdist(Saprox.Rel.Env.Sp$SR_Oak,"pois")
 gofstat(fitnb)$chisqpvalue #0.4257678 --> Negbin
 gofstat(fitp)$chisqpvalue #0.1261187 
 
-glmm_SR_Oak_quad<-glmmTMB(SR_Oak~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
-glmm_SR_Oak_simple<-glmmTMB(SR_Oak~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Oak_quad<-glmmTMB(SR_Oak_0_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Oak_simple<-glmmTMB(SR_Oak_0_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
 AICc(glmm_SR_Oak_quad) #309.8831
 AICc(glmm_SR_Oak) #309.2632
 
@@ -1216,6 +1348,12 @@ summary(glmm_SR_Oak_simple)
 #(Intercept)          3.536422   0.097006   36.46   <2e-16 ***
 #  G_all_plot          -0.009093   0.003389   -2.68   0.0073 ** 
 #  I(mixture_plot/100)  0.185845   0.074504    2.49   0.0126 *       
+
+r.squaredGLMM(glmm_SR_Oak_simple)
+#                R2m       R2c
+#delta     0.2205927 0.2205928
+#lognormal 0.2234457 0.2234458
+#trigamma  0.2177193 0.2177193
 
 sim<-simulateResiduals(glmm_SR_Oak_simple)
 testUniformity(sim)#le qqplot est issu de cette commande 
@@ -1257,8 +1395,8 @@ fitp<-fitdist(Saprox.Rel.Env.Sp$SR.Generalist,"pois")
 gofstat(fitnb)$chisqpvalue #NULL
 gofstat(fitp)$chisqpvalue #0.1310683 
 
-glmm_SR_Generalist_quad<-glmmTMB(SR_Generalist~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
-glmm_SR_Generalist_simple<-glmmTMB(SR_Generalist~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Generalist_quad<-glmmTMB(SR_Generalist_2~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
+glmm_SR_Generalist_simple<-glmmTMB(SR_Generalist_2~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Saprox.Rel.Env.Sp)
 AICc(glmm_SR_Generalist_quad)#143.8809
 AICc(glmm_SR_Generalist_simple)#143.864
 
@@ -1278,6 +1416,12 @@ summary(glmm_SR_Generalist_simple)
 #(Intercept)          0.78285    0.41579   1.883   0.0597 .
 #G_all_plot          -0.01343    0.01471  -0.913   0.3613  
 #I(mixture_plot/100)  0.08201    0.31960   0.257   0.7975
+
+r.squaredGLMM(glmm_SR_Generalist_simple)
+#R2m        R2c
+#delta     0.01930922 0.01930922
+#lognormal 0.02464270 0.02464270
+#trigamma  0.01419965 0.01419965
 
 sim<-simulateResiduals(glmm_SR_Generalist_simple)
 testUniformity(sim)
@@ -1335,6 +1479,12 @@ summary(glmm_SR_Oak_0_quad)
 #  I(mixture_plot/100)      0.850392   0.359099   2.368   0.0179 *  
 #  I((mixture_plot/100)^2) -0.536143   0.338091  -1.586   0.1128 
 
+r.squaredGLMM(glmm_SR_Oak_0_quad)
+#R2m       R2c
+#delta     0.2844071 0.2844071
+#lognormal 0.2897899 0.2897899
+#trigamma  0.2789448 0.2789448
+
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
@@ -1383,6 +1533,12 @@ summary(glmm_SR_Oak_Mixed_1_simple)
 #(Intercept)          2.621188   0.157883   16.60   <2e-16 ***
 #  G_all_plot          -0.007776   0.005556   -1.40    0.162    
 #I(mixture_plot/100) -0.007245   0.121539   -0.06    0.952 
+
+r.squaredGLMM(glmm_SR_Oak_Mixed_1_simple)
+#                 R2m        R2c
+#delta     0.04111620 0.04111620
+#lognormal 0.04284048 0.04284048
+#trigamma  0.03938794 0.03938794
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -1434,6 +1590,12 @@ summary(glmm_SR_Pine_0_quad)
 #I(mixture_plot/100)      0.99040    1.04051   0.952   0.3412    
 #I((mixture_plot/100)^2) -2.98479    1.13075  -2.640   0.0083 ** 
 
+r.squaredGLMM(glmm_SR_Pine_0_quad)
+#                R2m       R2c
+#delta     0.6154525 0.7646870
+#lognormal 0.6307860 0.7837385
+#trigamma  0.5973374 0.7421793
+
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
@@ -1482,6 +1644,12 @@ summary(glmm_SR_Pine_Mixed_1_simple)
 #(Intercept)          0.97115    0.53333   1.821  0.06862 . 
 #G_all_plot          -0.01788    0.02030  -0.881  0.37845   
 #I(mixture_plot/100) -1.21856    0.43973  -2.771  0.00559 **
+
+r.squaredGLMM(glmm_SR_Pine_Mixed_1_simple)
+#R2m       R2c
+#delta     0.1760485 0.1920462
+#lognormal 0.2326601 0.2538021
+#trigamma  0.1171126 0.1277547
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -1541,6 +1709,12 @@ summary(glmm_SR_Generalist_simple)
 #  G_all_plot          -0.009099   0.005023  -1.812   0.0701 .  
 #I(mixture_plot/100) -0.081993   0.109400  -0.749   0.4536 
 
+r.squaredGLMM(glmm_SR_Generalist_simple)
+#                 R2m        R2c
+#delta     0.07837532 0.07837532
+#lognormal 0.08093716 0.08093716
+#trigamma  0.07580137 0.07580137
+
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
@@ -1567,11 +1741,8 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   theme_minimal()
 
 
-##############################################################################################
-###########################     SAPROX Total abundance    ##################################
-##############################################################################################
 
-######## SAPROX BEETLES - Abundance all species
+########SAPROXYLIC BEETLES - Abundance all species
 
 descdist(Saprox.Rel.Env$Abdce_all,discrete=TRUE,boot=1001)
 plot(fitdist(Saprox.Rel.Env$Abdce_all,"pois"))
@@ -1585,7 +1756,7 @@ glmm_Abdce_all_simple<-glmmTMB(Abdce_all~G_all_plot+I(mixture_plot/100)+(1|stand
 AICc(glmm_Abdce_all_quad)#556.3937
 AICc(glmm_Abdce_all_simple)#554.598
 
-summary(glmm_Abdce_all) 
+summary(glmm_Abdce_all_simple) 
 #Family: nbinom1  ( log )
 #Formula:          Abdce_all ~ G_all_plot + I(mixture_plot/100) + (1 | stand)
 #Data: Saprox.Rel.Env.Sp
@@ -1602,6 +1773,12 @@ summary(glmm_Abdce_all)
 #(Intercept)          5.398479   0.230187  23.453   <2e-16 ***
 #  G_all_plot          -0.011145   0.007865  -1.417    0.156    
 #I(mixture_plot/100)  0.038670   0.176996   0.218    0.827    
+
+r.squaredGLMM(glmm_Abdce_all_simple)
+#R2m        R2c
+#delta     0.04014605 0.04071779
+#lognormal 0.04369051 0.04431273
+#trigamma  0.03659563 0.03711680
 
 sim<-simulateResiduals(glmm_Abdce_all_simple)
 testUniformity(sim)
@@ -1634,9 +1811,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (all)") +
   theme_minimal()
 
-#####################################
-########Abundance conifer (pine) specialists
-################################
+########SAPROXYLIC BEETLES - Abundance conifer (pine) specialists cat 0 and 1
 
 descdist(Saprox.Rel.Env.Sp$Abdce_Pine,discrete=TRUE,boot=1001)
 plot(fitdist(Saprox.Rel.Env.Sp$Abdce_Pine,"pois"))
@@ -1645,38 +1820,12 @@ fitp<-fitdist(Saprox.Rel.Env.Sp$Abdce_Pine,"pois")
 gofstat(fitnb)$chisqpvalue #0.007874077
 gofstat(fitp)$chisqpvalue #0 
 
-########Abundance pine species with quadratic effect of tree mixture
+glmm_Abdce_Pine_quad<-glmmTMB(Abdce_Pine_0_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+glmm_Abdce_Pine_simple<-glmmTMB(Abdce_Pine_0_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+AICc(glmm_Abdce_Pine_quad) #356.2953
+AICc(glmm_Abdce_Pine) #354.5107
 
-glmm_Abdce_Pine<-glmmTMB(Abdce_Pine~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Pine) 
-#  Family: nbinom1  ( log )
-#Formula:          Abdce_Pine ~ G_all_plot + I(mixture_plot/100) + I((mixture_plot/100)^2) +      (1 | stand)
-#Data: Saprox.Rel.Env.Sp
-#AIC       BIC    logLik -2*log(L)  df.resid 
-#354.2     365.5    -171.1     342.2        42 
-#Random effects:
-#  Conditional model:
-#  Groups Name        Variance Std.Dev.
-#stand  (Intercept) 0.1949   0.4415  
-#Number of obs: 48, groups:  stand, 21
-#Dispersion parameter for nbinom1 family (): 12.2 
-#Conditional model:
-#  Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)              3.729633   0.469658   7.941    2e-15 ***
-#  G_all_plot              -0.004018   0.017019  -0.236    0.813    
-#I(mixture_plot/100)     -1.167241   1.331762  -0.876    0.381    
-#I((mixture_plot/100)^2) -1.299835   1.428250  -0.910    0.363    
-AICc(glmm_Abdce_Pine) #356.2953
-
-sim<-simulateResiduals(glmm_Abdce_Pine)
-testUniformity(sim)#le qqplot est issu de cette commande 
-#KS Test p-value p=.70952 #Dispersion test p=0.408 # Outliers p=1
-testOutliers(sim) # p=1, RAS
-
-########Abundance pine specialist species with simple effect of tree mixture
-
-glmm_Abdce_Pine<-glmmTMB(Abdce_Pine~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Pine) 
+summary(glmm_Abdce_Pine_simple) 
 #  Family: nbinom1  ( log )
 #Formula:          Abdce_Pine ~ G_all_plot + I(mixture_plot/100) + (1 | stand)
 #Data: Saprox.Rel.Env.Sp
@@ -1693,7 +1842,12 @@ summary(glmm_Abdce_Pine)
 #(Intercept)          3.806766   0.464054   8.203 2.34e-16 ***
 #  G_all_plot          -0.002715   0.016995  -0.160    0.873    
 #I(mixture_plot/100) -2.316756   0.442752  -5.233 1.67e-07 ***  
-AICc(glmm_Abdce_Pine) #354.5107
+
+r.squaredGLMM(glmm_Abdce_Pine_simple)
+#R2m       R2c
+#delta     0.2729879 0.2729879
+#lognormal 0.3261043 0.3261043
+#trigamma  0.2144138 0.2144138
 
 # Create prediction grid
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
@@ -1721,10 +1875,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (pine)") +
   theme_minimal()
 
-
-#####################################
-########Abdce deciduous
-################################
+########SAPROXYLIC BEETLES - Abundance deciduous (oak) specialists cat 0 and 1
 
 descdist(Saprox.Rel.Env.Sp$Abdce_Oak_0_1,discrete=TRUE,boot=1001)
 plot(fitdist(Saprox.Rel.Env.Sp$Abdce_Oak_0_1,"pois"))
@@ -1733,38 +1884,12 @@ fitp<-fitdist(Saprox.Rel.Env.Sp$Abdce_Oak_0_1,"pois")
 gofstat(fitnb)$chisqpvalue #0.4542295 --> Negbin
 gofstat(fitp)$chisqpvalue #0 
 
-########Abundance oak specialist species with quadratic effect of tree mixture
+glmm_Abdce_Oak_0_1_quad<-glmmTMB(Abdce_Oak_0_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+glmm_Abdce_Oak_0_1_simple<-glmmTMB(Abdce_Oak_0_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+AICc(glmm_Abdce_Oak_0_1_quad) #538.7397
+AICc(glmm_Abdce_Oak_0_1_simple) #537.7154
 
-glmm_Abdce_Oak_0_1<-glmmTMB(Abdce_Oak_0_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Oak_0_1) 
-#  Family: nbinom1  ( log )
-#Formula:          Abdce_Oak_0_1 ~ G_all_plot + I(mixture_plot/100) + I((mixture_plot/100)^2) +      (1 | stand)
-#Data: Saprox.Rel.Env.Sp
-#AIC       BIC    logLik -2*log(L)  df.resid 
-#536.7     547.9    -262.3     524.7        42 
-#Random effects:
-#  Conditional model:
-#  Groups Name        Variance  Std.Dev. 
-#stand  (Intercept) 2.765e-09 5.258e-05
-#Number of obs: 48, groups:  stand, 21
-#Dispersion parameter for nbinom1 family (): 28.6 
-#Conditional model:
-#  Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)              4.909056   0.263317  18.643   <2e-16 ***
-#  G_all_plot              -0.013168   0.008325  -1.582   0.1137    
-#I(mixture_plot/100)      1.207976   0.706096   1.711   0.0871 .  
-#I((mixture_plot/100)^2) -0.828080   0.651307  -1.271   0.2036     
-AICc(glmm_Abdce_Oak_0_1) #538.7397
-
-sim<-simulateResiduals(glmm_Abdce_Oak_0_1)
-testUniformity(sim)#le qqplot est issu de cette commande 
-#KS Test p-value 0.9683 # Dispersion test 0.352 # Outliers p=0.78 
-testOutliers(sim) # p=0.82, one outliying value (highest residual)
-
-########Species richness oak specialist species with simple effect of tree mixture
-
-glmm_Abdce_Oak_0_1<-glmmTMB(Abdce_Oak_0_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Oak_0_1) 
+summary(glmm_Abdce_Oak_0_1_simple) 
 #   Family: nbinom1  ( log )
 #Formula:          Abdce_Oak_0_1 ~ G_all_plot + I(mixture_plot/100) + (1 | stand)
 #Data: Saprox.Rel.Env.Sp
@@ -1781,7 +1906,12 @@ summary(glmm_Abdce_Oak_0_1)
 #(Intercept)          5.05865    0.23576  21.457   <2e-16 ***
 #G_all_plot          -0.01417    0.00848  -1.671   0.0947 .  
 #I(mixture_plot/100)  0.34520    0.18156   1.901   0.0573 .       
-AICc(glmm_Abdce_Oak_0_1) #537.7154
+
+r.squaredGLMM(glmm_Abdce_Oak_0_1_simple)
+#                 R2m        R2c
+#delta     0.10548739 0.10548747
+#lognormal 0.11597197 0.11597207
+#trigamma  0.09484454 0.09484461
 
 sim<-simulateResiduals(glmm_Abdce_Oak_0_1)
 testUniformity(sim)#le qqplot est issu de cette commande 
@@ -1814,52 +1944,21 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (oak)") +
   theme_minimal()
 
+########SAPROXYLIC BEETLES - Abundance generalist cat 2
 
-#####################################
-######## SAPRO - Abundance generalist
-################################
-
-descdist(Saprox.Rel.Env.Sp$Abdce_Generalist,discrete=TRUE,boot=1001)
-plot(fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist,"pois"))
-fitnb<-fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist,"nbinom")
-fitp<-fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist,"pois")
+descdist(Saprox.Rel.Env.Sp$Abdce_Generalist_2,discrete=TRUE,boot=1001)
+plot(fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist_2,"pois"))
+fitnb<-fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist_2,"nbinom")
+fitp<-fitdist(Saprox.Rel.Env.Sp$Abdce_Generalist_2,"pois")
 gofstat(fitnb)$chisqpvalue #0.4838977
 gofstat(fitp)$chisqpvalue #3.05807e-112
 
-########Abundance generalist species with quadratic effect of tree mixture
+glmm_Abdce_Generalist_2_quad<-glmmTMB(Abdce_Generalist_2~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+glmm_Abdce_Generalist_2_simple<-glmmTMB(Abdce_Generalist_2~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
+AICc(glmm_Abdce_Generalist_2_quad)#289.7721
+AICc(glmm_Abdce_Generalis)#287.1774
 
-glmm_Abdce_Generalist<-glmmTMB(Abdce_Generalis~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Generalist) 
-
-# Family: nbinom1  ( log )
-#Formula:          Abdce_Generalis ~ G_all_plot + I(mixture_plot/100) + I((mixture_plot/100)^2) +      (1 | stand)
-#Data: Saprox.Rel.Env.Sp
-#AIC       BIC    logLik -2*log(L)  df.resid 
-#287.7     299.0    -137.9     275.7        42 
-#Random effects:
-#  Conditional model:
-#  Groups Name        Variance Std.Dev.
-#stand  (Intercept) 0.005251 0.07246 
-#Number of obs: 48, groups:  stand, 21
-#Dispersion parameter for nbinom1 family (): 2.62 
-#Conditional model:
-#  Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)              3.24712    0.34067   9.532   <2e-16 ***
-#  G_all_plot              -0.02719    0.01267  -2.147   0.0318 *  
-#  I(mixture_plot/100)     -1.26035    0.96588  -1.305   0.1919    
-#I((mixture_plot/100)^2)  0.15576    0.97361   0.160   0.8729
-AICc(glmm_Abdce_Generalis)#289.7721
-
-sim<-simulateResiduals(glmm_Abdce_Generalist)
-testUniformity(sim)#le qqplot est issu de cette commande 
-#KS Test p-value 0.84298 # Dispersion test 0.76 # Outliers 1 
-testOutliers(sim) # p=1, RAS
-
-########Abundance generalist species with simple effect of tree mixture
-
-glmm_Abdce_Generalist<-glmmTMB(Abdce_Generalist~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
-summary(glmm_Abdce_Generalist) 
-
+summary(glmm_Abdce_Generalist_2_simple) 
 # Family: nbinom1  ( log )
 #Formula:          Abdce_Generalist ~ G_all_plot + I(mixture_plot/100) + (1 | stand)
 #Data: Saprox.Rel.Env.Sp
@@ -1876,7 +1975,12 @@ summary(glmm_Abdce_Generalist)
 #(Intercept)          3.23188    0.32791   9.856  < 2e-16 ***
 #  G_all_plot          -0.02721    0.01268  -2.146   0.0319 *  
 #  I(mixture_plot/100) -1.11270    0.28465  -3.909 9.26e-05 ***
-AICc(glmm_Abdce_Generalis)#287.1774
+
+r.squaredGLMM(glmm_Abdce_Generalist_2_simple)
+#                R2m       R2c
+#delta     0.3139855 0.3228134
+#lognormal 0.3557308 0.3657324
+#trigamma  0.2676871 0.2752133
 
 sim<-simulateResiduals(glmm_Abdce_Generalist)
 testUniformity(sim)#le qqplot est issu de cette commande 
@@ -1909,8 +2013,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (generalist)") +
   theme_minimal()
 
-
-######Abundance oak specialist (category 0)
+########SAPROXYLIC BEETLES - Abundance oak specialist (category 0)
 
 glmm_Abdce_Oak_0_quad<-glmmTMB(Abdce_Oak_0~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
 glmm_Abdce_Oak_0_simple<-glmmTMB(Abdce_Oak_0~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
@@ -1934,6 +2037,12 @@ summary(glmm_Abdce_Oak_0_simple)
 #(Intercept)          4.470539   0.247852  18.037  < 2e-16 ***
 #  G_all_plot          -0.016517   0.008621  -1.916  0.05538 .  
 #I(mixture_plot/100)  0.536355   0.188268   2.849  0.00439 **  
+
+r.squaredGLMM(glmm_Abdce_Oak_0_simple)
+#R2m       R2c
+#delta     0.1747903 0.1747903
+#lognormal 0.1918756 0.1918756
+#trigamma  0.1571482 0.1571482
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -1960,7 +2069,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (oak)") +
   theme_minimal()
 
-######Species richness oak specialist tolerant to mixing (category 1)
+########SAPROXYLIC BEETLES - Abundance oak specialist tolerant to mixing (category 1)
 
 glmm_Abdce_Oak_Mixed_1_quad<-glmmTMB(Abdce_Oak_Mixed_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
 glmm_Abdce_Oak_Mixed_1_simple<-glmmTMB(Abdce_Oak_Mixed_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
@@ -1984,6 +2093,12 @@ summary(glmm_Abdce_Oak_Mixed_1_simple)
 #(Intercept)          4.240934   0.327424  12.952   <2e-16 ***
 #  G_all_plot          -0.006969   0.011948  -0.583    0.560    
 #I(mixture_plot/100) -0.115972   0.250834  -0.462    0.644 
+
+r.squaredGLMM(glmm_Abdce_Oak_Mixed_1_simple)
+#R2m         R2c
+#delta     0.009548895 0.009548898
+#lognormal 0.011754713 0.011754716
+#trigamma  0.007413837 0.007413839
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -2010,7 +2125,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle species (oak tolerant to pine)") +
   theme_minimal()
 
-######Species richness pine specialist (category 0)
+########SAPROXYLIC BEETLES - Abundance pine specialist (category 0)
 
 glmm_Abdce_Pine_0_quad<-glmmTMB(Abdce_Pine_0~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
 glmm_Abdce_Pine_0_simple<-glmmTMB(Abdce_Pine_0~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
@@ -2034,6 +2149,12 @@ summary(glmm_Abdce_Pine_0_simple)
 #(Intercept)          3.765653   0.489791   7.688 1.49e-14 ***
 #  G_all_plot          -0.002605   0.017987  -0.145    0.885    
 #I(mixture_plot/100) -2.556390   0.469002  -5.451 5.02e-08 *** 
+
+r.squaredGLMM(glmm_Abdce_Pine_0_simple)
+#                R2m       R2c
+#delta     0.5003738 0.6320547
+#lognormal 0.5445659 0.6878767
+#trigamma  0.4409080 0.5569396
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -2060,8 +2181,7 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle individuals (pine)") +
   theme_minimal()
 
-
-######Species richness pine specialist tolerant to mixing (category 1)
+########SAPROXYLIC BEETLES - Abundance pine specialist tolerant to mixing (category 1)
 
 glmm_Abdce_Pine_Mixed_1_quad<-glmmTMB(Abdce_Pine_Mixed_1~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
 glmm_Abdce_Pine_Mixed_1_simple<-glmmTMB(Abdce_Pine_Mixed_1~G_all_plot+I(mixture_plot/100)+(1|stand),family=nbinom1(),data=Saprox.Rel.Env.Sp)
@@ -2085,6 +2205,12 @@ summary(glmm_Abdce_Pine_Mixed_1_simple)
 #(Intercept)          1.67272    0.69299   2.414   0.0158 *
 #  G_all_plot          -0.03068    0.03281  -0.935   0.3497  
 #I(mixture_plot/100) -1.22601    0.57944  -2.116   0.0344 *
+
+r.squaredGLMM(glmm_Abdce_Pine_Mixed_1_simple)
+#                R2m       R2c
+#delta     0.1480403 0.3389452
+#lognormal 0.1896234 0.4341517
+#trigamma  0.0990229 0.2267176
 
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
@@ -2146,6 +2272,12 @@ summary(glmm_Abdce_Generalist_quad)
 #  I(mixture_plot/100)     -1.751513   0.445986  -3.927 8.59e-05 ***
 #  I((mixture_plot/100)^2)  3.514453   0.399140   8.805  < 2e-16 *** 
 
+r.squaredGLMM(glmm_Abdce_Generalist_quad)
+#R2m       R2c
+#delta     0.3846353 0.9890487
+#lognormal 0.3846678 0.9891323
+#trigamma  0.3846023 0.9889638
+
 mixture_seq <- seq(min(Saprox.Rel.Env.Sp$mixture_plot), max(Saprox.Rel.Env.Sp$mixture_plot), length.out = 200)
 G_all_moy<-mean(Saprox.Rel.Env.Sp$G_all_plot)
 G_all_seq<-rep(G_all_moy,200)
@@ -2170,87 +2302,6 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   geom_point(data = Saprox.Rel.Env.Sp, aes(x = mixture_plot, y = Abdce_Generalist_cat0to3), color = "black") +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of saproxylic beetle species (generalists)") +
   theme_minimal()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-descdist(Saprox.Rel.Env$ab_all,discrete=TRUE,boot=1001)
-plot(fitdist(Saprox.Rel.Env$ab_all,"pois"))
-fitnb<-fitdist(Saprox.Rel.Env$ab_all,"nbinom")
-fitp<-fitdist(Saprox.Rel.Env$ab_all,"pois")
-gofstat(fitnb)$chisqpvalue #0.1367534 --> Negbin
-gofstat(fitp)$chisqpvalue #0
-
-# Visual inspection of total abundance and local tree mixture
-gam_model <- gam(Abdce_all ~ s(mel_trap,k=3), data = Saprox.Rel.Env)
-
-# Create prediction grid
-mel_seq <- seq(min(Saprox.Rel.Env$mel_trap), max(Saprox.Rel.Env$mel_trap), length.out = 200)
-pred <- predict(
-  gam_model,
-  newdata = data.frame(mel_trap = mel_seq),
-  se.fit = TRUE)
-
-# Compute 95% CI
-crit <- qnorm(0.975)  # 1.96 for 95%
-pred_df <- data.frame(
-  mel_trap = mel_seq,
-  fit = pred$fit,
-  lower = pred$fit - crit * pred$se.fit,
-  upper = pred$fit + crit * pred$se.fit)
-
-# Plot with ggplot2
-ggplot(pred_df, aes(x = mel_trap, y = fit)) +
-  geom_ribbon(aes(ymin = lower, ymax = upper), fill = "lightblue", alpha = 0.4) +
-  geom_line(color = "blue", size = 1) +
-  geom_point(data = Saprox.Rel.Env, aes(x = mel_trap, y = Abdce_all), color = "black") +
-  labs(title = "GAM: Abdce_all ~ s(mel_trap) with 95% CI", x = "Deciduous basal area (%)", y = "Number of individuals (all species)") +
-  theme_minimal()
-
-boxplot(Saprox.Rel.Env$ab_all~Saprox.Rel.Env$mel_trap_cat) 
-
-glmm_ab_all<-glmmTMB(ab_all~G_all+I(mel_trap/100)+I((mel_trap/100)^2)+(1|plot),family=nbinom1(),data=Saprox.Rel.Env)
-summary(glmm_ab_all)
-#Conditional model:
-#  Groups Name        Variance Std.Dev.
-#plot   (Intercept) 0.1891   0.4349  
-#Number of obs: 48, groups:  plot, 48
-#
-#Dispersion parameter for nbinom1 family (): 2.29e-06 
-#
-#Conditional model:
-#                     Estimate Std. Error z value Pr(>|z|)    
-#(Intercept)          5.258297   0.245479  21.421   <2e-16 ***
-#G_all               -0.012561   0.008165  -1.538    0.124    
-#I(mel_trap/100)      0.732365   0.669244   1.094    0.274    
-#I((mel_trap/100)^2) -0.708099   0.645788  -1.096    0.273  
-AICc(glmm_Abdce_all) #[1] 555.7867
-
-sim<-simulateResiduals(glmm_ab_all)
-testUniformity(sim)#le qqplot est issu de cette commande 
-#KS Test p-value # Dispersion test  # Outliers 
-testOutliers(sim) # KS test p=0.64, Dispersion test, p=095, Outlier test, p=1
-
-#neither tree mixture, nor G influence total abundance
 
 ######################################################
 ##############  SAPROX - OMI    #####################
@@ -2547,18 +2598,18 @@ summary(indval_Saprox)
 #List of species associated to each combination: 
 #  Group pine  #sps.  4 
 #stat p.value    
-#Hylurgops.palliatus     0.856   0.001 ***
+#  Hylurgops.palliatus     0.856   0.001 ***
 #  Tomicus.piniperda       0.839   0.002 ** 
 #  Pityophthorus.pubescens 0.652   0.009 ** 
 #  Rhizophagus.depressus   0.612   0.010 ** 
 #  Group mixed  #sps.  3 
 #stat p.value   
-#Silvanus.unidentatus   0.520   0.040 * 
+#  Silvanus.unidentatus   0.520   0.040 * 
 #  Thymalus.limbatus      0.513   0.007 **
 #  Octotemnus.glabriculus 0.459   0.032 * 
 #  Group oak  #sps.  1 
 #stat p.value    
-#Cryptarcha.undata 0.598   0.001 ***
+#  Cryptarcha.undata 0.598   0.001 ***
 #  Group pine+mixed  #sps.  5 
 #stat p.value   
 #Hylastes.linearis             0.854   0.003 **
@@ -2569,12 +2620,32 @@ summary(indval_Saprox)
 #  Group pine+oak  #sps.  1 
 #stat p.value  
 #Vincenzellus.ruficollis 0.707   0.025 *
-  
-  Group mixed+oak  #sps.  2 
-stat p.value  
-Ampedus.quercicola   0.792   0.018 *
-  Isoriphis.melasoides 0.744   0.047 *
+#  Group mixed+oak  #sps.  2 
+#stat p.value  
+#Ampedus.quercicola   0.792   0.018 *
+#  Isoriphis.melasoides 0.744   0.047 *
 
+#Species with unexpected preference
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Rhagium.mordax) #oak cat 0 but IndVal pine+mixed
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Ampedus.sanguinolentus) #oak cat 0 but IndVal pine+mixed
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Glischrochilus.quadriguttatus) #oak cat 0 but IndVal pine+mixed
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Vincenzellus.ruficollis) #oak cat 0 but IndVal pine+oak
+
+#Species with preference for mixed stands
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Silvanus.unidentatus)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Thymalus.limbatus)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Octotemnus.glabriculus)
+
+#Species with expected preference
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Hylurgops.palliatus)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Tomicus.piniperda)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Pityophthorus.pubescens)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Rhizophagus.depressus)
+
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Cryptarcha.undata)
+
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Ampedus.quercicola)
+plot(Saprox.Rel.Env.Sp$mixture_plot,Saprox.Rel.Env.Sp$Isoriphis.melasoides)
 
 ################################################################################################
 ###################      Beta partitioning (Baselga 2017 MEE)  #################################

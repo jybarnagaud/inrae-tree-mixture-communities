@@ -22,7 +22,7 @@ library(adespatial)
 #options(constrasts=c("contr.treatment","contr.poly"))
 #setwd("P:/Emmanuelle/MelangeEss_FOrl?ans/Analyses/These_JYB_2011")
 #setwd("Z:/projets/MelangeEss_FOrleans/TheseJYB/Analyses\These_JYB_2011")
-setwd("C:/Users/farchaux/Documents/OakPine/inrae-tree-mixture-communities/data")
+#setwd("C:/Users/farchaux/Documents/OakPine/inrae-tree-mixture-communities/data")
 
 ##############################################################################################
 ##############################################################################################
@@ -298,7 +298,7 @@ plot(bb$sampled.values)
 ##############################################################################################
 ##############################################################################################
 
-Bird.Rel.Env.Sp<-read.csv("Rel_Env_Sp_Bird_2026.csv", sep=";", header=T)
+Bird.Rel.Env.Sp<-read.csv("data/Rel_Env_Sp_Bird_2026.csv", sep=";", header=T)
 
 #Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
 Bird.Rel.Env.Sp$cat_mixture_plot<- factor(Bird.Rel.Env.Sp$cat_mixture_plot, levels = c("pine", "mixed", "oak"))
@@ -311,8 +311,23 @@ Bird.Rel.Env.Sp$cat_mixture_plot<- factor(Bird.Rel.Env.Sp$cat_mixture_plot, leve
 
 #### BIRDS - Species richness all species
 
+Bird.Rel.Env.Sp$mixperc <- Bird.Rel.Env.Sp$mixture_plot/100
+
+ glmm_SR_all_quad<-glmmTMB(SR_all~G_all_plot+poly(mixperc,2,raw = TRUE)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
+
+ # j'ajoute un prior parce que l'effet plot est proche de 0 --> pb de singularité. Ca ne change pas grand chose mais 
+ # au moins c'est propre. voir ?performance::check_singularity
+ 
+ prior <- data.frame(
+   prior = "gamma(1, 2.5)",  # mean can be 1, but even 1e8
+   class = "ranef"           # for random effects
+ )
+ glmm_SR_all_quad_priors <- update(glmm_SR_all_quad, priors = prior)
+ 
+ # glmm_SR_all_simple<-glmmTMB(SR_all~G_all_plot+mixperc+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 glmm_SR_all_quad<-glmmTMB(SR_all~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 glmm_SR_all_simple<-glmmTMB(SR_all~G_all_plot+I(mixture_plot/100)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
+
 AICc(glmm_SR_all_quad) #334.2836
 AICc(glmm_SR_all_simple) #334.7857
 
@@ -348,6 +363,12 @@ ggplot(pred_df, aes(x = mixture_plot, y = fit)) +
   geom_point(data = Bird.Rel.Env.Sp, aes(x = mixture_plot, y = SR_all), color = "black") +
   labs(x = "Mixture (% oak vs pine+oak)", y = "Number of bird species (all)") +
   theme_minimal()
+
+# plot with ggeffects
+library(ggeffects)
+p1 <- ggemmeans(glmm_SR_all_quad_priors, terms = "mixperc[all]", bias_correction = T)
+p2 <- plot(p1,show_residuals = T)
+p2
 
 #### BIRDS - Species richness of Generalist species
 
@@ -941,6 +962,7 @@ rtest(nic1,100)
 
 # Creation of the factor
 fact <- Bird.Rel.Env.Sp$cat_mixture_plot
+
 # plotting the two subsets
 s.class(nic1$ls, fact, col=c("red", "blue","black"),cellipse=0, cpoint=2, pch=3)
 s.chull(nic1$ls, fact, col=c("red", "blue","black"),optchull = 1, add.plot = T)
@@ -963,6 +985,11 @@ fviz_pca_ind(
   addEllipses = TRUE,       # Ellipses de confiance par groupe
 )
 
+# JYB : je la refais en AFC (plus correct pour des abondances)
+
+bird_coa <- dudi.coa(Bird.Rel.Env.Sp[,c(8:46)])
+4
+s.class(bird_coa$li,fac = fact)
 
 ###########################################################
 ##############      BIRDS - RDA      ######################
@@ -977,7 +1004,7 @@ ordiellipse(Bird.rda,group = Bird.Rel.Env.Sp$cat_mel_plot,col = c(1,2,3),label=T
 ##############  BIRDS - RLQ analysis   #######################
 ##############################################################
 
-Bird.Sp.Trait<-read.csv("Sp_Traits_Bird_2026.csv", sep=";", header=T)
+Bird.Sp.Trait<-read.csv("data/Sp_Traits_Bird_2026.csv", sep=";", header=T)
 dim(Bird.Sp.Trait)
 
 afcL.Bird <- dudi.coa(Bird.Rel.Env.Sp[,c(8:46)], scannf = FALSE)

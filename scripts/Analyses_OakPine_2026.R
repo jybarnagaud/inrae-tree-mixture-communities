@@ -19,6 +19,8 @@ library(vegan)
 library(fitdistrplus)
 library(adespatial)
 library(MuMIn)
+library(ggExtra)
+library(partR2)
 
 #options(constrasts=c("contr.treatment","contr.poly"))
 #setwd("P:/Emmanuelle/MelangeEss_FOrl?ans/Analyses/These_JYB_2011")
@@ -31,7 +33,12 @@ library(MuMIn)
 ##############################################################################################
 ##############################################################################################
 
-Carab.Rel.Env.Sp<-read.csv("Rel_Env_Sp_Carab_2026.csv", sep=";", header=T)
+Carab.Rel.Env.Sp<-read.csv("data/Rel_Env_Sp_Carab_2026.csv", sep=";", header=T)
+
+#Scatter plot with histogram relating G_all_plot to mixture_plot for ground beetles 
+df <- data.frame(x = Carab.Rel.Env.Sp$G_all_plot, y = Carab.Rel.Env.Sp$mixture_plot)
+p <- ggplot(df, aes(x,y)) + geom_point() + theme_classic() + labs(x = "Total basal area (m²)", y = "Mixture (% oak vs pine+oak)")
+ggExtra::ggMarginal(p, type = "histogram")
 
 ###############################################################################################
 ########################### GROUND BEETLES - GLMM          ####################################
@@ -182,7 +189,7 @@ quantile(DX, c(0.01, 0.99))
 ########################### GROUND BEETLES - PCA          ####################################
 ###############################################################################################
 
-Carab.Rel.Spe<-read.csv("Rel_Sp_Carab_2026.csv", sep=";", header=T)
+Carab.Rel.Spe<-read.csv("data/Rel_Sp_Carab_2026.csv", sep=";", header=T)
 # Analyse en composantes principales
 Carab_acp <- PCA(Carab.Rel.Spe[,c(2:29)], graph = FALSE)
 Carab.Rel.Env$cat_mel_plot<- factor(Carab.Rel.Env$cat_mel_plot, levels = c("pine", "mixed", "oak"))
@@ -196,6 +203,11 @@ fviz_pca_ind(
   palette = "jco",          # Palette de couleurs
   addEllipses = TRUE,       # Ellipses de confiance par groupe
   )
+
+carab_coa <- dudi.coa(Carab.Rel.Spe[,c(2:29)])
+4
+s.class(carab_coa$li,fac = Carab.Rel.Env$cat_mel_plot,col=c("red", "blue","black"),cellipse=1, cpoint=2, pch=3)
+
 
 ###############################################################################################
 ########################### GROUND BEETLES - RDA          ####################################
@@ -342,6 +354,13 @@ Bird.Rel.Env.Sp<-read.csv("data/Rel_Env_Sp_Bird_2026.csv", sep=";", header=T)
 #Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
 Bird.Rel.Env.Sp$cat_mixture_plot<- factor(Bird.Rel.Env.Sp$cat_mixture_plot, levels = c("pine", "mixed", "oak"))
 
+
+#Scatter plot with histogram relating G_all_plot to mixture_plot for birds 
+df <- data.frame(x = Bird.Rel.Env.Sp$G_all_plot, y = Bird.Rel.Env.Sp$mixture_plot)
+p <- ggplot(df, aes(x,y)) + geom_point() + theme_classic() + labs(x = "Total basal area (m²)", y = "Mixture (% oak vs pine+oak)")
+ggExtra::ggMarginal(p, type = "histogram")
+
+
 #############################################################################################
 #####################      BIRDS - GLMM        ##############################################
 #############################################################################################
@@ -362,6 +381,8 @@ Bird.Rel.Env.Sp$mixperc <- Bird.Rel.Env.Sp$mixture_plot/100
    class = "ranef"           # for random effects
  )
  glmm_SR_all_quad_priors <- update(glmm_SR_all_quad, priors = prior)
+ 
+ summary(glmm_SR_all_quad_priors)
  
  # glmm_SR_all_simple<-glmmTMB(SR_all~G_all_plot+mixperc+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
 glmm_SR_all_quad<-glmmTMB(SR_all~G_all_plot+I(mixture_plot/100)+I((mixture_plot/100)^2)+(1|stand),family=poisson,data=Bird.Rel.Env.Sp)
@@ -1101,7 +1122,7 @@ fviz_pca_ind(
 
 bird_coa <- dudi.coa(Bird.Rel.Env.Sp[,c(8:46)])
 4
-s.class(bird_coa$li,fac = fact)
+s.class(bird_coa$li,fac = fact,col=c("red", "blue","black"),cellipse=1, cpoint=2, pch=3)
 
 ###########################################################
 ##############      BIRDS - RDA      ######################
@@ -1198,10 +1219,16 @@ bb.Bird<-beta.sample.abund(Bird.Rel.Env.Sp[,c(8:46)], index.family="bray", sites
 ##############################################################################################
 ##############################################################################################
 
-Saprox.Rel.Env.Sp<-read.csv("Rel_Env_Sp_Saprox_2026.csv", sep=";", header=T)
+Saprox.Rel.Env.Sp<-read.csv("data/Rel_Env_Sp_Saprox_2026.csv", sep=";", header=T)
 
 #Reordering tree mixture categories along a gradient of increasing oak (deciduous) basal area 
 Saprox.Rel.Env.Sp$cat_mixture_plot<- factor(Saprox.Rel.Env.Sp$cat_mixture_plot, levels = c("pine", "mixed", "oak"))
+
+#Scatter plot with histogram relating G_all_plot to mixture_plot for saproxylic beetles
+df <- data.frame(x = Saprox.Rel.Env.Sp$G_all_plot, y = Saprox.Rel.Env.Sp$mixture_plot)
+p <- ggplot(df, aes(x,y)) + geom_point() + theme_classic() + labs(x = "Total basal area (m²)", y = "Mixture (% oak vs pine+oak)")
+ggExtra::ggMarginal(p, type = "histogram")
+
 
 ############################################################################################
 ###########################     SAPROX BEETLES - GLMMM    ##################################
@@ -2576,6 +2603,10 @@ fviz_pca_ind(
   palette = "jco",          # Palette de couleurs
   addEllipses = TRUE,       # Ellipses de confiance par groupe
 )
+
+Saprox_coa <- dudi.coa(Saprox.Rel.Env.Sp[,c(11:213)])
+4
+s.class(Saprox_coa$li,fac = fact,col=c("red", "blue","black"),cellipse=1, cpoint=2, pch=3)
 
 ###########################################################
 ##############        BIRD - RDA      #####################
